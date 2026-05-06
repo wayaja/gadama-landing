@@ -1,0 +1,2494 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Gadama — Lambung Terlindungi, Hidup Kembali</title>
+  <meta name="description" content="Gadama membantu menjaga kenyamanan lambung dengan madu viskositas tinggi dan sari kunyit aktif." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+
+  <link rel="preconnect" href="https://i.ibb.co.com" crossorigin />
+  <link rel="preload" as="image" href="https://i.ibb.co.com/ZzhK97wW/hero.webp" fetchpriority="high" />
+
+  <!-- =========================
+       KONFIGURASI
+       Ganti bagian ini saja.
+  ========================== -->
+  <script>
+    const WA_NUMBER = "6287778325315";
+    const TALLY_FORM_ID = "WOYWlL";
+
+    const CHECKOUT_1_BOTOL = "https://livinh.storelink.id/gadama-co-sp-1btl";
+    const CHECKOUT_3_BOTOL = "https://livinh.storelink.id/gadama-co-sp-3btl";
+
+    const PRICE_1_OLD = "Rp 177.000";
+    const PRICE_1_NEW = "Rp 155.000";
+
+    const PRICE_3_OLD = "Rp 531.000";
+    const PRICE_3_NEW = "Rp 445.000";
+    const PRICE_1_DAILY = "Rp 5.200";
+    const PRICE_3_DAILY = "Rp 4.900";
+    const PRICE_3_SAVING = "Rp 86.000";
+
+    function waLink(text) {
+      return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+    }
+
+    function openTallyFallback() {
+      if (typeof Tally !== "undefined") {
+        Tally.openPopup(TALLY_FORM_ID, {
+          emoji: { text: "👋", animation: "wave" },
+          autoClose: 0
+        });
+      } else {
+        window.location.href = "#konsultasi";
+      }
+    }
+
+    function goCheckout(url) {
+      window.location.href = url;
+    }
+  </script>
+
+  <!-- Optional: Tally Embed -->
+  <script async src="https://tally.so/widgets/embed.js"></script>
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :root {
+      --ink: #1c2b1e;
+      --ink-2: #263a2a;
+      --ink-mid: #3a5040;
+      --ink-soft: #6a8470;
+      --leaf: #3d6e4a;
+      --leaf-dark: #2a4f33;
+      --leaf-pale: #eaf2ec;
+      --turmeric: #c4780f;
+      --honey: #dfa932;
+      --honey-dark: #aa7413;
+      --honey-pale: #fdf4dc;
+      --cream: #f7f3ec;
+      --cream-2: #f0ebe0;
+      --white: #ffffff;
+      --danger-pale: #fff1ef;
+      --danger: #9f3327;
+      --shadow: 0 8px 28px rgba(28, 43, 30, .08);
+      --shadow-soft: 0 4px 16px rgba(28, 43, 30, .06);
+      --radius: 22px;
+      --radius-sm: 16px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: "DM Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--cream);
+      color: var(--ink);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: 82px;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a, button {
+      font-family: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(100%, 430px);
+      margin: 0 auto;
+      padding: 0 18px;
+    }
+
+    .section {
+      padding: 38px 0;
+    }
+
+    .section-tight {
+      padding: 28px 0;
+    }
+
+    .sep {
+      width: min(100%, 480px);
+      height: 1px;
+      margin: 0 auto;
+      background: linear-gradient(90deg, transparent, var(--cream-2), transparent);
+    }
+
+    .label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+      color: var(--ink-soft);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .label::before {
+      content: "";
+      width: 22px;
+      height: 1.5px;
+      border-radius: 99px;
+      background: var(--ink-soft);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 56px;
+      width: 100%;
+      padding: 0 22px;
+      border: 0;
+      border-radius: var(--radius-sm);
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.2;
+      cursor: pointer;
+      transition: transform .15s ease, opacity .15s ease, box-shadow .15s ease;
+      user-select: none;
+    }
+
+    .btn:active {
+      transform: scale(.98);
+      opacity: .92;
+    }
+
+    .btn-primary {
+      background: var(--honey);
+      color: var(--ink);
+      box-shadow: 0 8px 26px rgba(223, 169, 50, .35);
+    }
+
+    .btn-wa {
+      background: #25D366;
+      color: var(--white);
+      box-shadow: 0 8px 26px rgba(37, 211, 102, .32);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.8px solid var(--leaf);
+      color: var(--leaf-dark);
+    }
+
+    .btn-buy {
+      background: linear-gradient(135deg, var(--turmeric), var(--honey));
+      color: var(--white);
+      box-shadow: 0 8px 26px rgba(196, 120, 15, .28);
+    }
+
+    .soft-link {
+      display: inline-flex;
+      justify-content: center;
+      width: 100%;
+      margin-top: 12px;
+      color: var(--ink-soft);
+      font-size: 13px;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 82% 12%, rgba(223,169,50,.16), transparent 28%),
+        radial-gradient(circle at 18% 88%, rgba(61,110,74,.22), transparent 30%),
+        linear-gradient(155deg, #0f2419 0%, #1c2b1e 48%, #2a4f33 100%);
+      color: var(--white);
+      overflow: hidden;
+      padding: max(48px, env(safe-area-inset-top)) 0 40px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      right: -120px;
+      top: -80px;
+      border-radius: 54% 46% 49% 51% / 46% 55% 45% 54%;
+      background: radial-gradient(ellipse, rgba(255,255,255,.08), transparent 66%);
+      animation: blob 16s ease-in-out infinite alternate;
+    }
+
+    @keyframes blob {
+      from { transform: rotate(0deg) translate(0, 0); }
+      to { transform: rotate(7deg) translate(12px, 16px); }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+    }
+
+    .pretag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 24px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 99px;
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.68);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .pretag-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--honey);
+      box-shadow: 0 0 0 5px rgba(223,169,50,.16);
+    }
+
+    .hero h1 {
+      font-family: "Lora", serif;
+      font-size: clamp(30px, 9vw, 44px);
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -.02em;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 em {
+      color: var(--honey);
+      font-style: italic;
+    }
+
+    .hero-copy {
+      max-width: 360px;
+      font-size: 15px;
+      line-height: 1.58;
+      color: rgba(255,255,255,.62);
+      margin-bottom: 28px;
+    }
+
+    .hero-cta {
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-note {
+      color: rgba(255,255,255,.46);
+      font-size: 12.5px;
+      text-align: center;
+      line-height: 1.6;
+    }
+
+    .scroll-hint {
+      display: inline-flex;
+      justify-content: center;
+      width: 100%;
+      color: rgba(255,255,255,.46);
+      font-size: 13px;
+      margin-top: 6px;
+    }
+
+    .wave {
+      display: block;
+      height: 44px;
+      width: 100%;
+      background: var(--ink);
+    }
+
+    .wave path {
+      fill: var(--cream);
+    }
+
+    /* TRUST BAR */
+    .trust-bar {
+      margin-top: -8px;
+      padding: 16px 0 20px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .trust-item {
+      min-height: 74px;
+      padding: 12px 10px;
+      border-radius: 16px;
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .trust-icon {
+      min-height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .trust-logo {
+      width: auto;
+      height: 24px;
+      max-width: 64px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .trust-label {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .trust-small {
+      font-size: 10.5px;
+      color: var(--ink-soft);
+      line-height: 1.25;
+    }
+
+    /* TYPO */
+    .headline {
+      font-family: "Lora", serif;
+      font-size: clamp(22px, 6vw, 30px);
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: -.01em;
+      margin-bottom: 14px;
+    }
+
+    .headline em {
+      color: var(--leaf);
+      font-style: italic;
+    }
+
+    .body {
+      font-size: 15px;
+      line-height: 1.62;
+      color: var(--ink-soft);
+    }
+
+    .body strong {
+      color: var(--ink);
+    }
+
+    .body + .body {
+      margin-top: 12px;
+    }
+
+    .big-line {
+      font-family: "Lora", serif;
+      font-size: 20px;
+      line-height: 1.42;
+      color: var(--ink);
+    }
+
+    .big-line em {
+      color: var(--leaf);
+    }
+
+    /* EMPATHY */
+    .empathy-card {
+      padding: 22px 18px;
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .note-left {
+      margin-top: 14px;
+      padding-left: 14px;
+      border-left: 3px solid var(--leaf-pale);
+      color: var(--ink-soft);
+      font-size: 14.5px;
+      line-height: 1.58;
+    }
+
+    /* PAIN */
+    .pain-stack {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pain-line {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow-soft);
+      font-size: 15px;
+      color: var(--ink-mid);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .pain-line span:first-child {
+      font-family: "Lora", serif;
+      color: var(--leaf);
+      font-size: 20px;
+      font-weight: 700;
+      min-width: 24px;
+    }
+
+    .loop-box {
+      margin-top: 22px;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: var(--white);
+      padding: 22px 18px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .loop-box::before {
+      content: "";
+      position: absolute;
+      right: -44px;
+      top: -44px;
+      width: 150px;
+      height: 150px;
+      border-radius: 99px;
+      background: radial-gradient(circle, rgba(223,169,50,.17), transparent 66%);
+    }
+
+    .loop-flow {
+      position: relative;
+      z-index: 1;
+      font-size: 14.5px;
+      line-height: 1.6;
+      color: rgba(255,255,255,.72);
+      margin-bottom: 16px;
+    }
+
+    .loop-punch {
+      position: relative;
+      z-index: 1;
+      padding: 15px 16px;
+      border-left: 3px solid var(--honey);
+      background: rgba(255,255,255,.06);
+      border-radius: 14px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: rgba(255,255,255,.86);
+      font-weight: 700;
+    }
+
+    /* REVELATION */
+    .compare {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin: 22px 0;
+    }
+
+    .compare-card {
+      border-radius: 16px;
+      padding: 14px 12px;
+      text-align: center;
+      min-height: 142px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .compare-card.bad {
+      background: var(--danger-pale);
+      color: var(--danger);
+    }
+
+    .compare-card.good {
+      background: var(--leaf-pale);
+      color: var(--leaf-dark);
+    }
+
+    .compare-visual {
+      height: 42px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      background: rgba(255,255,255,.55);
+      border: 1px solid rgba(28,43,30,.06);
+    }
+
+    .compare-card.bad .compare-visual::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      height: 11px;
+      border-radius: 99px;
+      background: #d94b3e;
+    }
+
+    .compare-card.bad .compare-visual::after {
+      content: "";
+      position: absolute;
+      width: 13px;
+      height: 13px;
+      border-radius: 99px;
+      background: var(--honey);
+      left: 50%;
+      top: 6px;
+      transform: translateX(-50%);
+      box-shadow: -26px 10px 0 rgba(223,169,50,.8), 26px 10px 0 rgba(223,169,50,.8);
+    }
+
+    .compare-card.good .compare-visual::before {
+      content: "";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      height: 11px;
+      border-radius: 99px;
+      background: var(--leaf);
+      box-shadow: 0 -10px 0 rgba(61,110,74,.18);
+    }
+
+    .compare-title {
+      font-size: 12.5px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .compare-desc {
+      font-size: 11.5px;
+      line-height: 1.45;
+      color: var(--ink-soft);
+    }
+
+    .revelation-punch {
+      padding: 18px 18px;
+      border-radius: 18px;
+      background: var(--honey-pale);
+      border-left: 4px solid var(--honey);
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.5;
+      font-weight: 800;
+    }
+
+    /* OBJECTION */
+    .reader-voice {
+      padding: 20px 18px;
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(61,110,74,.10);
+    }
+
+    .reader-quote {
+      font-family: "Lora", serif;
+      color: var(--leaf-dark);
+      font-size: 20px;
+      line-height: 1.5;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    /* MECHANISM */
+    .mechanism-grid {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mechanism-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .mechanism-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+      background: linear-gradient(135deg, var(--leaf-pale), var(--honey-pale));
+    }
+
+    .mechanism-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      background: var(--white);
+      font-size: 24px;
+      box-shadow: 0 2px 10px rgba(28,43,30,.08);
+      flex: 0 0 auto;
+    }
+
+    .mechanism-title {
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+
+    .mechanism-sub {
+      margin-top: 2px;
+      color: var(--ink-soft);
+      font-size: 12px;
+    }
+
+    .mechanism-body {
+      padding: 16px;
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .mechanism-body strong {
+      color: var(--ink);
+    }
+
+    .steps-summary {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: rgba(255,255,255,.76);
+      line-height: 1.55;
+      font-size: 14.5px;
+    }
+
+    .steps-summary strong {
+      display: block;
+      color: var(--white);
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .steps-summary span {
+      color: var(--honey);
+      font-weight: 800;
+    }
+
+    /* CTA BOX */
+    .cta-box {
+      background: var(--ink);
+      border-radius: var(--radius);
+      padding: 26px 20px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      right: -44px;
+      top: -44px;
+      width: 160px;
+      height: 160px;
+      border-radius: 99px;
+      background: radial-gradient(circle, rgba(61,110,74,.34), transparent 65%);
+    }
+
+    .cta-box > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-title {
+      font-family: "Lora", serif;
+      font-size: 24px;
+      line-height: 1.32;
+      margin-bottom: 10px;
+    }
+
+    .cta-title span {
+      color: var(--honey);
+    }
+
+    .cta-copy {
+      color: rgba(255,255,255,.62);
+      font-size: 14.5px;
+      line-height: 1.58;
+      margin-bottom: 20px;
+    }
+
+    .cta-sub {
+      color: rgba(255,255,255,.36);
+      font-size: 12px;
+      line-height: 1.55;
+      text-align: center;
+      margin-top: 11px;
+    }
+
+    /* PROGRAM */
+    .program-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 22px 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .program-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .program-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 14px;
+      border-radius: 15px;
+      background: var(--leaf-pale);
+    }
+
+    .program-item .check {
+      color: var(--leaf);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .program-item strong {
+      color: var(--ink);
+      display: block;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .program-item span {
+      color: var(--ink-soft);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .faq {
+      background: var(--white);
+      border-radius: 17px;
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+    }
+
+    .faq summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 17px 18px;
+      font-size: 14.5px;
+      line-height: 1.48;
+      font-weight: 900;
+      color: var(--ink);
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      user-select: none;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq summary::after {
+      content: "⌄";
+      color: var(--leaf);
+      font-size: 20px;
+      line-height: 1;
+      transition: transform .2s ease;
+      flex: 0 0 auto;
+    }
+
+    .faq[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    .faq-body {
+      padding: 0 18px 18px;
+      border-top: 1px solid var(--leaf-pale);
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.58;
+    }
+
+    .faq-body p {
+      margin-top: 12px;
+    }
+
+    .faq-body strong {
+      color: var(--ink);
+    }
+
+    /* PRICING */
+    .pricing-intro {
+      margin-bottom: 18px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .price-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      background: var(--white);
+      box-shadow: var(--shadow);
+      border: 2px solid transparent;
+    }
+
+    .price-card.featured {
+      border-color: var(--honey);
+      box-shadow: 0 10px 38px rgba(223,169,50,.22);
+    }
+
+    .badge {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%);
+      background: linear-gradient(135deg, var(--turmeric), var(--honey));
+      color: var(--white);
+      padding: 6px 18px;
+      border-radius: 0 0 14px 14px;
+      font-size: 10.5px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .price-top {
+      display: flex;
+      gap: 0;
+      min-height: 156px;
+    }
+
+    .featured .price-top {
+      padding-top: 26px;
+    }
+
+    .product-visual {
+      width: 120px;
+      flex: 0 0 auto;
+      background: linear-gradient(160deg, var(--leaf-pale), var(--honey-pale));
+      display: grid;
+      place-items: center;
+      padding: 16px 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .featured .product-visual {
+      width: 136px;
+    }
+
+    .product-visual::before {
+      content: "";
+      position: absolute;
+      left: -24px;
+      bottom: -24px;
+      width: 100px;
+      height: 100px;
+      border-radius: 99px;
+      background: radial-gradient(circle, rgba(223,169,50,.17), transparent 66%);
+    }
+
+    .bottle {
+      position: relative;
+      width: 62px;
+      height: 112px;
+      border-radius: 24px 24px 18px 18px;
+      background: linear-gradient(180deg, #f0c36c, #b86a12);
+      box-shadow: 0 10px 20px rgba(28,43,30,.2);
+    }
+
+    .bottle::before {
+      content: "";
+      position: absolute;
+      left: 20px;
+      top: -17px;
+      width: 22px;
+      height: 22px;
+      border-radius: 8px 8px 4px 4px;
+      background: #2e5938;
+    }
+
+    .bottle::after {
+      content: "GADAMA";
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 30px;
+      padding: 8px 2px;
+      border-radius: 10px;
+      background: var(--cream);
+      color: var(--leaf-dark);
+      font-size: 7px;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: .05em;
+    }
+
+    .bottles-3 {
+      width: 98px;
+      height: 120px;
+      position: relative;
+    }
+
+    .bottles-3 .bottle {
+      position: absolute;
+      bottom: 0;
+    }
+
+    .bottles-3 .b1 { left: 0; transform: scale(.88) rotate(-5deg); opacity: .86; }
+    .bottles-3 .b2 { left: 27px; z-index: 2; transform: scale(1); }
+    .bottles-3 .b3 { right: 0; transform: scale(.88) rotate(5deg); opacity: .86; }
+
+    .price-info {
+      flex: 1;
+      padding: 18px 16px;
+      min-width: 0;
+    }
+
+    .for {
+      font-size: 12px;
+      color: var(--ink-soft);
+      font-style: italic;
+      line-height: 1.45;
+      margin-bottom: 5px;
+    }
+
+    .pname {
+      font-family: "Lora", serif;
+      color: var(--ink);
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 4px;
+    }
+
+    .pdur {
+      color: var(--ink-soft);
+      font-size: 12.5px;
+      margin-bottom: 10px;
+    }
+
+    .old {
+      color: var(--ink-soft);
+      font-size: 12px;
+      text-decoration: line-through;
+      margin-bottom: 2px;
+    }
+
+    .new {
+      font-family: "Lora", serif;
+      color: var(--leaf);
+      font-size: 23px;
+      line-height: 1.15;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .featured .new {
+      color: var(--turmeric);
+      font-size: 25px;
+    }
+
+    .perday {
+      display: inline-flex;
+      margin-top: 8px;
+      padding: 5px 10px;
+      border-radius: 99px;
+      background: var(--honey-pale);
+      color: var(--honey-dark);
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .benefits {
+      padding: 16px 18px;
+      display: grid;
+      gap: 10px;
+      border-top: 1px solid var(--cream-2);
+    }
+
+    .benefit {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: var(--ink-mid);
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .benefit span:first-child {
+      color: var(--leaf);
+      font-weight: 900;
+      flex: 0 0 auto;
+      margin-top: 1px;
+    }
+
+    .bonus {
+      margin-top: 4px;
+      padding: 11px 12px;
+      border-radius: 12px;
+      background: var(--honey-pale);
+      color: var(--honey-dark);
+      font-size: 13px;
+      line-height: 1.55;
+      font-style: italic;
+    }
+
+    .price-cta {
+      padding: 0 18px 20px;
+    }
+
+    .microcopy {
+      margin-bottom: 10px;
+      color: var(--ink-soft);
+      font-size: 12.5px;
+      line-height: 1.45;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .cod {
+      padding-top: 10px;
+      margin-top: 10px;
+      border-top: 1px solid var(--cream-2);
+      text-align: center;
+      color: var(--ink-soft);
+      font-size: 12.5px;
+    }
+
+    .cod strong {
+      color: var(--leaf);
+    }
+
+    .urgency {
+      margin-top: 16px;
+      padding: 18px;
+      border-radius: var(--radius);
+      background: var(--ink);
+      color: rgba(255,255,255,.67);
+      font-size: 14.5px;
+      line-height: 1.58;
+    }
+
+    .urgency strong {
+      color: var(--white);
+    }
+
+    /* FINAL */
+    .final-card {
+      padding: 26px 20px;
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+      text-align: left;
+    }
+
+    .final-card .headline {
+      margin-bottom: 10px;
+    }
+
+    .final-actions {
+      margin-top: 20px;
+      display: grid;
+      gap: 11px;
+    }
+
+    .disclaimer {
+      padding: 34px 0 38px;
+      background: var(--ink);
+      color: rgba(255,255,255,.52);
+      font-size: 11.5px;
+      line-height: 1.62;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 390px;
+      margin: 0 auto;
+    }
+
+    .footer-brand {
+      font-family: "Lora", serif;
+      color: var(--honey);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      margin-bottom: 12px;
+    }
+
+    .footer-trust {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin: 0 auto 14px;
+    }
+
+    .footer-trust-item {
+      min-width: 108px;
+      padding: 10px 12px;
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 14px;
+      background: rgba(255,255,255,.06);
+      display: grid;
+      justify-items: center;
+      gap: 6px;
+    }
+
+    .footer-trust-item img {
+      height: 24px;
+      max-width: 70px;
+      object-fit: contain;
+      display: block;
+    }
+
+    .footer-trust-item span {
+      color: rgba(255,255,255,.70);
+      font-size: 10px;
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: .02em;
+    }
+
+    .footer-legal {
+      color: rgba(255,255,255,.68);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+
+    .footer-divider {
+      width: 54px;
+      height: 1px;
+      margin: 16px auto;
+      background: rgba(223,169,50,.42);
+    }
+
+    .footer-note {
+      color: rgba(255,255,255,.42);
+      font-size: 11.3px;
+      line-height: 1.65;
+    }
+
+    .footer-note + .footer-note {
+      margin-top: 10px;
+    }
+
+
+
+    /* FINAL HOSTED IMAGE IMPLEMENTATION */
+    .hero {
+      min-height: 100svh;
+      display: block;
+      padding: 0;
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-img-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      z-index: 0;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        linear-gradient(180deg, rgba(10,24,16,.12) 0%, rgba(10,24,16,.30) 45%, rgba(10,24,16,.82) 100%),
+        linear-gradient(90deg, rgba(10,24,16,.78) 0%, rgba(10,24,16,.52) 43%, rgba(10,24,16,.10) 78%);
+      pointer-events: none;
+    }
+
+    .hero .wrap {
+      min-height: 100svh;
+      display: flex;
+      align-items: flex-end;
+      padding-top: max(42px, env(safe-area-inset-top));
+      padding-bottom: calc(34px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hero h1 {
+      max-width: 380px;
+      text-shadow: 0 3px 18px rgba(0,0,0,.36);
+    }
+
+    .hero-copy {
+      max-width: 330px;
+      text-shadow: 0 2px 12px rgba(0,0,0,.32);
+    }
+
+    .hero-cta {
+      max-width: 420px;
+    }
+
+    .hero .btn-outline {
+      background: rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
+    }
+
+    .visual-image-card {
+      margin: 20px 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--white);
+      border: 1px solid rgba(61,110,74,.10);
+    }
+
+    .visual-image-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .revelation-image {
+      margin: 22px 0;
+    }
+
+    .mechanism-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 18px 0 20px;
+    }
+
+    .mechanism-photo {
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(61,110,74,.10);
+      min-height: 150px;
+    }
+
+    .mechanism-photo img {
+      width: 100%;
+      height: 100%;
+      min-height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product-hosted-img {
+      width: 100%;
+      max-width: 210px;
+      height: auto;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 10px 18px rgba(28,43,30,.24));
+      border-radius: 14px;
+    }
+
+    .product-visual.has-image {
+      background: linear-gradient(160deg, var(--leaf-pale), var(--honey-pale));
+      padding: 10px;
+    }
+
+    .featured .product-visual.has-image {
+      width: 148px;
+    }
+
+    .product-visual.has-image .product-hosted-img {
+      max-width: 118px;
+    }
+
+    @media (max-width: 380px) {
+      .mechanism-photo-grid { gap: 10px; }
+      .mechanism-photo img { min-height: 130px; }
+      .featured .product-visual.has-image { width: 130px; }
+      .product-visual.has-image .product-hosted-img { max-width: 100px; }
+    }
+
+
+    /* TESTIMONIALS */
+    .testi-section {
+      padding: 44px 0;
+    }
+
+    .testi-intro {
+      margin-bottom: 20px;
+    }
+
+    .testi-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .testi-card {
+      position: relative;
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 22px 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(61, 110, 74, .10);
+      overflow: hidden;
+    }
+
+    .testi-card.highlight {
+      border: 2px solid var(--honey);
+      background: linear-gradient(180deg, var(--white), #fffaf0);
+      box-shadow: 0 10px 34px rgba(223,169,50,.18);
+    }
+
+    .testi-card::before {
+      content: "“";
+      position: absolute;
+      right: 18px;
+      top: -18px;
+      font-family: "Lora", serif;
+      font-size: 92px;
+      line-height: 1;
+      color: rgba(61, 110, 74, .07);
+      pointer-events: none;
+    }
+
+    .testi-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testi-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--leaf-pale), var(--honey-pale));
+      border: 1px solid rgba(196, 120, 15, .14);
+      font-size: 18px;
+      flex: 0 0 auto;
+    }
+
+    .testi-name {
+      font-size: 14px;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .testi-type {
+      margin-top: 2px;
+      font-size: 11.5px;
+      color: var(--ink-soft);
+      line-height: 1.3;
+    }
+
+    .testi-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 12px;
+      padding: 5px 10px;
+      border-radius: 99px;
+      background: var(--leaf-pale);
+      color: var(--leaf-dark);
+      font-size: 11px;
+      font-weight: 900;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testi-card.highlight .testi-tag {
+      background: var(--honey-pale);
+      color: var(--honey-dark);
+    }
+
+    .testi-quote {
+      position: relative;
+      z-index: 1;
+      font-family: "Lora", serif;
+      color: var(--ink-mid);
+      font-size: 15px;
+      line-height: 1.55;
+      font-style: italic;
+      white-space: pre-line;
+    }
+
+    .testi-quote strong {
+      color: var(--ink);
+      font-style: normal;
+    }
+
+    .testi-disclaimer {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: var(--cream-2);
+      color: var(--ink-soft);
+      font-size: 12px;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+
+    /* FLOATING */
+    .float-wa {
+      position: fixed;
+      right: 18px;
+      bottom: calc(88px + env(safe-area-inset-bottom, 0px));
+      z-index: 1000;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #25D366;
+      color: var(--white);
+      padding: 12px 15px 12px 13px;
+      border-radius: 99px;
+      box-shadow: 0 10px 28px rgba(37,211,102,.38);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .sticky {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 999;
+      padding: 12px 16px calc(12px + env(safe-area-inset-bottom, 0px));
+      background: rgba(28, 43, 30, .98);
+      box-shadow: 0 -8px 26px rgba(0,0,0,.22);
+    }
+
+    .sticky-inner {
+      width: min(100%, 430px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .sticky .sbtn {
+      min-height: 46px;
+      border-radius: 13px;
+      font-size: 13px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 0 12px;
+    }
+
+    .sticky-chat {
+      background: #25D366;
+      color: var(--white);
+    }
+
+    .sticky-pack {
+      background: var(--honey);
+      color: var(--ink);
+    }
+
+
+    /* MOBILE READABILITY REFINEMENT */
+    .visual-image-card {
+      margin: 18px 0 14px;
+    }
+
+    .body {
+      max-width: 34em;
+    }
+
+    .headline {
+      max-width: 13em;
+    }
+
+    .mechanism-card + .mechanism-card {
+      margin-top: 2px;
+    }
+
+    .faq-body {
+      line-height: 1.58;
+    }
+
+    @media (max-width: 520px) {
+      .sticky {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+    }
+
+    @media (min-width: 560px) {
+      body {
+        background:
+          linear-gradient(90deg, rgba(28,43,30,.04) 0 1px, transparent 1px),
+          var(--cream);
+        background-size: 28px 28px;
+      }
+
+      .hero {
+        min-height: 820px;
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    /* READABILITY BULLETS + TESTIMONIAL REFINEMENT */
+    .soft-bullets {
+      display: grid;
+      gap: 8px;
+      margin: 12px 0 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .soft-bullets li {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.52;
+    }
+
+    .soft-bullets li::before {
+      content: "•";
+      color: var(--leaf);
+      font-weight: 900;
+      line-height: 1.45;
+      flex: 0 0 auto;
+    }
+
+    .testi-name {
+      font-size: 14.5px;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .testi-type {
+      margin-top: 3px;
+      font-size: 11.5px;
+      color: var(--ink-soft);
+      line-height: 1.35;
+    }
+
+    .testi-quote {
+      font-family: "Lora", serif;
+      color: var(--ink-mid);
+      font-size: 15.5px;
+      line-height: 1.62;
+      font-style: normal;
+      white-space: pre-line;
+    }
+
+
+    /* SCROLL REVEAL ANIMATION */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+      will-change: opacity, transform;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+  </style>
+
+  <!-- META PIXEL PLACEHOLDER -->
+  <script>
+    /*
+      GANTI DENGAN META PIXEL ANDA
+
+      fbq('track', 'PageView');
+      fbq('track', 'ViewContent');
+    */
+  </script>
+
+</head>
+
+<body>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <img
+        src="https://i.ibb.co.com/ZzhK97wW/hero.webp"
+        alt="Pria memegang perut karena maag kambuh"
+        class="hero-img-bg"
+        fetchpriority="high"
+        decoding="async"
+        width="1080"
+        height="1920"
+      />
+
+      <div class="wrap hero-inner">
+        <div>
+          <div class="pretag">
+            <span class="pretag-dot"></span>
+            Gadama · Herbal Lambung Premium
+          </div>
+
+          <h1>Sudah jaga makan, sudah minum obat,<br />tapi lambung masih sering <em>kambuh?</em></h1>
+
+          <p class="hero-copy">
+            Kembung, begah, dada panas, sampai takut makan bisa membuat aktivitas ikut terganggu. Gadama membantu menjaga lambung lebih nyaman dengan madu viskositas tinggi dan sari kunyit aktif.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn btn-outline" style="border-color:rgba(255,255,255,.22);color:rgba(255,255,255,.88)" href="#penjelasan">
+              Pelajari Cara Kerjanya ↓
+            </a>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+<svg class="wave" viewBox="0 0 1440 44" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,0 C360,44 1080,44 1440,0 L1440,44 L0,44 Z"></path>
+    </svg>
+
+    <!-- TRUST BAR -->
+    <section class="trust-bar">
+      <div class="wrap">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="trust-icon"><img class="trust-logo" src="https://i.ibb.co.com/GvbVSt8m/halal.webp" alt="Logo Halal MUI" loading="lazy" decoding="async" /></div>
+            <div class="trust-label">Halal MUI</div>
+            <div class="trust-small">ID34110018277270424</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon"><img class="trust-logo" src="https://i.ibb.co.com/7c2zq48/bpom.webp" alt="Logo BPOM" loading="lazy" decoding="async" /></div>
+            <div class="trust-label">BPOM Terdaftar</div>
+            <div class="trust-small">TR256049601</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🌿</div>
+            <div class="trust-label">Bahan Alami</div>
+            <div class="trust-small">Madu & sari kunyit</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🍯</div>
+            <div class="trust-label">Madu Kental</div>
+            <div class="trust-small">Viskositas tinggi</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🌿</div>
+            <div class="trust-label">Sari Kunyit Aktif</div>
+            <div class="trust-small">Bukan ekstrak kering</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">📦</div>
+            <div class="trust-label">Bisa COD</div>
+            <div class="trust-small">Transfer / bayar di tempat</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- EMPATHY -->
+    <section class="section" id="penjelasan">
+      <div class="wrap">
+        <div class="label">Kamu tidak sendirian</div>
+
+        <div class="empathy-card">
+          <p class="big-line">
+            Banyak yang sudah jaga makan, minum obat, bahkan coba herbal. Tapi lambung tetap <em>sensitif dan mudah kambuh.</em>
+          </p>
+
+          <p class="note-left">
+            Bukan karena kamu kurang usaha. Masalahnya sering bukan cuma makanan, tapi dinding lambung yang belum benar-benar terlindungi dari iritasi berulang.
+          </p>
+
+          <p class="note-left">
+            Sebelum memilih solusi, kenali dulu kondisi lambungmu. Cek singkat ini gratis dan hanya butuh sekitar 30 detik.
+          </p>
+
+          <button class="btn btn-primary" style="margin-top:16px" onclick="fbq('trackCustom', 'ClickFormCekKondisi'); openTallyFallback()">
+            🔍 Cek Kondisi Lambung Saya →
+          </button>
+
+          <p class="note-left" style="font-size:12px;line-height:1.5;opacity:.82">
+            Setelah pengecekan selesai, tim Gadama akan membantu meninjau kondisi Anda dan memberikan informasi lanjutan sesuai jam operasional.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- PAIN ESCALATION -->
+    <section class="section">
+      <div class="wrap">
+        <div class="label">Yang sering terjadi</div>
+
+        <h2 class="headline">Yang melelahkan bukan cuma rasa perihnya. Tapi hidup yang ikut terbatas.</h2>
+        <p class="body"><strong>Takut makan. Susah fokus kerja. Tidur tidak nyaman. Lalu mulai bergantung pada penenang sementara.</strong></p>
+
+        <div class="pain-stack">
+          <div class="pain-line"><span>01</span>Kembung dan begah setelah makan.</div>
+          <div class="pain-line"><span>02</span>Dada terasa panas atau perut cepat tidak nyaman.</div>
+          <div class="pain-line"><span>03</span>Kerja, tidur, dan makan mulai ikut terganggu.</div>
+        </div>
+
+        <div class="visual-image-card">
+          <img
+            src="https://i.ibb.co.com/nqFn2W3R/kambuh.webp"
+            alt="Ilustrasi lambung kambuh"
+            loading="lazy"
+            decoding="async"
+            alt="Infografis siklus maag kambuh: asam naik, minum obat, reda, lalu kambuh lagi"
+            loading="lazy"
+            decoding="async"
+            width="1024"
+            height="1792"
+          />
+        </div>
+
+        <div class="loop-box">
+          <p class="loop-punch">
+            Intinya: kalau hanya diredakan, pola kambuhnya bisa terus berulang.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- REVELATION -->
+    <section class="section">
+      <div class="wrap">
+        <div class="label">Yang jarang dijelaskan</div>
+
+        <h2 class="headline">Masalahnya bukan cuma asam lambungnya.</h2>
+
+        <p class="body">
+          Dinding lambung punya lapisan pelindung. Kalau terus terkena asam berlebih, pola makan tidak teratur, stres, atau iritasi berulang, lapisan itu bisa makin sensitif.
+        </p>
+
+        <p class="body">
+          Saat lapisan ini belum pulih, lambung bisa tetap mudah bereaksi meski kamu sudah berusaha jaga makan.
+        </p>
+
+        <div class="visual-image-card revelation-image">
+          <img
+            src="https://i.ibb.co.com/yB03Yxtb/revelation.webp"
+            alt="Ilustrasi perbandingan dinding lambung iritasi dan lebih terlindungi"
+            loading="lazy"
+            decoding="async"
+            width="1024"
+            height="1024"
+          />
+        </div>
+
+        <div class="compare">
+          <div class="compare-card bad">
+            <div class="compare-visual"></div>
+            <div class="compare-title">Dinding lambung mudah iritasi</div>
+            <div class="compare-desc">Asam lebih mudah terasa perih.</div>
+          </div>
+
+          <div class="compare-card good">
+            <div class="compare-visual"></div>
+            <div class="compare-title">Dinding lambung lebih terlindungi</div>
+            <div class="compare-desc">Lebih stabil untuk aktivitas harian.</div>
+          </div>
+        </div>
+
+        <div class="revelation-punch">
+          Yang sering belum dilakukan: membantu melapisi dan menjaga dinding lambung — supaya tidak terus menerus terpapar iritasi.
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- OBJECTION -->
+    <section class="section">
+      <div class="wrap">
+        <div class="reader-voice">
+          <p class="reader-quote">
+            “Sudah coba macam-macam, kenapa masih kambuh juga?”
+          </p>
+          <p class="body">
+            Wajar kalau kamu merasa lelah. Banyak solusi hanya fokus menenangkan gejala sementara, tapi belum membantu memberi perlindungan pada dinding lambung.
+          </p>
+          <p class="body">
+            Bukan salah kamu. Bisa jadi mekanisme yang kamu coba belum tepat. Di sinilah Gadama masuk dengan pendekatan yang berbeda.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    
+    <div class="sep"></div>
+
+    <!-- HIDDEN TRIGGER REALIZATION -->
+    <section class="section-tight">
+      <div class="wrap">
+        <div class="reader-voice" style="background:#fffaf6;border:1px solid rgba(0,0,0,.05);box-shadow:none">
+          <div class="label" style="margin-bottom:14px">Kadang bukan cuma makanan</div>
+
+          <p class="big-line" style="font-size:22px;margin-bottom:16px">
+            Saat tubuh sedang sensitif,<br>
+            lambung juga bisa ikut lebih mudah terganggu.
+          </p>
+
+          <div class="pain-stack" style="margin-top:0">
+            <div class="pain-line" style="background:#fff;box-shadow:none;border:1px solid rgba(0,0,0,.05);padding:13px 15px">
+              😵‍💫 Stres atau pikiran berat
+            </div>
+
+            <div class="pain-line" style="background:#fff;box-shadow:none;border:1px solid rgba(0,0,0,.05);padding:13px 15px">
+              🌙 Kurang tidur & aktivitas padat
+            </div>
+
+            <div class="pain-line" style="background:#fff;box-shadow:none;border:1px solid rgba(0,0,0,.05);padding:13px 15px">
+              ⏰ Telat makan atau pola makan tidak teratur
+            </div>
+          </div>
+
+          <p class="note-left" style="margin-top:16px">
+            Karena itu, yang penting bukan cuma menenangkan sementara.
+            Tapi membantu menjaga dan melapisi lambung agar tetap nyaman saat tubuh sedang sensitif.
+          </p>
+        </div>
+      </div>
+    </section>
+
+<!-- MECHANISM -->
+    <section class="section">
+      <div class="wrap">
+        <div class="label">Cara kerjanya</div>
+
+        <h2 class="headline">Lapisi. Lindungi. Pulihkan.</h2>
+
+        <div class="mechanism-photo-grid">
+          <div class="mechanism-photo">
+            <img
+              src="https://i.ibb.co.com/r2BycbqM/madu.webp"
+              alt="Madu kental dituang dari sendok"
+              loading="lazy"
+              decoding="async"
+              width="1024"
+              height="1024"
+            />
+          </div>
+          <div class="mechanism-photo">
+            <img
+              src="https://i.ibb.co.com/1YcnhkLf/kunyit.webp"
+              alt="Kunyit segar dipotong"
+              loading="lazy"
+              decoding="async"
+              width="1024"
+              height="1024"
+            />
+          </div>
+        </div>
+
+        <div class="mechanism-grid">
+          <div class="mechanism-card">
+            <div class="mechanism-head">
+              <div class="mechanism-icon">🍯</div>
+              <div>
+                <div class="mechanism-title">Lapisi — madu viskositas tinggi.</div>
+                <div class="mechanism-sub">Kental, tidak langsung lewat.</div>
+              </div>
+            </div>
+            <div class="mechanism-body">
+              Kebanyakan produk pakai madu yang encer. Madu encer langsung lewat — tidak sempat melapisi dinding lambung. <strong>Gadama pakai madu yang kental.</strong> Saat diminum, madu ini membantu melapisi dinding lambungmu.
+            </div>
+          </div>
+
+          <div class="mechanism-card">
+            <div class="mechanism-head">
+              <div class="mechanism-icon">🌿</div>
+              <div>
+                <div class="mechanism-title">Pulihkan — sari kunyit aktif.</div>
+                <div class="mechanism-sub">Sari kunyit segar, bukan ekstrak kering.</div>
+              </div>
+            </div>
+            <div class="mechanism-body">
+              Kebanyakan produk pakai kunyit yang sudah dikeringkan. Proses pengeringan bisa mengurangi kandungan aktifnya. <strong>Gadama pakai sari kunyit segar</strong> untuk membantu meredakan iritasi di dinding lambung.
+            </div>
+          </div>
+        </div>
+
+        <div class="reader-voice" style="margin-top:18px">
+          <div class="reader-quote">
+            “Madu lagi, kunyit lagi!<br>
+            Saya udah pernah coba…”
+          </div>
+
+          <p class="body">
+            Untuk lambung yang sensitif, bukan cuma soal madu dan kunyit.
+          </p>
+
+          <ul class="soft-bullets">
+            <li>kualitas bahan</li>
+            <li>proses formulasi</li>
+            <li>cara kerja di lambung</li>
+          </ul>
+
+          <p class="body">
+            Gadama menggunakan madu viskositas tinggi dan sari kunyit aktif untuk membantu menjaga kenyamanan lambung dengan mekanisme perlindungan yang lebih terarah.
+          </p>
+        </div>
+
+        <div class="steps-summary">
+          <strong>Cara kerja Gadama:</strong>
+          <span>• Madu viskositas tinggi membantu melapisi lambung.</span><br />
+          • Sari kunyit aktif membantu menjaga kenyamanan lambung.<br />
+          • Dua mekanisme dalam satu produk.
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA LOW FRICTION -->
+    <section class="section-tight" id="konsultasi">
+      <div class="wrap">
+        <div class="cta-box" style="background:rgba(255,250,246,.78);color:var(--ink);box-shadow:none;border:1px solid rgba(0,0,0,.05);backdrop-filter:blur(4px)">
+          <h2 class="cta-title" style="color:var(--ink);font-size:22px;line-height:1.38;margin-bottom:10px">
+            Banyak pengguna awalnya juga merasa ragu.
+          </h2>
+
+          <p class="cta-copy" style="color:var(--ink-soft);margin-bottom:18px">
+            Sampai akhirnya mereka menemukan pola yang lebih cocok untuk menjaga kenyamanan lambungnya.
+          </p>
+
+          <a class="btn btn-outline" href="#testimoni" onclick="fbq('trackCustom', 'ViewTestimonials')">
+            ↓ Baca Pengalaman Mereka
+          </a>
+
+          <p class="cta-sub" style="color:var(--ink-soft)">
+            Lanjut baca cerita pengguna Gadama di bawah ini.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- TESTIMONIALS -->
+    <section class="testi-section" id="testimoni">
+      <div class="wrap">
+        <div class="label">Pengalaman pengguna</div>
+
+        <h2 class="headline">Yang dicari bukan janji berlebihan. Tapi lambung yang terasa lebih nyaman.</h2>
+        <p class="body testi-intro">
+          Beberapa orang mulai dari ragu dulu. Yang mereka perhatikan bukan klaim besar, tapi perubahan kecil yang membuat makan, kerja, dan tidur terasa lebih tenang.
+        </p>
+
+        <div class="testi-grid">
+          <article class="testi-card highlight">
+            <div class="testi-top">
+              <div class="testi-avatar">👩</div>
+              <div>
+                <div class="testi-name">Rina, 32 tahun</div>
+                <div class="testi-type">Karyawan Swasta</div>
+              </div>
+            </div>
+
+            <div class="testi-tag">Paling relate untuk yang sudah sering coba produk</div>
+
+            <p class="testi-quote">"Awalnya saya tidak terlalu berharap.
+Sudah coba beberapa produk sebelumnya, hasilnya biasa saja.
+Saya coba ini juga karena penjelasannya masuk akal.
+
+Tidak langsung terasa. Tapi setelah beberapa hari, saya sadar perut tidak se-sering itu kambuh.
+<strong>Baru dari situ saya lanjut.</strong>"</p>
+          </article>
+
+          <article class="testi-card">
+            <div class="testi-top">
+              <div class="testi-avatar">🍽️</div>
+              <div>
+                <div class="testi-name">Dewi, 38 tahun</div>
+                <div class="testi-type">Ibu Rumah Tangga</div>
+              </div>
+            </div>
+
+            <div class="testi-tag">Momen kecil yang terasa</div>
+
+            <p class="testi-quote">"Saya tidak sadar awalnya.
+Tapi ada satu hari, saya telat makan dan tidak langsung perih.
+
+Dari situ baru terasa bedanya.
+Tidak dramatis, tapi cukup kerasa."</p>
+          </article>
+
+          <article class="testi-card">
+            <div class="testi-top">
+              <div class="testi-avatar">👨‍💼</div>
+              <div>
+                <div class="testi-name">Andi, 41 tahun</div>
+                <div class="testi-type">Wiraswasta</div>
+              </div>
+            </div>
+
+            <div class="testi-tag">Cocok untuk yang butuh alasan logis</div>
+
+            <p class="testi-quote">"Biasanya saya tidak langsung percaya.
+Saya baca dulu cara kerjanya, lalu cek BPOM-nya.
+
+Setelah itu baru coba.
+Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
+<strong>Masuk akal untuk dilanjutkan.</strong>"</p>
+          </article>
+        </div>
+
+        <p class="testi-disclaimer">
+          Pengalaman dapat berbeda tergantung kondisi masing-masing individu. Gunakan bagian ini sebagai contoh pengalaman pengguna dan ganti dengan testimoni asli jika sudah tersedia.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- PROGRAM -->
+    <section class="section">
+      <div class="wrap">
+        <div class="label">Bukan cuma produk</div>
+
+        <div class="program-card">
+          <h2 class="headline">Setelah order, kamu juga dapat panduan agar prosesnya lebih terarah.</h2>
+          <p class="body">
+            Ini membantu kamu lebih konsisten menjaga pola harian, bukan hanya minum lalu lupa.
+          </p>
+
+          <div class="program-list">
+            <div class="program-item">
+              <div class="check">✓</div>
+              <div>
+                <strong>Jadwal konsumsi harian</strong>
+                <span>Supaya kamu tahu kapan dan bagaimana mulai.</span>
+              </div>
+            </div>
+
+            <div class="program-item">
+              <div class="check">✓</div>
+              <div>
+                <strong>Daftar makanan untuk lambung</strong>
+                <span>Membantu lambung lebih stabil dari pola makan harian.</span>
+              </div>
+            </div>
+
+            <div class="program-item">
+              <div class="check">✓</div>
+              <div>
+                <strong>Panduan 90 Hari Pemulihan Lambung</strong>
+                <span>Langkah harian yang bisa kamu ikuti secara bertahap.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- OBJECTION HANDLER -->
+    <section class="section">
+      <div class="wrap">
+        <div class="label">Sebelum kamu putuskan</div>
+
+        <h2 class="headline">Mungkin ada yang masih di kepala.</h2>
+
+        <div class="faq-list">
+          <details class="faq">
+            <summary>Sudah ada izin resminya?</summary>
+            <div class="faq-body">
+              <p>BPOM nomor <strong>TR256049601</strong>. Halal MUI nomor <strong>ID34110018277270424</strong>. Sudah teregistrasi juga di <strong>ASROT Produk Obat Tradisional dan Suplemen Kesehatan</strong>. Keduanya bisa dicek langsung di situs resmi BPOM dan LPPOM MUI.</p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Berapa lama sampai terasa?</summary>
+            <div class="faq-body">
+              <p>Berbeda tiap orang karena kondisi lambung tidak sama. Dari yang sudah mencoba, banyak yang mulai merasakan perbedaan di <strong>hari ke-7 sampai ke-14</strong>.</p>
+              <p>Bukan langsung dramatis. Tapi mulai terasa. Ada panduan harian yang bisa kamu ikuti sejak hari pertama.</p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Masih minum obat dokter — aman tidak?</summary>
+            <div class="faq-body">
+              <p>Gadama bukan pengganti obat dokter. Gadama diminum berdampingan dengan pengobatan yang sedang berjalan.</p>
+              <p>Obat dokter menetralisir asamnya. Gadama membantu melapisi dinding lambungmu. Dua langkah berbeda.</p>
+              <p>Kalau gejalamu berat — nyeri intens, mual berulang, atau kondisi tidak biasa — konsultasi ke dokter spesialis dulu sebelum mulai.</p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Bagaimana kalau tidak cocok?</summary>
+            <div class="faq-body">
+              <p>Mulai dari <strong>1 botol dulu</strong>. Ada COD — bayar saat produk sudah sampai, tidak perlu transfer duluan.</p>
+              <p>Kalau belum ada perubahan, hubungi kami langsung. Tim kami akan bantu cek cara konsumsi dan kebiasaan harian yang mungkin perlu disesuaikan.</p>
+            </div>
+          </details>
+
+          <details class="faq">
+            <summary>Bedanya apa sama yang pernah saya coba?</summary>
+            <div class="faq-body">
+              <p>Perbedaannya di dua titik: madunya lebih kental — membantu melapisi dinding lambung, tidak langsung lewat. Kunyitnya dari sari segar — kandungan aktifnya tidak banyak berkurang saat diolah.</p>
+              <p>Bukan beda nama. Beda cara pengolahan — beda cara kerjanya di lambung.</p>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- PRICING -->
+    <section class="section" id="paket">
+      <div class="wrap">
+        <div class="label">Pilihan paket</div>
+
+        <h2 class="headline">Mulai dari yang paling nyaman untuk kamu.</h2>
+        <p class="body pricing-intro">
+          Kalau masih ingin mencoba pelan-pelan, mulai dari 1 botol. Kalau keluhan sudah sering kambuh dan ingin lebih konsisten, pilih program 90 hari.
+        </p>
+
+        <div class="pricing-grid">
+          <!-- Paket 1 -->
+          <article class="price-card">
+            <div class="price-top">
+              <div class="product-visual has-image">
+                <img
+                  src="https://i.ibb.co.com/84fWfRyf/product.webp"
+                  alt="Botol Gadama madu kunyit"
+                  class="product-hosted-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="1200"
+                />
+              </div>
+
+              <div class="price-info">
+                <div class="for">Untuk mulai coba dulu</div>
+                <h3 class="pname">Paket 1 Botol</h3>
+                <div class="pdur">± 30 hari pemakaian</div>
+                <div class="old" id="price1Old">Rp 177.000</div>
+                <div class="new" id="price1New">Rp 155.000</div>
+                <div class="perday" id="price1Daily">≈ Rp 5.200 / hari</div>
+              </div>
+            </div>
+
+            <div class="benefits">
+              <div class="benefit"><span>✓</span><div>1 Botol Gadama 250ml</div></div>
+              <div class="benefit"><span>✓</span><div>Panduan Pola Makan & Hidup untuk Lambung</div></div>
+              <div class="benefit"><span>✓</span><div>Dikirim digital setelah order selesai</div></div>
+            </div>
+
+            <div class="price-cta">
+              <p class="microcopy">Cocok untuk yang ingin coba pelan-pelan.</p>
+              <button class="btn btn-wa" onclick="fbq('trackCustom', 'ClickPaket1Botol'); goCheckout(CHECKOUT_1_BOTOL)">Mulai dengan 1 Botol →</button>
+              <div class="cod"><strong>Transfer / COD</strong> tersedia</div>
+            </div>
+          </article>
+
+          <!-- Paket 3 -->
+          <article class="price-card featured">
+            <div class="badge">Paling Banyak Dipilih</div>
+
+            <div class="price-top">
+              <div class="product-visual has-image">
+                <img
+                  src="https://i.ibb.co.com/PbdXqVS/product3.webp"
+                  alt="Botol Gadama madu kunyit untuk program 90 hari"
+                  class="product-hosted-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="800"
+                  height="1200"
+                />
+              </div>
+
+              <div class="price-info">
+                <div class="for">Untuk penggunaan lebih konsisten</div>
+                <h3 class="pname">90 Hari Program</h3>
+                <div class="pdur">3 botol · ± 90 hari</div>
+                <div class="old" id="price3Old">Rp 531.000</div>
+                <div class="new" id="price3New">Rp 445.000</div>
+                <div class="perday" id="price3Daily">Lebih hemat Rp 86.000 · ≈ Rp 4.900 / hari</div>
+              </div>
+            </div>
+
+            <div class="benefits">
+              <div class="benefit"><span>✓</span><div>3 Botol Gadama 250ml</div></div>
+              <div class="benefit"><span>✓</span><div>Panduan Pola Makan & Hidup untuk Lambung</div></div>
+              <div class="benefit"><span>✓</span><div>Panduan 90 Hari Pemulihan Lambung</div></div>
+              <div class="benefit"><span>✓</span><div>Subsidi ongkir sampai Rp 20.000*</div></div>
+              <div class="bonus">*Tersedia selama program berjalan. Sesuaikan kuota harian jika ada.</div>
+            </div>
+
+            <div class="price-cta">
+              <p class="microcopy">Pilihan lebih masuk akal untuk yang sering kambuh.</p>
+              <button class="btn btn-buy" onclick="fbq('trackCustom', 'ClickPaket3Botol'); goCheckout(CHECKOUT_3_BOTOL)">Mulai 90 Hari Program →</button>
+              <div class="cod"><strong>Transfer / COD</strong> tersedia</div>
+            </div>
+          </article>
+        </div>
+
+        <div class="urgency">
+          <strong>Semakin lama ditunda, pola kambuh yang sama bisa terus berulang.</strong><br />
+          Mulai dari langkah yang paling mudah dan konsisten dari hari pertama.
+        </div>
+      </div>
+    </section>
+
+    <div class="sep"></div>
+
+    <!-- FINAL CTA -->
+    <section class="section">
+      <div class="wrap">
+        <div class="final-card">
+          <div class="label">Langkah berikutnya</div>
+          <h2 class="headline">Saatnya mulai jaga lambung dengan cara yang lebih tepat.</h2>
+          <p class="body">
+            Kalau kamu sudah baca sampai sini, berarti kamu sudah tahu bahwa lambung yang sering kambuh butuh perlindungan, bukan hanya penenang sementara.
+          </p>
+
+          <div class="final-actions">
+            <a class="btn btn-buy" href="#paket">Mulai Jaga Lambung Saya →</a>
+            <a class="btn btn-outline" id="waFinalBtn" href="#">Tanya Dulu via WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER DISCLAIMER -->
+  <footer class="disclaimer">
+    <div class="wrap">
+      <div class="footer-inner">
+        <div class="footer-brand">GADAMA</div>
+
+        <div class="footer-trust" aria-label="Legalitas Gadama">
+          <div class="footer-trust-item">
+            <img src="https://i.ibb.co.com/7c2zq48/bpom.webp" alt="Logo BPOM" loading="lazy" decoding="async" />
+            <span>TR256049601</span>
+          </div>
+          <div class="footer-trust-item">
+            <img src="https://i.ibb.co.com/GvbVSt8m/halal.webp" alt="Logo Halal MUI" loading="lazy" decoding="async" />
+            <span>ID34110018277270424</span>
+          </div>
+        </div>
+
+        <p class="footer-legal">
+          Terdaftar BPOM dan tersertifikasi Halal MUI.
+        </p>
+
+        <div class="footer-divider"></div>
+
+        <p class="footer-note">
+          Produk ini bukan pengganti pengobatan medis. Tidak dimaksudkan untuk mendiagnosis, mengobati, menyembuhkan, atau mencegah penyakit. Konsultasikan dengan dokter jika kondisimu memerlukan penanganan lebih lanjut.
+        </p>
+        <p class="footer-note">
+          Hasil penggunaan dapat berbeda tergantung kondisi masing-masing individu.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING / STICKY CTA -->
+  <a class="float-wa" id="floatWa" href="#">💬 Ada pertanyaan?</a>
+
+  <div class="sticky">
+    <div class="sticky-inner">
+      <a class="sbtn sticky-chat" id="stickyChat" href="#">Tanya Dulu</a>
+      <a class="sbtn sticky-pack" href="#paket">Lihat Paket</a>
+    </div>
+  </div>
+
+  <script>
+    // Isi harga dari konfigurasi
+    document.getElementById("price1Old").textContent = PRICE_1_OLD;
+    document.getElementById("price1New").textContent = PRICE_1_NEW;
+    document.getElementById("price3Old").textContent = PRICE_3_OLD;
+    document.getElementById("price3New").textContent = PRICE_3_NEW;
+    document.getElementById("price1Daily").textContent = `≈ ${PRICE_1_DAILY} / hari`;
+    document.getElementById("price3Daily").textContent = `Lebih hemat ${PRICE_3_SAVING} · ≈ ${PRICE_3_DAILY} / hari`;
+
+    const consultText = "Halo Gadama, saya ingin konsultasi dulu soal kondisi maag/lambung saya.";
+    const formText = "Halo Gadama, saya sudah/ingin cek kondisi lambung dan mau tanya lebih lanjut.";
+    const orderText = "Halo Gadama, saya ingin tanya paket Gadama yang paling cocok untuk kondisi lambung saya.";
+
+    document.getElementById("waConsultBtn").href = waLink(consultText);
+    document.getElementById("waFinalBtn").href = waLink(orderText);
+    document.getElementById("floatWa").href = waLink(formText);
+    document.getElementById("stickyChat").href = waLink(consultText);
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const revealItems = document.querySelectorAll(
+        '.trust-item, .empathy-card, .pain-line, .loop-box, .reader-voice, .mechanism-card, .steps-summary, .cta-box, .testi-card, .program-card, .faq, .price-card, .final-card'
+      );
+
+      revealItems.forEach(function (item) {
+        item.classList.add('reveal');
+      });
+
+      const revealObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      revealItems.forEach(function (item) {
+        revealObserver.observe(item);
+      });
+    });
+  </script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  const trackedSections = [
+    { id: '#penjelasan', event: 'ViewEmpathy' },
+    { id: '#testimoni', event: 'ViewTestimonials' },
+    { id: '#paket', event: 'ViewPricing' }
+  ];
+
+  trackedSections.forEach(function(item) {
+    const el = document.querySelector(item.id);
+
+    if (!el) return;
+
+    let fired = false;
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !fired) {
+          fired = true;
+
+          if (typeof fbq !== 'undefined') {
+            fbq('trackCustom', item.event);
+          }
+
+          observer.disconnect();
+        }
+      });
+    }, {
+      threshold: 0.35
+    });
+
+    observer.observe(el);
+  });
+
+  const mechanismSection = document.querySelector('.mechanism-grid');
+
+  if (mechanismSection) {
+    let mechanismFired = false;
+
+    const mechanismObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && !mechanismFired) {
+          mechanismFired = true;
+
+          if (typeof fbq !== 'undefined') {
+            fbq('trackCustom', 'ViewMechanism');
+          }
+
+          mechanismObserver.disconnect();
+        }
+      });
+    }, {
+      threshold: 0.3
+    });
+
+    mechanismObserver.observe(mechanismSection);
+  }
+
+});
+</script>
+
+</body>
+</html>
