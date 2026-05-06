@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Gadama — Cek Kondisi Lambungmu</title>
-  <meta name="description" content="Cek kondisi lambungmu dan kenali cara Gadama membantu menjaga lambung lebih stabil." />
+  <title>Gadama — Lambung Terlindungi, Hidup Kembali</title>
+  <meta name="description" content="Gadama membantu menjaga kenyamanan lambung dengan madu viskositas tinggi dan sari kunyit aktif." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -1592,9 +1592,59 @@
       }
 
       .trust-grid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
     }
+
+    /* READABILITY BULLETS + TESTIMONIAL REFINEMENT */
+    .soft-bullets {
+      display: grid;
+      gap: 8px;
+      margin: 12px 0 14px;
+      padding: 0;
+      list-style: none;
+    }
+
+    .soft-bullets li {
+      display: flex;
+      gap: 9px;
+      align-items: flex-start;
+      color: var(--ink-soft);
+      font-size: 14px;
+      line-height: 1.52;
+    }
+
+    .soft-bullets li::before {
+      content: "•";
+      color: var(--leaf);
+      font-weight: 900;
+      line-height: 1.45;
+      flex: 0 0 auto;
+    }
+
+    .testi-name {
+      font-size: 14.5px;
+      font-weight: 900;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .testi-type {
+      margin-top: 3px;
+      font-size: 11.5px;
+      color: var(--ink-soft);
+      line-height: 1.35;
+    }
+
+    .testi-quote {
+      font-family: "Lora", serif;
+      color: var(--ink-mid);
+      font-size: 15.5px;
+      line-height: 1.62;
+      font-style: normal;
+      white-space: pre-line;
+    }
+
   </style>
 </head>
 
@@ -1616,27 +1666,20 @@
         <div>
           <div class="pretag">
             <span class="pretag-dot"></span>
-            Gadama · Gratis & tanpa syarat
+            Gadama · Herbal Lambung Premium
           </div>
 
-          <h1>Maagmu Sering <em>Kambuh?</em><br />Cari Tahu Penyebabnya Dulu.</h1>
+          <h1>Sudah jaga makan, sudah minum obat,<br />tapi lambung masih sering <em>kambuh?</em></h1>
 
           <p class="hero-copy">
-            Jawab beberapa pertanyaan singkat biar kamu tahu kondisi lambungmu dan cara ngatasinnya yang lebih tepat.
+            Kembung, begah, dada panas, sampai takut makan bisa membuat aktivitas ikut terganggu. Gadama membantu menjaga lambung lebih nyaman dengan madu viskositas tinggi dan sari kunyit aktif.
           </p>
 
           <div class="hero-cta">
-            <button class="btn btn-primary" onclick="openTallyFallback()">
-              🔍 Cek Kondisi Lambungku →
-            </button>
-
             <a class="btn btn-outline" style="border-color:rgba(255,255,255,.22);color:rgba(255,255,255,.88)" href="#penjelasan">
-              Lihat Penjelasannya ↓
+              Pelajari Cara Kerjanya ↓
             </a>
 
-            <p class="hero-note">
-              Gratis · 30 detik · tidak ada kewajiban membeli
-            </p>
           </div>
         </div>
       </div>
@@ -1666,6 +1709,16 @@
             <div class="trust-small">Madu & sari kunyit</div>
           </div>
           <div class="trust-item">
+            <div class="trust-icon">🍯</div>
+            <div class="trust-label">Madu Kental</div>
+            <div class="trust-small">Viskositas tinggi</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🌿</div>
+            <div class="trust-label">Sari Kunyit Aktif</div>
+            <div class="trust-small">Bukan ekstrak kering</div>
+          </div>
+          <div class="trust-item">
             <div class="trust-icon">📦</div>
             <div class="trust-label">Bisa COD</div>
             <div class="trust-small">Transfer / bayar di tempat</div>
@@ -1683,11 +1736,23 @@
 
         <div class="empathy-card">
           <p class="big-line">
-            Banyak yang sudah coba berbagai cara, tapi maag tetap <em>datang dan pergi.</em>
+            Banyak yang sudah jaga makan, minum obat, bahkan coba herbal. Tapi lambung tetap <em>sensitif dan mudah kambuh.</em>
           </p>
 
           <p class="note-left">
-            Bukan karena kamu kurang usaha. Tapi karena selama ini belum tahu apa yang sebenarnya dibutuhkan lambungmu.
+            Bukan karena kamu kurang usaha. Masalahnya sering bukan cuma makanan, tapi dinding lambung yang belum benar-benar terlindungi dari iritasi berulang.
+          </p>
+
+          <p class="note-left">
+            Sebelum memilih solusi, kenali dulu kondisi lambungmu. Cek singkat ini gratis dan hanya butuh sekitar 30 detik.
+          </p>
+
+          <button class="btn btn-primary" style="margin-top:16px" onclick="openTallyFallback()">
+            🔍 Cek Kondisi Lambung Saya →
+          </button>
+
+          <p class="note-left" style="font-size:12px;line-height:1.5;opacity:.82">
+            Setelah pengecekan selesai, tim Gadama akan membantu meninjau kondisi Anda dan memberikan informasi lanjutan sesuai jam operasional.
           </p>
         </div>
       </div>
@@ -1700,13 +1765,13 @@
       <div class="wrap">
         <div class="label">Yang sering terjadi</div>
 
-        <h2 class="headline">Obat sudah diminum. Pantangan sudah dijaga. Herbal juga sudah dicoba.</h2>
-        <p class="body"><strong>Tapi lambung masih kambuh.</strong></p>
+        <h2 class="headline">Yang melelahkan bukan cuma rasa perihnya. Tapi hidup yang ikut terbatas.</h2>
+        <p class="body"><strong>Takut makan. Susah fokus kerja. Tidur tidak nyaman. Lalu mulai bergantung pada penenang sementara.</strong></p>
 
         <div class="pain-stack">
-          <div class="pain-line"><span>01</span>Perut perih saat telat makan.</div>
-          <div class="pain-line"><span>02</span>Reda sebentar, lalu kambuh lagi.</div>
-          <div class="pain-line"><span>03</span>Aktivitas mulai ikut terganggu.</div>
+          <div class="pain-line"><span>01</span>Kembung dan begah setelah makan.</div>
+          <div class="pain-line"><span>02</span>Dada terasa panas atau perut cepat tidak nyaman.</div>
+          <div class="pain-line"><span>03</span>Kerja, tidur, dan makan mulai ikut terganggu.</div>
         </div>
 
         <div class="visual-image-card">
@@ -1735,14 +1800,14 @@
       <div class="wrap">
         <div class="label">Yang jarang dijelaskan</div>
 
-        <h2 class="headline">Masalahnya bukan di asamnya saja.</h2>
+        <h2 class="headline">Masalahnya bukan cuma asam lambungnya.</h2>
 
         <p class="body">
-          Dinding lambung punya lapisan pelindung. Kalau terus kena asam berlebih, pola makan tidak teratur, atau tekanan pikiran, lapisan itu bisa menipis.
+          Dinding lambung punya lapisan pelindung. Kalau terus terkena asam berlebih, pola makan tidak teratur, stres, atau iritasi berulang, lapisan itu bisa makin sensitif.
         </p>
 
         <p class="body">
-          Makin tipis, makin mudah terasa perih dan mudah kambuh karena hal kecil.
+          Saat lapisan ini belum pulih, lambung bisa tetap mudah bereaksi meski kamu sudah berusaha jaga makan.
         </p>
 
         <div class="visual-image-card revelation-image">
@@ -1771,7 +1836,7 @@
         </div>
 
         <div class="revelation-punch">
-          Yang belum pernah dilakukan: melapisi dinding lambung itu — agar tidak mudah terkikis lagi.
+          Yang sering belum dilakukan: membantu melapisi dan menjaga dinding lambung — supaya tidak terus menerus terpapar iritasi.
         </div>
       </div>
     </section>
@@ -1783,13 +1848,13 @@
       <div class="wrap">
         <div class="reader-voice">
           <p class="reader-quote">
-            “Madu lagi. Kunyit lagi. Memang bedanya apa?”
+            “Sudah coba macam-macam, kenapa masih kambuh juga?”
           </p>
           <p class="body">
-            Wajar kalau itu yang muncul. Kamu mungkin sudah pernah coba, tapi hasilnya belum terasa.
+            Wajar kalau kamu merasa lelah. Banyak solusi hanya fokus menenangkan gejala sementara, tapi belum membantu memberi perlindungan pada dinding lambung.
           </p>
           <p class="body">
-            Kami tidak minta kamu percaya begitu saja. Perbedaannya di sini — dan bisa kamu nilai sendiri.
+            Bukan salah kamu. Bisa jadi mekanisme yang kamu coba belum tepat. Di sinilah Gadama masuk dengan pendekatan yang berbeda.
           </p>
         </div>
       </div>
@@ -1797,12 +1862,48 @@
 
     <div class="sep"></div>
 
-    <!-- MECHANISM -->
+    
+    <div class="sep"></div>
+
+    <!-- HIDDEN TRIGGER REALIZATION -->
+    <section class="section-tight">
+      <div class="wrap">
+        <div class="reader-voice" style="background:#fffaf6;border:1px solid rgba(0,0,0,.05);box-shadow:none">
+          <div class="label" style="margin-bottom:14px">Kadang bukan cuma makanan</div>
+
+          <p class="big-line" style="font-size:22px;margin-bottom:16px">
+            Saat tubuh sedang sensitif,<br>
+            lambung juga bisa ikut lebih mudah terganggu.
+          </p>
+
+          <div class="pain-stack" style="margin-top:0">
+            <div class="pain-line" style="background:#fff;box-shadow:none;border:1px solid rgba(0,0,0,.05);padding:13px 15px">
+              😵‍💫 Stres atau pikiran berat
+            </div>
+
+            <div class="pain-line" style="background:#fff;box-shadow:none;border:1px solid rgba(0,0,0,.05);padding:13px 15px">
+              🌙 Kurang tidur & aktivitas padat
+            </div>
+
+            <div class="pain-line" style="background:#fff;box-shadow:none;border:1px solid rgba(0,0,0,.05);padding:13px 15px">
+              ⏰ Telat makan atau pola makan tidak teratur
+            </div>
+          </div>
+
+          <p class="note-left" style="margin-top:16px">
+            Karena itu, yang penting bukan cuma menenangkan sementara.
+            Tapi membantu menjaga dan melapisi lambung agar tetap nyaman saat tubuh sedang sensitif.
+          </p>
+        </div>
+      </div>
+    </section>
+
+<!-- MECHANISM -->
     <section class="section">
       <div class="wrap">
         <div class="label">Cara kerjanya</div>
 
-        <h2 class="headline">Perbedaannya ada di dua titik.</h2>
+        <h2 class="headline">Lapisi. Lindungi. Pulihkan.</h2>
 
         <div class="mechanism-photo-grid">
           <div class="mechanism-photo">
@@ -1832,7 +1933,7 @@
             <div class="mechanism-head">
               <div class="mechanism-icon">🍯</div>
               <div>
-                <div class="mechanism-title">Pertama — madunya.</div>
+                <div class="mechanism-title">Lapisi — madu viskositas tinggi.</div>
                 <div class="mechanism-sub">Kental, tidak langsung lewat.</div>
               </div>
             </div>
@@ -1845,7 +1946,7 @@
             <div class="mechanism-head">
               <div class="mechanism-icon">🌿</div>
               <div>
-                <div class="mechanism-title">Kedua — kunyitnya.</div>
+                <div class="mechanism-title">Pulihkan — sari kunyit aktif.</div>
                 <div class="mechanism-sub">Sari kunyit segar, bukan ekstrak kering.</div>
               </div>
             </div>
@@ -1855,11 +1956,32 @@
           </div>
         </div>
 
+        <div class="reader-voice" style="margin-top:18px">
+          <div class="reader-quote">
+            “Madu lagi, kunyit lagi!<br>
+            Saya udah pernah coba…”
+          </div>
+
+          <p class="body">
+            Untuk lambung yang sensitif, bukan cuma soal madu dan kunyit.
+          </p>
+
+          <ul class="soft-bullets">
+            <li>kualitas bahan</li>
+            <li>proses formulasi</li>
+            <li>cara kerja di lambung</li>
+          </ul>
+
+          <p class="body">
+            Gadama menggunakan madu viskositas tinggi dan sari kunyit aktif untuk membantu menjaga kenyamanan lambung dengan mekanisme perlindungan yang lebih terarah.
+          </p>
+        </div>
+
         <div class="steps-summary">
-          <strong>Jadi cara kerjanya:</strong>
-          <span>Madu melapisi dulu.</span><br />
-          Kunyit membantu meredakan iritasinya.<br />
-          Dua langkah — satu produk.
+          <strong>Cara kerja Gadama:</strong>
+          <span>• Madu viskositas tinggi membantu melapisi lambung.</span><br />
+          • Sari kunyit aktif membantu menjaga kenyamanan lambung.<br />
+          • Dua mekanisme dalam satu produk.
         </div>
       </div>
     </section>
@@ -1867,17 +1989,22 @@
     <!-- CTA LOW FRICTION -->
     <section class="section-tight" id="konsultasi">
       <div class="wrap">
-        <div class="cta-box">
-          <h2 class="cta-title">Masih ragu?<br /><span>Konsultasi dulu aja.</span></h2>
-          <p class="cta-copy">
-            Gratis, tanpa kewajiban beli. Tim Gadama bisa bantu pahami kondisi lambungmu dan arah penggunaan yang lebih sesuai.
+        <div class="cta-box" style="background:rgba(255,250,246,.78);color:var(--ink);box-shadow:none;border:1px solid rgba(0,0,0,.05);backdrop-filter:blur(4px)">
+          <h2 class="cta-title" style="color:var(--ink);font-size:22px;line-height:1.38;margin-bottom:10px">
+            Banyak pengguna awalnya juga merasa ragu.
+          </h2>
+
+          <p class="cta-copy" style="color:var(--ink-soft);margin-bottom:18px">
+            Sampai akhirnya mereka menemukan pola yang lebih cocok untuk menjaga kenyamanan lambungnya.
           </p>
 
-          <a class="btn btn-wa" href="#" id="waConsultBtn">
-            💬 Chat WhatsApp Sekarang
+          <a class="btn btn-outline" href="#testimoni">
+            ↓ Baca Pengalaman Mereka
           </a>
 
-          <p class="cta-sub">Tidak perlu langsung memutuskan apa pun.</p>
+          <p class="cta-sub" style="color:var(--ink-soft)">
+            Lanjut baca cerita pengguna Gadama di bawah ini.
+          </p>
         </div>
       </div>
     </section>
@@ -1889,9 +2016,9 @@
       <div class="wrap">
         <div class="label">Pengalaman pengguna</div>
 
-        <h2 class="headline">Bukan perubahan yang berlebihan. Tapi cukup terasa.</h2>
+        <h2 class="headline">Yang dicari bukan janji berlebihan. Tapi lambung yang terasa lebih nyaman.</h2>
         <p class="body testi-intro">
-          Beberapa orang mulai dari ragu dulu. Mereka tidak langsung berharap banyak, tapi memperhatikan perubahan kecil yang muncul setelah mencoba.
+          Beberapa orang mulai dari ragu dulu. Yang mereka perhatikan bukan klaim besar, tapi perubahan kecil yang membuat makan, kerja, dan tidur terasa lebih tenang.
         </p>
 
         <div class="testi-grid">
@@ -1899,8 +2026,8 @@
             <div class="testi-top">
               <div class="testi-avatar">👩</div>
               <div>
-                <div class="testi-name">Pengguna Gadama</div>
-                <div class="testi-type">Awalnya skeptis</div>
+                <div class="testi-name">Rina, 32 tahun</div>
+                <div class="testi-type">Karyawan Swasta</div>
               </div>
             </div>
 
@@ -1909,8 +2036,8 @@
             <p class="testi-quote">"Awalnya saya tidak terlalu berharap.
 Sudah coba beberapa produk sebelumnya, hasilnya biasa saja.
 Saya coba ini juga karena penjelasannya masuk akal.
-Tidak langsung terasa.
-Tapi setelah beberapa hari, saya sadar perut tidak se-sering itu kambuh.
+
+Tidak langsung terasa. Tapi setelah beberapa hari, saya sadar perut tidak se-sering itu kambuh.
 <strong>Baru dari situ saya lanjut.</strong>"</p>
           </article>
 
@@ -1918,15 +2045,16 @@ Tapi setelah beberapa hari, saya sadar perut tidak se-sering itu kambuh.
             <div class="testi-top">
               <div class="testi-avatar">🍽️</div>
               <div>
-                <div class="testi-name">Pengguna Gadama</div>
-                <div class="testi-type">Sering perih kalau telat makan</div>
+                <div class="testi-name">Dewi, 38 tahun</div>
+                <div class="testi-type">Ibu Rumah Tangga</div>
               </div>
             </div>
 
             <div class="testi-tag">Momen kecil yang terasa</div>
 
             <p class="testi-quote">"Saya tidak sadar awalnya.
-Tapi ada satu hari, saya telat makan — dan tidak langsung perih.
+Tapi ada satu hari, saya telat makan dan tidak langsung perih.
+
 Dari situ baru terasa bedanya.
 Tidak dramatis, tapi cukup kerasa."</p>
           </article>
@@ -1935,8 +2063,8 @@ Tidak dramatis, tapi cukup kerasa."</p>
             <div class="testi-top">
               <div class="testi-avatar">👨‍💼</div>
               <div>
-                <div class="testi-name">Pengguna Gadama</div>
-                <div class="testi-type">Tipe rasional, cek dulu sebelum beli</div>
+                <div class="testi-name">Andi, 41 tahun</div>
+                <div class="testi-type">Wiraswasta</div>
               </div>
             </div>
 
@@ -1944,6 +2072,7 @@ Tidak dramatis, tapi cukup kerasa."</p>
 
             <p class="testi-quote">"Biasanya saya tidak langsung percaya.
 Saya baca dulu cara kerjanya, lalu cek BPOM-nya.
+
 Setelah itu baru coba.
 Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
 <strong>Masuk akal untuk dilanjutkan.</strong>"</p>
@@ -1963,7 +2092,7 @@ Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
         <div class="label">Bukan cuma produk</div>
 
         <div class="program-card">
-          <h2 class="headline">Setelah order, kamu juga dapat panduan yang bisa langsung diikuti.</h2>
+          <h2 class="headline">Setelah order, kamu juga dapat panduan agar prosesnya lebih terarah.</h2>
           <p class="body">
             Ini membantu kamu lebih konsisten menjaga pola harian, bukan hanya minum lalu lupa.
           </p>
@@ -2057,9 +2186,9 @@ Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
       <div class="wrap">
         <div class="label">Pilihan paket</div>
 
-        <h2 class="headline">Pilih dari mana kamu mulai.</h2>
+        <h2 class="headline">Mulai dari yang paling nyaman untuk kamu.</h2>
         <p class="body pricing-intro">
-          Banyak yang mulai dari 1 botol dulu untuk lihat respon tubuhnya. Kalau ingin lebih konsisten, pilih program 90 hari.
+          Kalau masih ingin mencoba pelan-pelan, mulai dari 1 botol. Kalau keluhan sudah sering kambuh dan ingin lebih konsisten, pilih program 90 hari.
         </p>
 
         <div class="pricing-grid">
@@ -2145,8 +2274,8 @@ Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
         </div>
 
         <div class="urgency">
-          <strong>Semakin lama nunggu, lambungmu tetap menanggung kondisi yang sama.</strong><br />
-          Paling efektif kalau dimulai konsisten dari hari pertama.
+          <strong>Semakin lama ditunda, pola kambuh yang sama bisa terus berulang.</strong><br />
+          Mulai dari langkah yang paling mudah dan konsisten dari hari pertama.
         </div>
       </div>
     </section>
@@ -2158,13 +2287,13 @@ Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
       <div class="wrap">
         <div class="final-card">
           <div class="label">Langkah berikutnya</div>
-          <h2 class="headline">Mau lambungmu lebih stabil dari sekarang?</h2>
+          <h2 class="headline">Saatnya mulai jaga lambung dengan cara yang lebih tepat.</h2>
           <p class="body">
-            Kalau kamu sudah baca sampai sini, berarti kamu sudah cukup tahu alasan kenapa perlu mulai dengan cara yang lebih tepat.
+            Kalau kamu sudah baca sampai sini, berarti kamu sudah tahu bahwa lambung yang sering kambuh butuh perlindungan, bukan hanya penenang sementara.
           </p>
 
           <div class="final-actions">
-            <a class="btn btn-buy" href="#paket">Pilih Paket Sekarang →</a>
+            <a class="btn btn-buy" href="#paket">Mulai Jaga Lambung Saya →</a>
             <a class="btn btn-outline" id="waFinalBtn" href="#">Tanya Dulu via WhatsApp</a>
           </div>
         </div>
@@ -2210,7 +2339,7 @@ Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
 
   <div class="sticky">
     <div class="sticky-inner">
-      <a class="sbtn sticky-chat" id="stickyChat" href="#">Chat Dulu</a>
+      <a class="sbtn sticky-chat" id="stickyChat" href="#">Tanya Dulu</a>
       <a class="sbtn sticky-pack" href="#paket">Lihat Paket</a>
     </div>
   </div>
