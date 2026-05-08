@@ -74,7 +74,7 @@
     }
     .mini-kicker { display:inline-flex; padding:6px 10px; border-radius:99px; background:var(--leaf-pale); color:var(--leaf-dark); font-size:11px; font-weight:900; margin-bottom:12px; }
     .daily-price { font-family:"Lora",serif; font-size:31px; line-height:1.12; color:var(--leaf-dark); font-weight:700; margin-bottom:8px; }
-    .daily-price span { color:var(--turmeric); }
+    .daily-price span { color:var(--turmeric); display:inline-block; white-space:nowrap; }
     .mini-benefit { color:var(--soft); font-size:14.5px; line-height:1.55; }
     .mini-trust { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; margin-top:16px; }
     .mini-trust div { background:#fff; border-radius:13px; padding:10px; font-size:12px; font-weight:900; text-align:center; color:var(--ink2); box-shadow:0 3px 12px rgba(28,43,30,.04); }
@@ -431,6 +431,64 @@
     .scarcity-line span{color:var(--honey);font-weight:900;flex:0 0 auto}
     .bridge-copy{margin-top:16px;padding-left:14px;border-left:3px solid var(--honey);color:var(--ink2);font-size:14.5px;line-height:1.58}
   </style>
+
+  <!-- =========================
+       TRACKING PIXEL PLACEHOLDER
+       Ganti ID di bawah ini saja.
+  ========================== -->
+
+  <!-- META PIXEL PLACEHOLDER -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}
+    (window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1893372141340826');
+    fbq('track', 'PageView');
+    fbq('track', 'ViewContent');
+  </script>
+
+  <!-- TIKTOK PIXEL PLACEHOLDER -->
+  <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;
+      var ttq=w[t]=w[t]||[];
+      ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];
+      ttq.setAndDefer=function(t,e){
+        t[e]=function(){
+          t.push([e].concat(Array.prototype.slice.call(arguments,0)))
+        }
+      };
+      for(var i=0;i<ttq.methods.length;i++){
+        ttq.setAndDefer(ttq,ttq.methods[i]);
+      }
+      ttq.load=function(e,n){
+        var r="https://analytics.tiktok.com/i18n/pixel/events.js";
+        ttq._i=ttq._i||{};
+        ttq._i[e]=[];
+        ttq._i[e]._u=r;
+        ttq._t=ttq._t||{};
+        ttq._t[e]=+new Date;
+        ttq._o=ttq._o||{};
+        ttq._o[e]=n||{};
+        var o=document.createElement("script");
+        o.type="text/javascript";
+        o.async=!0;
+        o.src=r+"?sdkid="+e+"&lib="+t;
+        var a=document.getElementsByTagName("script")[0];
+        a.parentNode.insertBefore(o,a);
+      };
+
+      ttq.load('TIKTOK_PIXEL_ID_PLACEHOLDER');
+      ttq.page();
+    }(window, document, 'ttq');
+  </script>
+
 </head>
 
 
@@ -442,7 +500,7 @@
       <div class="wrap">
         <div>
           <div class="pretag"><span class="pretag-dot"></span>Gadama · Herbal Lambung Premium</div>
-          <h1>Sudah jaga makan,<br>tapi lambung masih sering <em>kambuh?</em></h1>
+          <h1>Sudah jaga makan,<br>minum obat, tapi lambung masih sering <em>kambuh?</em></h1>
           <p class="hero-copy">Kembung, begah, dada panas, sampai takut makan bisa membuat aktivitas ikut terganggu. Gadama membantu menjaga lambung lebih nyaman dengan madu viskositas tinggi dan sari kunyit aktif.</p>
           <a class="btn btn-outline" href="#mini-cost-1">Lihat Kenapa Banyak yang Mulai Coba ↓</a>
         </div>
@@ -525,12 +583,12 @@
           <div class="mini-value-box">
             <div class="mini-value-title">Bonus untuk pembelian paket tertentu:</div>
             <div class="mini-value-list">
-              <div><span>✓</span><p>Ebook <strong>Panduan Pola Makan & Hidup untuk Lambung Sehat</strong> senilai <span class="value-price">Rp59.000</span></p></div>
-              <div><span>✓</span><p>Ebook <strong>Panduan 90 Hari Pemulihan Lambung</strong> senilai <span class="value-price">Rp79.000</span></p></div>
+              <div><span>✓</span><p>Ebook <strong>Panduan Pola Makan & Hidup untuk Lambung Sehat</strong><br>senilai <span class="value-price">Rp59.000</span></p></div>
+              <div><span>✓</span><p>Ebook <strong>Panduan 90 Hari Pemulihan Lambung</strong><br>senilai <span class="value-price">Rp79.000</span></p></div>
               <div><span>✓</span><p>Subsidi ongkir sampai <span class="value-price">Rp20.000</span></p></div>
             </div>
             <div class="value-total">Total bonus senilai <span>Rp158.000</span></div>
-            <p class="mini-footnote">*Bonus dan subsidi ongkir berlaku untuk paket tertentu.</p>
+            <p class="mini-footnote">*Bonus dan subsidi ongkir berlaku untuk paket tertentu selama program berjalan.</p>
           </div>
           <div class="mini-legal">
             <img src="https://i.ibb.co.com/GvbVSt8m/halal.webp" alt="Logo Halal MUI" loading="lazy" decoding="async" />
@@ -612,7 +670,7 @@ Setelah itu baru coba.
 Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
 <strong>Masuk akal untuk dilanjutkan.</strong>"</p></article>
         </div>
-        <p class="testi-disclaimer">Pengalaman dapat berbeda tergantung kondisi masing-masing individu. Gunakan bagian ini sebagai contoh pengalaman pengguna dan ganti dengan testimoni asli jika sudah tersedia.</p>
+        <p class="testi-disclaimer">Pengalaman dapat berbeda tergantung<br>kondisi masing-masing individu.</p>
       </div>
     </section>
 
@@ -646,13 +704,13 @@ Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
         <div class="pricing-grid">
           <article class="price-card">
             <div class="price-top"><div class="product-visual has-image"><img src="https://i.ibb.co.com/84fWfRyf/product.webp" alt="Botol Gadama madu kunyit" class="product-hosted-img" loading="lazy" decoding="async" width="800" height="1200" /></div><div class="price-info"><div class="for">Untuk mulai coba dulu</div><h3 class="pname">Paket 1 Botol</h3><div class="pdur">± 30 hari pemakaian</div><div class="old" id="price1Old">Rp 177.000</div><div class="new" id="price1New">Rp 155.000</div><div class="perday" id="price1Daily">≈ Rp 5.200 / hari</div></div></div>
-            <div class="benefits"><div class="benefit"><span>✓</span><div>1 Botol Gadama 250ml</div></div><div class="benefit"><span>✓</span><div>Panduan Pola Makan & Hidup untuk Lambung</div></div><div class="benefit"><span>✓</span><div>Dikirim digital setelah order selesai</div></div></div>
+            <div class="benefits"><div class="benefit"><span>✓</span><div>1 Botol Gadama 250ml</div></div><div class="benefit"><span>✓</span><div>Panduan Pola Makan & Hidup untuk Lambung senilai Rp59.000</div></div><div class="benefit"><span>✓</span><div>Dikirim melalui WA setelah order selesai</div></div></div>
             <div class="price-cta"><p class="microcopy">Cocok untuk yang ingin coba pelan-pelan.</p><button class="btn btn-wa" onclick="goCheckout(CHECKOUT_1_BOTOL)">Mulai dengan 1 Botol →</button><div class="cod"><strong>Transfer / COD</strong> tersedia</div></div>
           </article>
           <article class="price-card featured">
             <div class="badge">Paling Banyak Dipilih</div>
-            <div class="price-top"><div class="product-visual has-image"><img src="https://i.ibb.co.com/84fWfRyf/product.webp" alt="Botol Gadama madu kunyit untuk program 90 hari" class="product-hosted-img" loading="lazy" decoding="async" width="800" height="1200" /></div><div class="price-info"><div class="for">Untuk penggunaan lebih konsisten</div><h3 class="pname">90 Hari Program</h3><div class="pdur">3 botol · ± 90 hari</div><div class="old" id="price3Old">Rp 531.000</div><div class="new" id="price3New">Rp 445.000</div><div class="perday" id="price3Daily">Lebih hemat Rp 86.000 · ≈ Rp 4.900 / hari</div></div></div>
-            <div class="benefits"><div class="benefit"><span>✓</span><div>3 Botol Gadama 250ml</div></div><div class="benefit"><span>✓</span><div>Panduan Pola Makan & Hidup untuk Lambung Sehat senilai Rp59.000</div></div><div class="benefit"><span>✓</span><div>Panduan 90 Hari Pemulihan Lambung senilai Rp79.000</div></div><div class="benefit"><span>✓</span><div>Subsidi ongkir sampai Rp 20.000*</div></div><div class="bonus">Total bonus senilai Rp158.000. *Bonus dan subsidi ongkir berlaku untuk paket tertentu selama program berjalan.</div></div>
+            <div class="price-top"><div class="product-visual has-image"><img src="https://i.ibb.co.com/84fWfRyf/product.webp" alt="Botol Gadama madu kunyit untuk program 90 hari" class="product-hosted-img" loading="lazy" decoding="async" width="800" height="1200" /></div><div class="price-info"><div class="for">Untuk penggunaan lebih konsisten</div><h3 class="pname">90 Hari Program</h3><div class="pdur">3 botol · ± 90 hari</div><div class="old" id="price3Old">Rp 531.000</div><div class="new" id="price3New">Rp 445.000</div><div class="perday" id="price3Daily">Lebih hemat Rp 86.000<br>≈ Rp 4.900 / hari</div></div></div>
+            <div class="benefits"><div class="benefit"><span>✓</span><div>3 Botol Gadama 250ml</div></div><div class="benefit"><span>✓</span><div>Panduan Pola Makan & Hidup untuk Lambung Sehat senilai Rp59.000</div></div><div class="benefit"><span>✓</span><div>Panduan 90 Hari Pemulihan Lambung senilai Rp79.000</div></div><div class="benefit"><span>✓</span><div>Subsidi ongkir sampai Rp 20.000*</div></div><div class="bonus">Total bonus senilai Rp158.000. *Subsidi ongkir berlaku selama program berjalan.</div></div>
             <div class="price-cta"><p class="microcopy">Pilihan lebih masuk akal untuk yang sering kambuh.</p><button class="btn btn-buy" onclick="goCheckout(CHECKOUT_3_BOTOL)">Mulai 90 Hari Program →</button><div class="cod"><strong>Transfer / COD</strong> tersedia</div></div>
           </article>
         </div>
@@ -668,8 +726,8 @@ Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
           <h2 class="headline">Gadama saat ini tidak dijual bebas secara umum.</h2>
           <p class="body">Produk hanya tersedia melalui distribusi resmi agar kualitas produk dan panduan penggunaan tetap terjaga.</p>
           <div class="scarcity-list">
-            <div class="scarcity-line"><span>✓</span><div>Pemesanan dilakukan melalui halaman resmi yang sedang anda lihat sekarang.</div></div>
-            <div class="scarcity-line"><span>✓</span><div>Bonus dan subsidi ongkir tersedia selama program berjalan.</div></div>
+            <div class="scarcity-line"><span>✓</span><div>Pemesanan dilakukan melalui halaman resmi yang sekarang anda lihat.</div></div>
+            <div class="scarcity-line"><span>✓</span><div>Bonus dan subsidi ongkir tersedia untuk pembelian di halaman resmi.</div></div>
             <div class="scarcity-line"><span>✓</span><div>Cocok untuk kamu yang ingin mulai menjaga lambung lebih konsisten sebelum pola kambuh terus berulang.</div></div>
           </div>
           <a class="btn btn-buy" href="#pricing" style="margin-top:18px">Pilih Paket Resmi Sekarang →</a>
@@ -681,7 +739,7 @@ Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
     <section class="section" id="faq">
       <div class="wrap">
         <div class="label">Sebelum kamu putuskan</div>
-        <h2 class="headline">Mungkin ada yang masih di kepala.</h2>
+        <h2 class="headline">Mungkin ada yang masih ingin ditanyakan.</h2>
         <div class="faq-list">
           <details class="faq"><summary>Sudah ada izin resminya?</summary><div class="faq-body"><p>BPOM nomor <strong>TR256049601</strong>. Halal MUI nomor <strong>ID34110018277270424</strong>. Sudah teregistrasi juga di <strong>ASROT Produk Obat Tradisional dan Suplemen Kesehatan</strong>. Keduanya bisa dicek langsung di situs resmi BPOM dan LPPOM MUI.</p></div></details>
           <details class="faq"><summary>Berapa lama sampai terasa?</summary><div class="faq-body"><p>Berbeda tiap orang karena kondisi lambung tidak sama. Dari yang sudah mencoba, banyak yang mulai merasakan perbedaan di <strong>hari ke-7 sampai ke-14</strong>.</p><p>Bukan langsung dramatis. Tapi mulai terasa. Ada panduan harian yang bisa kamu ikuti sejak hari pertama.</p></div></details>
@@ -749,7 +807,19 @@ Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
     const CHECKOUT_1_BOTOL = "https://livinh.storelink.id/gadama-co-sp-1btl";
     const CHECKOUT_3_BOTOL = "https://livinh.storelink.id/gadama-co-sp-3btl";
     function waLink(text) { return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`; }
-    function goCheckout(url) { window.location.href = url; }
+    function goCheckout(url) {
+      if (url === CHECKOUT_1_BOTOL && typeof trackEvent === 'function') {
+        trackEvent('ClickPaket_1Botol');
+      }
+
+      if (url === CHECKOUT_3_BOTOL && typeof trackEvent === 'function') {
+        trackEvent('ClickPaket_3Botol');
+      }
+
+      setTimeout(function(){
+        window.location.href = url;
+      }, 180);
+    }
     const consultText = "Halo Gadama, saya ingin konsultasi dulu soal kondisi maag/lambung saya.";
     const orderText = "Halo Gadama, saya ingin tanya paket Gadama yang paling cocok untuk kondisi lambung saya.";
     const waFinalBtn = document.getElementById("waFinalBtn");
@@ -760,5 +830,361 @@ Tidak langsung terasa signifikan, tapi cukup membuat lambung lebih tenang.
     if (floatWa) floatWa.href = waLink(consultText);
     if (stickyChat) stickyChat.href = waLink(consultText);
   </script>
+
+  <script>
+    // =========================
+    // TRACKING EVENT STRUCTURE
+    // =========================
+
+    function trackMeta(eventName){
+      if (typeof fbq === 'undefined') return;
+
+      if (eventName === 'Contact') {
+        fbq('track', 'Contact');
+      } else {
+        fbq('trackCustom', eventName);
+      }
+    }
+
+    function trackTikTok(eventName){
+      if (typeof ttq === 'undefined') return;
+      ttq.track(eventName);
+    }
+
+    function trackEvent(eventName){
+      trackMeta(eventName);
+      trackTikTok(eventName);
+      console.log('Tracked:', eventName);
+    }
+
+    document.addEventListener('DOMContentLoaded', function(){
+
+      // CTA EVENTS
+      const heroBtn = document.querySelector('.hero .btn');
+      if(heroBtn){
+        heroBtn.addEventListener('click', function(){
+          trackEvent('ClickCTA_Hero');
+        });
+      }
+
+      const finalBtn = document.querySelector('#final-cta .btn-buy');
+      if(finalBtn){
+        finalBtn.addEventListener('click', function(){
+          trackEvent('ClickCTA_Final');
+        });
+      }
+
+      // CONTACT EVENT: semua link WhatsApp
+      const waButtons = document.querySelectorAll('a[href*="wa.me"]');
+      waButtons.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          trackEvent('Contact');
+        });
+      });
+
+      // SCROLL DEPTH EVENTS
+      let scroll25 = false;
+      let scroll50 = false;
+      let scroll75 = false;
+      let scroll90 = false;
+
+      window.addEventListener('scroll', function(){
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        if(docHeight <= 0) return;
+
+        const percent = (scrollTop / docHeight) * 100;
+
+        if(percent >= 25 && !scroll25){
+          scroll25 = true;
+          trackEvent('Scroll_25');
+        }
+
+        if(percent >= 50 && !scroll50){
+          scroll50 = true;
+          trackEvent('Scroll_50');
+        }
+
+        if(percent >= 75 && !scroll75){
+          scroll75 = true;
+          trackEvent('Scroll_75');
+        }
+
+        if(percent >= 90 && !scroll90){
+          scroll90 = true;
+          trackEvent('Scroll_90');
+        }
+      });
+
+      // KEY SECTION VIEW EVENTS
+      const trackedSections = [
+        { id:'revelation', event:'View_Revelation' },
+        { id:'mechanism', event:'View_Mechanism' },
+        { id:'pricing', event:'View_Pricing' },
+        { id:'faq', event:'View_FAQ' }
+      ];
+
+      const sectionObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){
+            const eventName = entry.target.dataset.trackingEvent;
+            if(eventName){
+              trackEvent(eventName);
+              sectionObserver.unobserve(entry.target);
+            }
+          }
+        });
+      }, { threshold: 0.4 });
+
+      trackedSections.forEach(function(section){
+        const el = document.getElementById(section.id);
+        if(el){
+          el.dataset.trackingEvent = section.event;
+          sectionObserver.observe(el);
+        }
+      });
+
+    });
+  </script>
+
+
+
+  <!-- =========================
+       LIVE SOCIAL PROOF NOTIFICATION
+  ========================== -->
+
+  <style>
+    .live-notif-wrap{
+      position:fixed !important;
+      left:10px !important;
+      right:10px !important;
+      bottom:132px !important;
+      z-index:999997 !important;
+      width:auto !important;
+      max-width:340px !important;
+      pointer-events:none !important;
+      visibility:visible !important;
+    }
+
+    .live-notif{
+      display:flex !important;
+      gap:12px !important;
+      align-items:flex-start !important;
+      background:rgba(255,255,255,.96) !important;
+      backdrop-filter:blur(10px) !important;
+      border-radius:18px !important;
+      padding:14px !important;
+      border:1px solid rgba(61,110,74,.10) !important;
+      box-shadow:0 10px 35px rgba(0,0,0,.10),0 2px 10px rgba(0,0,0,.05) !important;
+      opacity:0;
+      transform:translateY(18px) scale(.98);
+      transition:opacity .45s ease, transform .45s ease;
+    }
+
+    .live-notif.show{
+      opacity:1 !important;
+      transform:translateY(0) scale(1) !important;
+    }
+
+    .live-notif.hide{
+      opacity:0 !important;
+      transform:translateY(10px) scale(.98) !important;
+    }
+
+    .live-notif-icon{
+      width:42px !important;
+      height:42px !important;
+      border-radius:50% !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      flex:0 0 auto !important;
+      background:linear-gradient(135deg,var(--leaf),var(--leaf-dark)) !important;
+      color:#fff !important;
+      font-size:17px !important;
+      font-weight:900 !important;
+      box-shadow:0 5px 14px rgba(61,110,74,.20) !important;
+    }
+
+    .live-notif-content{
+      flex:1 !important;
+      min-width:0 !important;
+    }
+
+    .live-notif-title{
+      color:var(--ink) !important;
+      font-size:14px !important;
+      line-height:1.35 !important;
+      font-weight:900 !important;
+      margin-bottom:4px !important;
+    }
+
+    .live-notif-desc{
+      color:var(--soft) !important;
+      font-size:13px !important;
+      line-height:1.5 !important;
+    }
+
+    .live-notif-time{
+      margin-top:8px !important;
+      color:#8a978d !important;
+      font-size:11px !important;
+      line-height:1 !important;
+    }
+
+    @media(max-width:420px){
+      .live-notif-wrap{
+        bottom:120px !important;
+      }
+
+      .live-notif{
+        border-radius:16px !important;
+        padding:13px !important;
+      }
+    }
+  </style>
+
+  <div class="live-notif-wrap">
+    <div class="live-notif" id="liveNotif">
+      <div class="live-notif-icon" id="liveNotifIcon">🛒</div>
+      <div class="live-notif-content">
+        <div class="live-notif-title" id="liveNotifTitle">Rina dari Bandung</div>
+        <div class="live-notif-desc" id="liveNotifDesc">baru memesan Program 90 Hari</div>
+        <div class="live-notif-time" id="liveNotifTime">baru saja</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const socialProofData = [
+      { icon:'🛒', title:'Rina dari Bandung', desc:'baru memesan Program 90 Hari' },
+      { icon:'🛒', title:'Andi dari Bekasi', desc:'baru checkout Paket 1 Botol' },
+      { icon:'🛒', title:'Dewi dari Surabaya', desc:'baru memesan Program 90 Hari' },
+      { icon:'💬', title:'Fajar dari Karawang', desc:'baru memulai konsultasi via WhatsApp' },
+      { icon:'🛒', title:'Lina dari Malang', desc:'baru checkout Program 90 Hari' },
+      { icon:'🛒', title:'Fitri dari Depok', desc:'baru memesan Paket 1 Botol' },
+      { icon:'🛒', title:'Agus dari Bogor', desc:'baru memesan Program 90 Hari' },
+      { icon:'💬', title:'Nina dari Jakarta', desc:'baru memulai konsultasi via WhatsApp' },
+      { icon:'🛒', title:'Sari dari Yogyakarta', desc:'baru checkout Paket 1 Botol' },
+      { icon:'🛒', title:'Budi dari Tangerang', desc:'baru checkout Program 90 Hari' },
+      { icon:'🛒', title:'Maya dari Solo', desc:'baru memesan Program 90 Hari' },
+      { icon:'💬', title:'Riko dari Cirebon', desc:'baru memulai konsultasi via WhatsApp' },
+      { icon:'🛒', title:'Dian dari Cimahi', desc:'baru memesan Paket 1 Botol' },
+      { icon:'🛒', title:'Yuni dari Semarang', desc:'baru checkout Program 90 Hari' }
+    ];
+
+    const notifEl = document.getElementById('liveNotif');
+    const notifIcon = document.getElementById('liveNotifIcon');
+    const notifTitle = document.getElementById('liveNotifTitle');
+    const notifDesc = document.getElementById('liveNotifDesc');
+    const notifTime = document.getElementById('liveNotifTime');
+
+    let notifIndex = 0;
+
+    function randomTimeText(){
+      const times = [
+        'baru saja',
+        '12 detik yang lalu',
+        '38 detik yang lalu',
+        '1 menit yang lalu',
+        '2 menit yang lalu'
+      ];
+
+      return times[Math.floor(Math.random() * times.length)];
+    }
+
+    function showNotification(){
+      if(!notifEl || !notifIcon || !notifTitle || !notifDesc || !notifTime) return;
+
+      const item = socialProofData[notifIndex];
+
+      notifIcon.innerHTML = item.icon;
+      notifTitle.innerHTML = item.title;
+      notifDesc.innerHTML = item.desc;
+      notifTime.innerHTML = randomTimeText();
+
+      notifEl.classList.remove('hide');
+      notifEl.classList.add('show');
+
+      setTimeout(function(){
+        notifEl.classList.remove('show');
+        notifEl.classList.add('hide');
+      }, 5200);
+
+      notifIndex++;
+      if(notifIndex >= socialProofData.length){
+        notifIndex = 0;
+      }
+
+      const nextDelay = Math.floor(Math.random() * 9000) + 10000;
+      setTimeout(showNotification, nextDelay);
+    }
+
+    setTimeout(showNotification, 9000);
+  </script>
+
+
+  <!-- =========================
+       EVERPRO STICKY OVERRIDE
+       Menjaga tombol WA, sticky CTA, dan notifikasi tetap fixed.
+  ========================== -->
+  <style>
+    .float-wa{
+      position:fixed !important;
+      right:16px !important;
+      bottom:126px !important;
+      z-index:999999 !important;
+      display:inline-flex !important;
+      visibility:visible !important;
+      opacity:1 !important;
+      transform:none !important;
+    }
+
+    .sticky{
+      position:fixed !important;
+      left:0 !important;
+      right:0 !important;
+      bottom:0 !important;
+      z-index:999998 !important;
+      display:block !important;
+      width:100% !important;
+      visibility:visible !important;
+      opacity:1 !important;
+      transform:none !important;
+    }
+
+    .sticky-inner{
+      width:min(100%,430px) !important;
+      margin:0 auto !important;
+      display:grid !important;
+      grid-template-columns:1fr 1fr !important;
+      gap:10px !important;
+    }
+
+    .live-notif-wrap{
+      position:fixed !important;
+      left:10px !important;
+      right:10px !important;
+      bottom:132px !important;
+      z-index:999997 !important;
+      width:auto !important;
+      max-width:340px !important;
+      visibility:visible !important;
+      transform:none !important;
+    }
+
+    @media(max-width:420px){
+      .float-wa{
+        right:14px !important;
+        bottom:118px !important;
+      }
+
+      .live-notif-wrap{
+        bottom:120px !important;
+      }
+    }
+  </style>
+
 </body>
 </html>
+
