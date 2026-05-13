@@ -2055,7 +2055,7 @@ src="https://www.facebook.com/tr?id=1838528193490352&ev=PageView&noscript=1"/>
 <p class="hero-subtext">Tapi karena lambung terus ikut campur di hidup sehari-hari. Dan makin lama dijalani, rasa takut kambuh itu mulai mengatur segalanya.</p>
 <p class="hero-gain">Bayangkan satu hari — hanya satu hari — kamu bangun tanpa langsung cek kondisi perut. Makan tanpa waspada. Pergi tanpa takut kambuh di jalan.<br/><br/>Itu yang mulai dirasakan banyak orang setelah akhirnya menemukan apa yang selama ini belum pernah disentuh.</p>
 <!-- CTA -->
-<a class="btn-primary" href="#section-2">
+<a class="btn-primary" href="#section-2" onclick="fireCTAClick('hero', 'scroll_cta')">
       Lihat Apa yang Selama Ini Belum Tersentuh ↓
     </a>
 </div>
@@ -2832,5 +2832,110 @@ const pricingObserver = new IntersectionObserver((entries) => {
 
 pricingObserver.observe(pricingSection);
 </script>
+
+<script>
+function fireCTAClick(position, type) {
+  fbq('trackCustom', 'CTA_Click', {
+    position: position,
+    type: type || 'scroll_cta'
+  });
+
+  if (typeof ttq !== 'undefined') {
+    ttq.track('ClickButton', {
+      content_name: 'CTA_' + position
+    });
+  }
+}
+
+function fireContact(position) {
+  fbq('track', 'Contact', {
+    content_name: position
+  });
+
+  if (typeof ttq !== 'undefined') {
+    ttq.track('Contact', {
+      content_name: position
+    });
+  }
+}
+
+function fireCheckout(packageName) {
+  fbq('track', 'InitiateCheckout', {
+    content_name: packageName
+  });
+
+  if (typeof ttq !== 'undefined') {
+    ttq.track('InitiateCheckout', {
+      content_name: packageName
+    });
+  }
+}
+
+let viewContentFired = false;
+
+window.addEventListener('scroll', function() {
+
+  const scrollPercent =
+    ((window.scrollY + window.innerHeight) /
+    document.documentElement.scrollHeight) * 100;
+
+  if (!viewContentFired && scrollPercent > 18) {
+    viewContentFired = true;
+
+    fbq('track', 'ViewContent', {
+      content_name: 'Gadama LP',
+      content_category: 'Herbal Lambung'
+    });
+
+    if (typeof ttq !== 'undefined') {
+      ttq.track('ViewContent', {
+        content_name: 'Gadama LP'
+      });
+    }
+  }
+
+  if (scrollPercent > 25 && !window.scroll25) {
+    window.scroll25 = true;
+    fbq('trackCustom', 'Scroll_25');
+    fbq('trackCustom', 'Section_Mirror');
+  }
+
+  if (scrollPercent > 50 && !window.scroll50) {
+    window.scroll50 = true;
+    fbq('trackCustom', 'Scroll_50');
+    fbq('trackCustom', 'Section_Verdict');
+
+    if (typeof ttq !== 'undefined') {
+      ttq.track('ClickButton', {
+        content_name: 'Scroll_50'
+      });
+    }
+  }
+
+  if (scrollPercent > 75 && !window.scroll75) {
+    window.scroll75 = true;
+    fbq('trackCustom', 'Scroll_75');
+    fbq('trackCustom', 'Section_Testimony');
+
+    if (typeof ttq !== 'undefined') {
+      ttq.track('ClickButton', {
+        content_name: 'Scroll_75'
+      });
+    }
+  }
+
+  if (scrollPercent > 90 && !window.scroll90) {
+    window.scroll90 = true;
+    fbq('trackCustom', 'Scroll_90');
+
+    if (typeof ttq !== 'undefined') {
+      ttq.track('ClickButton', {
+        content_name: 'Scroll_90'
+      });
+    }
+  }
+});
+</script>
+
 </body>
 </html>
