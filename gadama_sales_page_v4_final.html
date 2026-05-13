@@ -1,0 +1,3213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="description" content="Gadama Madu Curcuma — Membantu menjaga kenyamanan lambung dari dalam. Terdaftar BPOM & Tersertifikasi Halal MUI.">
+<title>Gadama — Madu Curcuma untuk Lambung</title>
+
+<!-- Preconnect fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel placeholder -->
+<!-- <script>!function(f,b,e,v,n,t,s)...</script> -->
+
+<style>
+/* ═══════════════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════════════ */
+:root {
+  /* Color wave: dark pain → warm transition → light solution */
+  --pain-deep:     #0F0F0F;
+  --pain-dark:     #141414;
+  --pain-mid:      #1A1A1A;
+  --pain-warm:     #1C1A14;
+  --trans-dark:    #151C10;
+  --trans-mid:     #162112;
+  --solution-dark: #18231A;
+  --pricing-bg:    #F5F0E8;
+  --faq-bg:        #FAFAF8;
+  --footer-bg:     #0A0A0A;
+
+  /* Accent */
+  --gold:          #C8963E;
+  --gold-light:    #D4AF37;
+  --gold-pale:     rgba(200,150,62,0.12);
+  --gold-border:   rgba(200,150,62,0.25);
+  --red-subtle:    rgba(160,50,50,0.18);
+  --red-border:    rgba(160,50,50,0.35);
+  --green-trust:   #2E7D52;
+  --green-light:   #3DA066;
+  --green-pale:    rgba(46,125,82,0.12);
+
+  /* Text */
+  --text-bright:   #EDE8DC;
+  --text-primary:  #C8C0B0;
+  --text-muted:    #7A7268;
+  --text-gold:     #C8963E;
+  --text-dark:     #1A1A1A;
+  --text-dark-mid: #3A3530;
+
+  /* Type */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* Spacing */
+  --px: 22px;
+  --section-gap: 72px;
+
+  /* Animation */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ═══════════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--pain-mid);
+  color: var(--text-primary);
+  line-height: 1.65;
+  font-size: 15px;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ═══════════════════════════════════════════════
+   SCROLL ANIMATION
+═══════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-slow { transition-duration: 0.9s; }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ═══════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════ */
+.container {
+  max-width: 430px;
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+
+section {
+  position: relative;
+}
+
+/* Divider line */
+.s-divider {
+  width: 40px;
+  height: 2px;
+  background: var(--gold-border);
+  margin: 0 auto 32px;
+}
+
+/* ═══════════════════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════════════════ */
+.display-headline {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 7vw, 34px);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--text-bright);
+  letter-spacing: -0.02em;
+}
+
+.display-headline em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.section-headline {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 6vw, 28px);
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-bright);
+  letter-spacing: -0.015em;
+}
+
+.section-headline em { font-style: italic; color: var(--gold); }
+
+.body-text {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+.body-text-sm {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.label-text {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-gold);
+}
+
+/* ═══════════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════════ */
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 54px;
+  padding: 16px 24px;
+  background: var(--gold);
+  color: #0F0F0F;
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  transition: background 0.2s, transform 0.15s;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-primary:active { transform: scale(0.98); background: #B87E2E; }
+
+.btn-ghost {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 54px;
+  padding: 14px 24px;
+  background: transparent;
+  color: var(--gold);
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid var(--gold-border);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-ghost:active { background: var(--gold-pale); }
+
+.btn-wa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 20px 24px;
+  background: #25D366;
+  color: #fff;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 32px rgba(37,211,102,0.25);
+  transition: transform 0.15s, box-shadow 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+.btn-wa:active { transform: scale(0.98); box-shadow: 0 4px 16px rgba(37,211,102,0.2); }
+.btn-wa svg { flex-shrink: 0; }
+
+/* ═══════════════════════════════════════════════
+   BADGE PILL
+═══════════════════════════════════════════════ */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: rgba(200,150,62,0.12);
+  border: 1px solid var(--gold-border);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1.3;
+}
+.badge-dot {
+  width: 6px; height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* ═══════════════════════════════════════════════
+   PAIN BOX / CALLOUT BOXES
+═══════════════════════════════════════════════ */
+.pain-callout {
+  background: var(--red-subtle);
+  border-left: 3px solid rgba(160,50,50,0.5);
+  border-radius: 0 6px 6px 0;
+  padding: 20px 18px;
+  margin: 20px 0;
+}
+.pain-callout p {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.65;
+}
+
+.gain-callout {
+  background: var(--green-pale);
+  border-left: 3px solid var(--green-trust);
+  border-radius: 0 6px 6px 0;
+  padding: 20px 18px;
+  margin: 20px 0;
+}
+.gain-callout p {
+  font-size: 15px;
+  color: var(--text-primary);
+  line-height: 1.65;
+}
+
+.gold-callout {
+  background: var(--gold-pale);
+  border: 1px solid var(--gold-border);
+  border-radius: 6px;
+  padding: 20px 18px;
+  margin: 20px 0;
+}
+
+/* ═══════════════════════════════════════════════
+   ══════════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════════
+═══════════════════════════════════════════════ */
+#hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+  background: var(--pain-deep);
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  filter: brightness(0.45) saturate(0.7);
+}
+/* Cinematic gradient overlay */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10,10,10,0.2) 0%,
+    rgba(10,10,10,0.1) 35%,
+    rgba(10,10,10,0.75) 65%,
+    rgba(10,10,10,0.95) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 48px var(--px) 0;
+  max-width: 430px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-badge {
+  margin-bottom: 20px;
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(28px, 8vw, 36px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-bright);
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+}
+.hero-headline em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-subtext {
+  font-size: 15px;
+  color: rgba(200,192,176,0.85);
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.hero-emphasis {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-bright);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.hero-list {
+  list-style: none;
+  margin: 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.hero-list li {
+  font-size: 14px;
+  color: rgba(200,192,176,0.75);
+  padding-left: 16px;
+  position: relative;
+}
+.hero-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.hero-gain {
+  font-size: 14px;
+  color: rgba(200,192,176,0.7);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 28px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(200,150,62,0.15);
+}
+
+/* ═══════════════════════════════════════════════
+   TRUST BADGE BAR #1
+═══════════════════════════════════════════════ */
+#trust-1 {
+  background: #111111;
+  border-top: 1px solid rgba(200,150,62,0.1);
+  border-bottom: 1px solid rgba(200,150,62,0.1);
+  padding: 20px var(--px);
+}
+.trust-inner {
+  max-width: 430px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+.trust-badge-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.trust-badge-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(46,125,82,0.15);
+  border: 1px solid rgba(46,125,82,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.trust-badge-text {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--green-light);
+  line-height: 1.3;
+  letter-spacing: 0.03em;
+}
+.trust-divider {
+  width: 1px;
+  height: 32px;
+  background: rgba(200,150,62,0.2);
+}
+.trust-note {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 10px;
+  max-width: 430px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION 2 — CERMIN KEHIDUPAN
+═══════════════════════════════════════════════ */
+#section-2 {
+  /* overridden by visual decisions block below */
+  padding: var(--section-gap) 0;
+}
+
+.s2-header {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+/* Story cards */
+.story-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.story-card {
+  position: relative;
+  overflow: hidden;
+}
+.story-card-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  filter: brightness(0.62) saturate(0.72) contrast(0.96);
+  display: block;
+}
+.story-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 20px 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.28) 58%, transparent 100%);
+}
+.story-card-text {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-bright);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+/* Closing face full width */
+.s2-closing-img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.5) saturate(0.6);
+  display: block;
+}
+
+.s2-transition {
+  padding: 28px var(--px) 0;
+  max-width: 430px;
+  margin: 0 auto;
+}
+.s2-transition-text {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 600;
+  color: var(--text-bright);
+  line-height: 1.45;
+  border-left: 3px solid rgba(160,50,50,0.5);
+  padding-left: 16px;
+  margin-bottom: 8px;
+}
+.s2-transition-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  padding-left: 20px;
+  line-height: 1.6;
+}
+
+/* ═══════════════════════════════════════════════
+   EARLY CTA STRIP
+═══════════════════════════════════════════════ */
+.early-cta {
+  background: #111111;
+  padding: 28px var(--px);
+  border-top: 1px solid rgba(200,150,62,0.08);
+  border-bottom: 1px solid rgba(200,150,62,0.08);
+}
+.early-cta-inner {
+  max-width: 430px;
+  margin: 0 auto;
+}
+.early-cta-text {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+.early-cta-strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 18px;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION 3 — VONIS SOLUSI LAMA
+═══════════════════════════════════════════════ */
+#section-3 {
+  /* overridden by visual decisions block below */
+  padding: var(--section-gap) 0;
+}
+
+.s3-header {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 0 auto 40px;
+}
+.s3-header-sub {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 6vw, 28px);
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1.3;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+/* Verdict items */
+.verdict-list {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.verdict-item {
+  padding: 28px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.verdict-item:last-child { border-bottom: none; }
+
+.verdict-img {
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.verdict-img img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  filter: brightness(0.6) saturate(0.7);
+}
+.verdict-img-square img {
+  aspect-ratio: 4/3;
+}
+
+.verdict-title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(160,50,50,0.8);
+  margin-bottom: 6px;
+}
+.verdict-main {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-bright);
+  line-height: 1.35;
+  margin-bottom: 12px;
+}
+.verdict-body {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+.verdict-close {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-bright);
+  line-height: 1.6;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* S3 transition */
+.s3-transition {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 32px auto 0;
+}
+
+/* ═══════════════════════════════════════════════
+   COST FRAMING #1
+═══════════════════════════════════════════════ */
+#cost-framing-1 {
+  /* overridden by visual decisions block below */
+}
+.cost-1-inner {
+  max-width: 430px;
+  margin: 0 auto;
+}
+.cost-intro {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.cost-question {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-bright);
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+.cost-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+.cost-item {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding-left: 12px;
+  border-left: 2px solid rgba(160,50,50,0.3);
+  line-height: 1.5;
+}
+.cost-punchline {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1.55;
+  padding: 16px;
+  background: rgba(200,150,62,0.08);
+  border: 1px solid var(--gold-border);
+  border-radius: 6px;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION 4 — MEKANISME + PRODUK
+═══════════════════════════════════════════════ */
+#section-4 {
+  /* overridden by visual decisions block below */
+}
+
+.s4-inner {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.mechanism-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.mechanism-pre {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.mechanism-img {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+.mechanism-img img {
+  width: 100%;
+  display: block;
+}
+.mechanism-caption {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 8px;
+  line-height: 1.4;
+}
+
+.mechanism-points {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 16px 0;
+  padding: 16px;
+  background: var(--red-subtle);
+  border-radius: 6px;
+}
+.mechanism-points p {
+  font-size: 14px;
+  color: var(--text-primary);
+  padding-left: 14px;
+  border-left: 2px solid rgba(160,50,50,0.4);
+  line-height: 1.5;
+}
+
+/* Ingredient cards */
+.ingredient-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 28px 0;
+}
+.ingredient-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #111;
+}
+.ingredient-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  filter: brightness(0.75) saturate(0.9);
+}
+.ingredient-card-body {
+  padding: 12px;
+}
+.ingredient-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 4px;
+  letter-spacing: 0.02em;
+}
+.ingredient-desc {
+  font-size: 12px;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+.ingredient-source {
+  font-size: 10px;
+  color: rgba(122,114,104,0.7);
+  line-height: 1.4;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* Product reveal */
+.product-reveal {
+  margin: 32px 0;
+  text-align: center;
+  /* background and padding overridden in visual decisions block */
+}
+.product-reveal img {
+  width: 75%;
+  max-width: 240px;
+  margin: 0 auto;
+  filter: drop-shadow(0 18px 38px rgba(55,29,10,0.30)) drop-shadow(0 0 18px rgba(208,160,74,0.10));
+}
+.product-name {
+  font-family: var(--font-display);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--text-bright);
+  letter-spacing: -0.02em;
+  margin: 16px 0 8px;
+}
+.product-tagline {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.product-natural-badge {
+  margin-top:0;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 10px 16px;
+  background: var(--green-pale);
+  border: 1px solid rgba(46,125,82,0.3);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--green-light);
+}
+
+/* Social proof number */
+.social-proof-bar {
+  margin: 24px 0;
+  padding: 20px;
+  background: rgba(200,150,62,0.06);
+  border: 1px solid var(--gold-border);
+  border-radius: 8px;
+  text-align: center;
+}
+.social-number {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.social-label {
+  font-size: 13px;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════
+   BONUS SPILL
+═══════════════════════════════════════════════ */
+#bonus-spill {
+  /* overridden by visual decisions block below */
+}
+.bonus-inner {
+  max-width: 430px;
+  margin: 0 auto;
+}
+.bonus-headline {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 4px;
+}
+.bonus-sub {
+  font-size: 14px;
+  color: var(--gold);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.bonus-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.bonus-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+.bonus-check {
+  width: 20px;
+  height: 20px;
+  background: rgba(46,125,82,0.2);
+  border: 1px solid rgba(46,125,82,0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-size: 10px;
+  color: var(--green-light);
+}
+.bonus-mystery {
+  font-size: 13px;
+  color: var(--gold);
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION 5 — TESTIMONI
+═══════════════════════════════════════════════ */
+#section-5 {
+  background: linear-gradient(180deg, var(--trans-mid) 0%, var(--solution-dark) 100%);
+  padding: var(--section-gap) 0;
+}
+
+.s5-header {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+/* Testimonial cards */
+.testimonial-list {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  padding: 24px 20px;
+  margin-bottom: 12px;
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(200,150,62,0.3);
+  flex-shrink: 0;
+}
+.testimonial-meta {}
+.testimonial-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 2px;
+}
+.testimonial-loc {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.testimonial-before {
+  font-size: 13px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+.testimonial-after {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.65;
+  margin-bottom: 14px;
+}
+.testimonial-highlight {
+  padding: 12px 16px;
+  background: rgba(200,150,62,0.08);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 6px 6px 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--gold-light);
+  line-height: 1.5;
+}
+.testimonial-disclaimer {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: center;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+/* Section 5 divider image */
+.s5-divider-img {
+  width: 100%;
+  margin: 32px 0;
+  position: relative;
+}
+.s5-divider-img img {
+  width: 100%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  filter: brightness(0.65) saturate(0.8);
+  display: block;
+}
+
+/* Social number */
+.s5-social {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 0 auto 24px;
+  text-align: center;
+}
+.s5-number {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+}
+.s5-number-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.s5-cta-strip {
+  padding: 0 var(--px) 0;
+  max-width: 430px;
+  margin: 0 auto;
+}
+.sampai-kapan {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(180,60,60,0.85);
+  text-align: center;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════
+   TRUST BADGE #2 + SCARCITY + COST FRAMING #2
+═══════════════════════════════════════════════ */
+#pre-pricing {
+  background: linear-gradient(180deg,
+    #18231A 0%,      /* warm dark green dari section 5 */
+    #111111 15%,     /* turun ke hitam — scarcity = titik paling gelap */
+    #0D0D0D 100%     /* deepest dark sebelum dawn */
+  );
+  padding: 40px 0;
+}
+.pre-pricing-inner {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+/* Trust badge #2 compact */
+.trust-2-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--green-pale);
+  border: 1px solid rgba(46,125,82,0.25);
+  border-radius: 8px;
+  margin-bottom: 32px;
+}
+.trust-2-item {
+  text-align: center;
+  flex: 1;
+}
+.trust-2-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green-light);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+.trust-2-sub {
+  font-size: 10px;
+  color: rgba(61,160,102,0.6);
+}
+.trust-2-divider {
+  width: 1px;
+  height: 28px;
+  background: rgba(46,125,82,0.2);
+}
+
+/* Scarcity */
+.scarcity-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+.scarcity-body {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.scarcity-bold {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-bright);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.scarcity-fear {
+  background: var(--red-subtle);
+  border: 1px solid var(--red-border);
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 32px;
+}
+.scarcity-fear p {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.65;
+}
+.scarcity-fear strong {
+  color: var(--text-bright);
+}
+
+/* Cost framing #2 */
+.cost-2-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 16px;
+}
+.cost-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.cost-comp-cell {
+  padding: 14px 12px;
+  background: rgba(255,255,255,0.03);
+}
+.cost-comp-cell.header {
+  background: rgba(200,150,62,0.08);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.cost-comp-cell.bad {
+  background: rgba(160,50,50,0.08);
+}
+.cost-comp-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 4px;
+}
+.cost-comp-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: rgba(180,80,80,0.9);
+}
+.cost-life-list {
+  padding: 16px;
+  background: rgba(255,255,255,0.02);
+  border-radius: 6px;
+  margin-top: 12px;
+}
+.cost-life-list p {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding-left: 12px;
+  border-left: 2px solid rgba(160,50,50,0.3);
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+.cost-life-list p:last-child { margin-bottom: 0; }
+.cost-2-punchline {
+  margin-top: 20px;
+  padding: 18px;
+  background: var(--gold-pale);
+  border: 1px solid var(--gold-border);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-bright);
+  line-height: 1.6;
+}
+.cost-2-punchline strong { color: var(--gold); }
+
+/* ═══════════════════════════════════════════════
+   SECTION 6 — PRICING
+═══════════════════════════════════════════════ */
+#section-pricing {
+  background: #F5F0E8;
+  padding: var(--section-gap) 0;
+}
+
+.pricing-inner {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+/* Pricing header */
+.pricing-badge-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+.pricing-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(46,125,82,0.1);
+  border: 1px solid rgba(46,125,82,0.25);
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green-trust);
+}
+
+.pricing-framing {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.pricing-framing-main {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.35;
+  margin-bottom: 8px;
+}
+.pricing-framing-sub {
+  font-size: 14px;
+  color: rgba(58,53,48,0.7);
+  line-height: 1.6;
+}
+
+/* Pricing cards */
+.pricing-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.pricing-card {
+  background: #fff;
+  border: 1.5px solid rgba(200,150,62,0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+.pricing-card.featured {
+  border-color: var(--gold);
+  box-shadow: 0 8px 40px rgba(200,150,62,0.2);
+}
+
+.pricing-card-badge {
+  background: var(--gold);
+  color: #0F0F0F;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 7px;
+}
+
+.pricing-card-img-wrap {
+  padding: 20px 20px 0;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+}
+.pricing-card-img {
+  height: 140px;
+  object-fit: contain;
+  display: block;
+}
+
+.pricing-card-body {
+  padding: 16px 20px 20px;
+}
+.pricing-tier-name {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+.pricing-duration {
+  font-size: 12px;
+  color: rgba(58,53,48,0.55);
+  margin-bottom: 14px;
+}
+.pricing-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+.pricing-normal {
+  font-size: 13px;
+  color: rgba(58,53,48,0.4);
+  text-decoration: line-through;
+}
+.pricing-promo {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.pricing-per-day {
+  font-size: 12px;
+  color: rgba(58,53,48,0.5);
+  margin-bottom: 16px;
+}
+.pricing-per-day strong { color: var(--gold); }
+
+.pricing-bonuses {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+  padding-top: 14px;
+  border-top: 1px solid rgba(0,0,0,0.06);
+}
+.pricing-bonus-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--text-dark-mid);
+  line-height: 1.45;
+}
+.pricing-bonus-item .check {
+  color: var(--green-trust);
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.pricing-bonus-item .cross {
+  color: rgba(58,53,48,0.25);
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.pricing-savings {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--green-trust);
+  padding: 8px 12px;
+  background: rgba(46,125,82,0.08);
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Guarantee */
+.guarantee-box {
+  background: #fff;
+  border: 1.5px solid rgba(46,125,82,0.3);
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  margin-bottom: 24px;
+}
+.guarantee-icon {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+.guarantee-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--green-trust);
+  margin-bottom: 10px;
+}
+.guarantee-body {
+  font-size: 14px;
+  color: var(--text-dark-mid);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+.guarantee-sub {
+  font-size: 13px;
+  color: var(--green-trust);
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* FAQ teaser — hook, bukan preview jawaban */
+.faq-summary-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+.faq-teaser {
+  font-size: 12px;
+  color: rgba(58,53,48,0.52);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Trust logo card */
+.trust-logo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 10px;
+  background: #FFF7EA;
+  border: 1px solid rgba(46,125,82,0.18);
+  border-radius: 14px;
+  margin-bottom: 32px;
+}
+.trust-logo-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 10px;
+  padding: 12px 8px;
+  text-align: center;
+}
+.trust-logo-card img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain;
+}
+.trust-logo-name {
+  font-size: 10px;
+  font-weight: 800;
+  color: #174C35;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+.trust-logo-num {
+  font-size: 10px;
+  color: #4D4338;
+  font-weight: 600;
+  line-height: 1.25;
+  word-break: break-word;
+}
+.dawn-bridge {
+  height: 140px;
+  background: linear-gradient(180deg,
+    #0D0D0D 0%,
+    #141008 18%,
+    #2A1E0A 38%,
+    #6B4E22 58%,
+    #B8956A 76%,
+    #DDD0B5 90%,
+    #F5F0E8 100%
+  );
+  pointer-events: none;
+}
+
+/* Dusk bridge — transisi cream ke gelap sebelum CTA final */
+.dusk-bridge {
+  height: 100px;
+  background: linear-gradient(180deg,
+    #FAFAF8 0%,
+    #E8E0D0 20%,
+    #9A8060 45%,
+    #3D2C14 70%,
+    #141008 88%,
+    #111111 100%
+  );
+  pointer-events: none;
+}
+
+/* ═══════════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════════ */
+#faq {
+  background: var(--faq-bg);
+  padding: var(--section-gap) 0;
+}
+.faq-inner {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 0 auto;
+}
+.faq-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.faq-headline {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+.faq-sub {
+  font-size: 14px;
+  color: rgba(58,53,48,0.6);
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+details.faq-item {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+details.faq-item[open] {
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+details.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 18px 18px;
+  cursor: pointer;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+}
+details.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-q {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  line-height: 1.4;
+  flex: 1;
+}
+.faq-icon {
+  width: 24px;
+  height: 24px;
+  background: rgba(200,150,62,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-size: 14px;
+  color: var(--gold);
+  transition: transform 0.2s;
+}
+details[open] .faq-icon { transform: rotate(45deg); }
+
+.faq-answer {
+  padding: 0 18px 18px;
+}
+.faq-answer p {
+  font-size: 14px;
+  color: var(--text-dark-mid);
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+.faq-answer p:last-child { margin-bottom: 0; }
+.faq-answer strong { color: var(--text-dark); }
+
+/* ═══════════════════════════════════════════════
+   URGENCY + PAIN/GAIN + CTA FINAL
+═══════════════════════════════════════════════ */
+#final-cta {
+  background: linear-gradient(180deg, #111111 0%, var(--trans-dark) 100%);
+  padding: var(--section-gap) 0;
+}
+.final-inner {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.urgency-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 6px;
+}
+.urgency-bold {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--gold);
+  font-style: italic;
+  margin-bottom: 32px;
+  line-height: 1.4;
+}
+
+.pain-wrapper {
+  background: var(--red-subtle);
+  border: 1px solid var(--red-border);
+  border-radius: 8px;
+  padding: 22px 20px;
+  margin-bottom: 16px;
+}
+.pain-wrapper-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 12px;
+}
+.pain-wrapper-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.pain-wrapper-list p {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.55;
+  padding-left: 12px;
+  border-left: 2px solid rgba(160,50,50,0.35);
+}
+
+.gain-wrapper {
+  background: var(--green-pale);
+  border: 1px solid rgba(46,125,82,0.25);
+  border-radius: 8px;
+  padding: 22px 20px;
+  margin-bottom: 28px;
+}
+.gain-wrapper-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-bright);
+  margin-bottom: 12px;
+}
+.gain-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  border-left: 2px solid rgba(46,125,82,0.4);
+}
+.gain-item:last-child { margin-bottom: 0; }
+.gain-day {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green-light);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.gain-text {
+  font-size: 14px;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.cta-final-wrap {
+  margin-bottom: 16px;
+}
+
+.closing-line {
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-style: italic;
+}
+.closing-line strong {
+  color: var(--text-bright);
+  display: block;
+  font-size: 15px;
+}
+
+/* ═══════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════ */
+#footer {
+  background: var(--footer-bg);
+  padding: 40px 0 32px;
+  border-top: 1px solid rgba(200,150,62,0.1);
+}
+.footer-inner {
+  padding: 0 var(--px);
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+.footer-logo {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.footer-logo img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin: 0 auto 8px;
+  opacity: 0.85;
+}
+.footer-brand {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: -0.02em;
+}
+.footer-brand-sub {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* Trust badges footer */
+.footer-badges {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+.footer-badge {
+  padding: 12px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 8px;
+  text-align: center;
+}
+.footer-badge-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--green-light);
+  margin-bottom: 3px;
+}
+.footer-badge-num {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Disclaimer boxes */
+.footer-disclaimer {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 6px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+}
+.footer-disclaimer p {
+  font-size: 11px;
+  color: rgba(122,114,104,0.75);
+  line-height: 1.65;
+}
+.footer-disclaimer strong {
+  color: rgba(138,130,122,0.9);
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+}
+.footer-bottom p {
+  font-size: 11px;
+  color: rgba(122,114,104,0.5);
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════
+   STICKY CTA (bottom)
+═══════════════════════════════════════════════ */
+.sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: linear-gradient(to top, rgba(10,10,10,1) 60%, transparent);
+  padding: 16px var(--px) calc(16px + env(safe-area-inset-bottom));
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.4s, transform 0.4s var(--ease-out);
+}
+.sticky-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+.sticky-cta-inner {
+  max-width: 430px;
+  margin: 0 auto;
+}
+
+/* ═══════════════════════════════════════════════
+   UTILITIES
+═══════════════════════════════════════════════ */
+.text-center { text-align: center; }
+.mt-8  { margin-top: 8px; }
+.mt-12 { margin-top: 12px; }
+.mt-16 { margin-top: 16px; }
+.mt-20 { margin-top: 20px; }
+.mt-24 { margin-top: 24px; }
+.mt-32 { margin-top: 32px; }
+.mb-8  { margin-bottom: 8px; }
+.mb-12 { margin-bottom: 12px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-24 { margin-bottom: 24px; }
+.mb-32 { margin-bottom: 32px; }
+
+/* ═══════════════════════════════════════════════
+   VISUAL DECISIONS — FINAL MERGE
+   1. Warm dark gradient section 2, 3, 4
+   2. Radial glow section 4 + product reveal
+   3. Filter brightness 0.62 story cards
+   4. text-wrap: balance mobile
+   5. Button min-height 54px
+   6. Story card overlay more natural
+═══════════════════════════════════════════════ */
+
+/* Warm dark — pain sections tidak flat black */
+#section-2 {
+  background: linear-gradient(180deg, #151310 0%, #211A14 100%);
+  padding: var(--section-gap) 0;
+}
+#section-3 {
+  background: linear-gradient(180deg, #211A14 0%, #151311 100%);
+  padding: var(--section-gap) 0;
+}
+#cost-framing-1 {
+  background: linear-gradient(180deg, #241D14 0%, #191713 100%);
+  padding: 40px var(--px);
+}
+
+/* Radial glow section 4 — pertama kali ada cahaya */
+#section-4 {
+  background:
+    radial-gradient(circle at 50% 18%, rgba(208,160,74,0.10), transparent 38%),
+    linear-gradient(180deg, #151311 0%, #172216 42%, #233A26 100%);
+  padding: var(--section-gap) 0;
+}
+#bonus-spill {
+  background: #243A28;
+  padding: 36px var(--px);
+  border-top: 1px solid rgba(200,150,62,0.1);
+  border-bottom: 1px solid rgba(200,150,62,0.1);
+}
+
+/* Radial glow product reveal */
+.product-reveal {
+  margin: 32px 0;
+  text-align: center;
+  padding: 24px 10px;
+  border-radius: 18px;
+  background: radial-gradient(circle at 50% 38%, rgba(224,184,92,0.18), transparent 48%);
+}
+
+/* Brightness 0.62 untuk story cards */
+.story-card-img {
+  filter: brightness(0.62) saturate(0.72) contrast(0.96);
+}
+
+/* Story card overlay lebih natural — tidak terlalu abrupt */
+.story-card-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.86) 0%, rgba(0,0,0,0.28) 58%, transparent 100%);
+}
+
+/* text-wrap: balance semua headline mobile */
+.display-headline,
+.hero-headline,
+.section-headline,
+.verdict-main,
+.s2-transition-text,
+.cost-question,
+.product-name {
+  text-wrap: balance;
+}
+
+/* Button min-height 54px */
+.btn-primary,
+.btn-wa,
+.btn-ghost {
+  min-height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hero warm dark override */
+#hero {
+  background: radial-gradient(circle at 70% 18%, rgba(208,160,74,0.10), transparent 35%), #10100E;
+}
+.hero-bg img {
+  filter: brightness(0.50) saturate(0.78) contrast(0.96);
+}
+
+/* Ingredient + verdict images slightly brighter */
+.verdict-img img,
+.s5-divider-img img {
+  filter: brightness(0.62) saturate(0.72) contrast(0.96);
+}
+.ingredient-card img {
+  filter: brightness(0.82) saturate(0.92) contrast(0.96);
+}
+
+/* Desktop centering */
+@media (min-width: 480px) {
+  .sticky-cta-inner,
+  .container { max-width: 430px; }
+}
+
+/* ═══════════════════════════════════════════════
+   FIT CARD — COCOK UNTUK SIAPA
+═══════════════════════════════════════════════ */
+.fit-card{
+  margin-top:40px;
+  margin-bottom:26px;
+  padding:20px;
+  border-radius:24px;
+  background:rgba(255,255,255,.055);
+  border:1px solid rgba(61,160,102,.24);
+  box-shadow:0 18px 42px rgba(0,0,0,.12);
+}
+
+.fit-label{
+  font-size:14px;
+  font-weight:800;
+  color:#EDE8DC;
+  margin-bottom:14px;
+  text-align:center;
+}
+
+.fit-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
+}
+
+.fit-item{
+  min-height:86px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:12px 10px;
+  border-radius:18px;
+  background:rgba(46,125,82,.14);
+  border:1px solid rgba(61,160,102,.18);
+  color:rgba(237,232,220,.86);
+  font-size:12.5px;
+  line-height:1.45;
+  font-weight:600;
+}
+
+@media(max-width:360px){
+  .fit-grid{
+    grid-template-columns:1fr;
+  }
+
+  .fit-item{
+    min-height:auto;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════
+   CRO READABILITY CLEANUP — ITALIC DISCIPLINE
+   Hero italic dan "Sampai kapan" tetap dipertahankan.
+   Section lain dibuat normal agar scanning mobile lebih cepat.
+═══════════════════════════════════════════════ */
+.section-headline em{
+  font-style: normal;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.s3-header-sub,
+.verdict-close,
+.bonus-sub,
+.bonus-mystery,
+.testimonial-before,
+.testimonial-highlight,
+.testimonial-disclaimer,
+.s5-number-sub,
+.guarantee-sub,
+.urgency-bold,
+.closing-line,
+.footer-badge-num{
+  font-style: normal;
+}
+
+.s3-header-sub{
+  font-weight: 700;
+}
+
+.bonus-sub,
+.guarantee-sub{
+  font-weight: 700;
+}
+
+</style>
+<!-- ══════════════════════════════════════════
+     META PIXEL
+     Ganti PIXEL_ID_META dengan ID pixel kamu
+══════════════════════════════════════════ -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1838528193490352');
+fbq('track', 'PageView');
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1838528193490352&ev=PageView&noscript=1"/>
+</noscript>
+
+<!-- ══════════════════════════════════════════
+     TIKTOK PIXEL (PLACEHOLDER)
+     Ganti PIXEL_ID_TIKTOK dengan ID pixel kamu
+══════════════════════════════════════════ -->
+<script>
+!function (w, d, t) {
+  w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};ttq.load=function(e,n){var i="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=i,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};var o=document.createElement("script");o.type="text/javascript",o.async=!0,o.src=i+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(o,a)};
+  ttq.load('PIXEL_ID_TIKTOK');
+  ttq.page();
+}(window, document, 'ttq');
+</script>
+
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════
+     HERO
+══════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg">
+    <img src="https://i.ibb.co.com/ymy3x3HL/hero-bg-man-exhausted.webp"
+         alt=""
+         fetchpriority="high"
+         decoding="async">
+  </div>
+
+  <div class="hero-content">
+    <!-- Badge -->
+    <div class="hero-badge reveal">
+      <div class="badge-pill">
+        <span class="badge-dot"></span>
+        Untuk kamu yang sudah bertahun-tahun hidup dengan lambung yang hilang-timbul — sembuh sebentar, kambuh lagi
+      </div>
+    </div>
+
+    <!-- Headline -->
+    <h1 class="hero-headline reveal reveal-delay-1">
+      Capek Harus Selalu Mengatur Hidup<br>
+      <em>Karena Takut Lambung Kambuh?</em>
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="hero-subtext reveal reveal-delay-2">Bukan salah kamu.</p>
+    <p class="hero-subtext reveal reveal-delay-2">Kamu sudah jaga makan. Minum obat tepat waktu. Hindari pantangan. Tapi rasanya hidup tetap muter di situ-situ aja..</p>
+
+    <ul class="hero-list reveal reveal-delay-2">
+      <li>Makan harus hati-hati</li>
+      <li>Telat makan sedikit langsung khawatir</li>
+      <li>Diajak makan keluar jadi mikir dulu</li>
+      <li>Tidur pun tidak pernah benar-benar tenang</li>
+    </ul>
+
+    <p class="hero-emphasis reveal reveal-delay-3">Kadang yang bikin capek bukan cuma sakitnya.</p>
+    <p class="hero-subtext reveal reveal-delay-3">Tapi karena lambung terus ikut campur di hidup sehari-hari. Dan makin lama dijalani, rasa takut kambuh itu mulai mengatur segalanya.</p>
+
+    <p class="hero-gain reveal reveal-delay-3">Bayangkan satu hari — hanya satu hari — kamu bangun tanpa langsung cek kondisi perut. Makan tanpa waspada. Pergi tanpa takut kambuh di jalan.<br><br>Itu yang mulai dirasakan banyak orang setelah akhirnya menemukan apa yang selama ini belum pernah disentuh.</p>
+
+    <!-- CTA -->
+    <a href="#section-2" class="btn-primary reveal reveal-slow" onclick="fireCTAClick('hero')">
+      Pelajari Kenapa Lambung Terus Kambuh ↓
+    </a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     TRUST BADGE #1
+══════════════════════════════════════════ -->
+<div id="trust-1">
+  <div class="trust-inner reveal">
+    <div class="trust-badge-item">
+      <div class="trust-badge-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="#3DA066" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="trust-badge-text">BPOM<br>ASROT Terdaftar</div>
+    </div>
+    <div class="trust-divider"></div>
+    <div class="trust-badge-item">
+      <div class="trust-badge-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" stroke="#3DA066" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="trust-badge-text">Halal MUI<br>Tersertifikasi</div>
+    </div>
+  </div>
+  <p class="trust-note reveal">TR256049601 · ID34110018277270424</p>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 2 — CERMIN KEHIDUPAN
+══════════════════════════════════════════ -->
+<section id="section-2">
+  <div class="s2-header reveal">
+    <p class="label-text mb-12">Coba Jujur</p>
+    <h2 class="section-headline">
+      Sudah Berapa Banyak Hidupmu<br>
+      <em>Mulai Diatur Lambung?</em>
+    </h2>
+  </div>
+
+  <div class="story-cards">
+    <!-- Card 1: kembung/begah + situasi makan -->
+    <div class="story-card reveal">
+      <img class="story-card-img"
+           src="https://i.ibb.co.com/j9vWFDdP/s2-card1-food-hesitation.webp"
+           alt=""
+           loading="lazy"
+           decoding="async">
+      <div class="story-card-overlay">
+        <p class="story-card-text">Habis makan langsung kembung dan begah — padahal sudah pilih yang aman.</p>
+      </div>
+    </div>
+    <!-- Card 2: perih/mual + situasi kerja -->
+    <div class="story-card reveal">
+      <img class="story-card-img"
+           src="https://i.ibb.co.com/QFkpRfQV/s2-card2-meeting-distracted.webp"
+           alt=""
+           loading="lazy"
+           decoding="async">
+      <div class="story-card-overlay">
+        <p class="story-card-text">Perut perih atau mual pas lagi kerja — fokus ikut pecah.</p>
+      </div>
+    </div>
+    <!-- Card 3: dada panas/mual + situasi tidur -->
+    <div class="story-card reveal">
+      <img class="story-card-img"
+           src="https://i.ibb.co.com/NgPt0FDr/s2-card3-sleepless-night.webp"
+           alt=""
+           loading="lazy"
+           decoding="async">
+      <div class="story-card-overlay">
+        <p class="story-card-text">Bangun malam karena dada panas atau mual — tidur tidak pernah tenang.</p>
+      </div>
+    </div>
+    <!-- Card 4: ga jelas kapan + akumulasi waktu -->
+    <div class="story-card reveal">
+      <img class="story-card-img"
+           src="https://i.ibb.co.com/DfZ0sXgJ/s2-card4-calendar-uncertain.webp"
+           alt=""
+           loading="lazy"
+           decoding="async">
+      <div class="story-card-overlay">
+        <p class="story-card-text">Sudah berbulan-bulan begini — tidak jelas kapan selesainya.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Closing face -->
+  <img class="s2-closing-img reveal"
+       src="https://i.ibb.co.com/V0n4JQG3/s2-closing-tired-face.webp"
+       alt=""
+       loading="lazy"
+       decoding="async">
+
+  <!-- Transition -->
+  <div class="s2-transition reveal">
+    <p class="s2-transition-text">
+      Pelan-pelan banyak aktivitas mulai disesuaikan dengan kondisi lambung.
+    </p>
+    <p class="s2-transition-sub mt-8">
+      Dan makin lama dijalani… yang capek bukan cuma badan. Tapi juga pikirannya.
+    </p>
+  </div>
+
+  <div style="padding: 28px var(--px) 0; max-width: 430px; margin: 0 auto;">
+    <a href="#section-3" class="btn-ghost reveal">
+      Lihat Kenapa Ini Tidak Pernah Benar-Benar Selesai ↓
+    </a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 3 — VONIS SOLUSI LAMA
+══════════════════════════════════════════ -->
+<section id="section-3">
+  <div class="s3-header reveal">
+    <p class="label-text mb-8">Kenapa Belum Berhasil</p>
+    <h2 class="section-headline">Bukan Kamu yang Kurang Disiplin.</h2>
+    <p class="s3-header-sub">Masalahnya Tidak Pernah Diselesaikan Sampai Akar.</p>
+    <p class="body-text mt-16">
+      Banyak yang sebenarnya sudah berusaha menjaga lambungnya.
+      Tapi sering kali yang dijaga hanya pemicunya… bukan bagian lambung yang terus terkena iritasi berulang.
+    </p>
+  </div>
+
+  <div class="verdict-list">
+
+    <!-- Vonis 1 -->
+    <div class="verdict-item reveal">
+      <div class="verdict-img">
+        <img src="https://i.ibb.co.com/xt2BMwRg/s3-stomach-lining-illustration.webp"
+             alt="" loading="lazy" decoding="async">
+      </div>
+      <p class="verdict-title">Akar Masalah</p>
+      <h3 class="verdict-main">Masalahnya Bukan di Makananmu.<br>Tapi di Lapisan Dalam Lambungmu.</h3>
+      <p class="body-text mt-12">Kalau lapisan itu lemah — apapun yang masuk bisa jadi pemicu.</p>
+    </div>
+
+    <!-- Vonis 2 -->
+    <div class="verdict-item reveal">
+      <p class="verdict-title">Obat-obatan</p>
+      <h3 class="verdict-main">Obat Meredakan.<br>Tidak Memulihkan Lapisannya.</h3>
+      <p class="body-text mt-12">"Reda sebentar… lalu balik lagi." — karena akarnya tidak pernah disentuh.</p>
+    </div>
+
+    <!-- Vonis 3 + 4 -->
+    <div class="verdict-item reveal">
+      <div class="verdict-img">
+        <img src="https://i.ibb.co.com/WpNM6M7p/s3-food-stress-split.webp"
+             alt="" loading="lazy" decoding="async">
+      </div>
+      <p class="verdict-title">Pola Makan & Stres</p>
+      <h3 class="verdict-main">Keduanya Hanya Mengurangi Pemicu.<br>Tidak Memulihkan Perlindungannya.</h3>
+      <p class="body-text mt-12">Makin dibatasi hidupnya, makin stres — dan stres sendiri merusak lapisan lambung. Lingkaran yang tidak ada habisnya.</p>
+    </div>
+
+    <!-- Vonis 5 -->
+    <div class="verdict-item reveal">
+      <div class="verdict-img verdict-img-square">
+        <img src="https://i.ibb.co.com/21nYmY3v/s3-herbal-products-generic.webp"
+             alt="" loading="lazy" decoding="async">
+      </div>
+      <p class="verdict-title">Herbal Lain yang Sudah Dicoba</p>
+      <h3 class="verdict-main">Mengurangi Gejala.<br>Tidak Memulihkan Lapisannya.</h3>
+      <p class="body-text mt-12">Bukan salah produknya. Tapi tidak diformulasikan untuk memulihkan mukosa yang terkikis.</p>
+    </div>
+
+  </div>
+
+  <div class="s3-transition">
+    <div class="pain-callout reveal">
+      <p><strong style="color:var(--text-bright)">Selama lapisannya belum pulih, kamu hanya belajar bertahan.</strong><br>Bukan benar-benar keluar dari masalahnya.</p>
+    </div>
+    <p class="section-headline reveal" style="font-size:18px; margin-bottom:20px;">Lalu apa yang sebenarnya harus dipulihkan?</p>
+    <a href="#section-4" class="btn-ghost reveal" onclick="fireCTAClick('mid_s3')">Lihat Bagaimana Gadama Bekerja ↓</a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     COST FRAMING #1
+══════════════════════════════════════════ -->
+<div id="cost-framing-1">
+  <div class="cost-1-inner reveal">
+    <p class="cost-intro">Sebelum lanjut —</p>
+    <h3 class="cost-question">Yang sudah kamu bayar bukan cuma uang.</h3>
+    <div class="cost-items">
+      <p class="cost-item">Energi yang habis setiap hari karena harus waspada terus</p>
+      <p class="cost-item">Waktu yang terbuang memikirkan kondisi perut</p>
+      <p class="cost-item">Momen yang terlewat karena tidak berani hadir</p>
+      <p class="cost-item">Fokus yang terus terpecah di saat yang paling penting</p>
+    </div>
+    <div class="cost-punchline">
+      Semua itu terbayar setiap hari.<br>
+      <em style="color:var(--gold)">Dan tidak ada yang mengembalikannya kecuali kondisi lambungmu berubah.</em>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 4 — MEKANISME + PRODUK
+══════════════════════════════════════════ -->
+<section id="section-4">
+  <div class="s4-inner">
+
+    <div class="mechanism-header reveal">
+      <!-- Relief — jembatan dari pain ke solusi -->
+      <div class="gain-callout" style="margin-bottom:24px; text-align:left;">
+        <p>Kondisi ini bukan berarti lapisannya rusak permanen.<br>Ada yang bisa dilakukan — dan ini yang selama ini belum pernah disentuh.</p>
+      </div>
+      <p class="label-text mb-8">Satu Hal yang Harus Terjadi Dulu</p>
+      <h2 class="section-headline">
+        Sebelum Lambung Bisa Tenang,<br>
+        <em>Lapisan Pelindungnya Harus Pulih Dulu.</em>
+      </h2>
+    </div>
+
+    <!-- Beat 1: Mekanisme -->
+    <div class="reveal mt-24">
+      <p class="body-text"><strong style="color:var(--text-bright)">Lambung punya lapisan pelindung alami. Namanya mukosa.</strong></p>
+      <p class="body-text mt-12">Saat lapisan ini terus terganggu, lambung bisa menjadi lebih sensitif.</p>
+      <p class="body-text mt-12">Akibatnya rasa perih, mual, kembung, atau tidak nyaman jadi lebih mudah muncul.</p>
+    </div>
+
+    <div class="mechanism-points reveal mt-16">
+      <p>Selama mukosa belum pulih: makanan tetap terasa mengancam</p>
+      <p>Stres tetap mudah memicu kambuh</p>
+      <p>Lambung tetap sensitif terhadap apapun</p>
+      <p><strong style="color:var(--text-bright)">Hidup tetap penuh kewaspadaan</strong></p>
+    </div>
+
+    <div class="mechanism-img reveal">
+      <img src="https://i.ibb.co.com/PsK5Bwhd/s4-mechanism-before-after.webp"
+           alt="Ilustrasi lapisan mukosa lambung sebelum dan sesudah"
+           loading="lazy" decoding="async">
+      <p class="mechanism-caption">Kiri: lapisan tipis terkikis · Kanan: lapisan tebal terlindungi</p>
+    </div>
+
+    <!-- Beat 2: Bahan -->
+    <div class="reveal mt-24">
+      <p class="label-text mb-16">Dua hal yang membantu memulihkan mukosa:</p>
+    </div>
+
+    <div class="ingredient-grid">
+      <div class="ingredient-card reveal">
+        <img src="https://i.ibb.co.com/PZJ7Xpxx/s4-ingredient-honey-texture.webp"
+             alt="Madu viskositas tinggi"
+             loading="lazy" decoding="async">
+        <div class="ingredient-card-body">
+          <p class="ingredient-name">Madu Viskositas Tinggi</p>
+          <p class="ingredient-desc">Melapisi dinding lambung secara langsung. Lapisan lebih tebal, lebih tahan lama.</p>
+          <p class="ingredient-source">Journal of Food Science, 2018</p>
+        </div>
+      </div>
+      <div class="ingredient-card reveal reveal-delay-1">
+        <img src="https://i.ibb.co.com/CK98Vc6q/s4-ingredient-turmeric-fresh.webp"
+             alt="Sari kunyit aktif"
+             loading="lazy" decoding="async">
+        <div class="ingredient-card-body">
+          <p class="ingredient-name">Sari Kunyit Aktif</p>
+          <p class="ingredient-desc">Mengurangi peradangan di lapisan lambung. Memulihkan sel yang rusak.</p>
+          <p class="ingredient-source">Gut Journal, 2019</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Beat 3: Produk -->
+    <div class="product-reveal reveal">
+      <img src="https://i.ibb.co.com/4Z0WC2SF/s4-product-gadama-hero.webp"
+           alt="Gadama Madu Curcuma"
+           loading="lazy" decoding="async">
+      <h3 class="product-name">Gadama.</h3>
+      <p class="product-tagline">Diformulasikan untuk membantu memulihkan dan melapisi lambung dari dalam —<br><strong style="color:var(--text-bright)">bukan sekadar membantu meredakan saat kambuh.</strong></p>
+      <p class="body-text" style="margin-bottom:16px;">Karena yang dibutuhkan lambungmu bukan cuma rasa lega sesaat.<br>Tapi perlindungan yang membuatnya perlahan lebih stabil setiap hari.</p>
+
+        <div style="height:12px;"></div>
+
+        <div class="fit-card reveal">
+          <div class="fit-label">Gadama cocok untuk kamu yang:</div>
+
+          <div class="fit-grid">
+            <div class="fit-item">Lambung sering sensitif walau sudah jaga makan</div>
+            <div class="fit-item">Mudah kembung, begah, perih, atau mual</div>
+            <div class="fit-item">Sering khawatir telat makan sedikit</div>
+            <div class="fit-item">Ingin menjaga lambung lebih konsisten</div>
+          </div>
+        </div>
+
+      <div class="product-natural-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2z"/><path d="M12 8v4l3 3"/></svg>
+        Bahan alami &nbsp;·&nbsp; Tanpa kimia sintetis &nbsp;·&nbsp; Aman jangka panjang
+      </div>
+    </div>
+
+    <!-- Social proof -->
+    <div class="social-proof-bar reveal">
+      <p class="social-number">157+ orang</p>
+      <p class="social-label">mulai merasakan perubahan.<br>Bukan karena menemukan pereda yang lebih kuat.<br><em>Tapi karena akhirnya berhenti hanya meredam.</em></p>
+    </div>
+
+    <a href="#section-5" class="btn-ghost reveal" onclick="fireCTAClick('mid_s4')">Lihat Apa yang Mereka Rasakan ↓</a>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     BONUS SPILL + EARLY CTA #2
+══════════════════════════════════════════ -->
+<div id="bonus-spill">
+  <div class="bonus-inner reveal">
+    <h3 class="bonus-headline">Yang kamu dapatkan bukan cuma produk.</h3>
+    <p class="bonus-sub">Tapi panduan supaya hidupmu tidak terus dikendalikan lambung.</p>
+    <div class="bonus-items">
+      <div class="bonus-item">
+        <span class="bonus-check">✓</span>
+        <span>Panduan pola makan yang lebih aman untuk lambung sensitif</span>
+      </div>
+      <div class="bonus-item">
+        <span class="bonus-check">✓</span>
+        <span>Program pemulihan harian step-by-step</span>
+      </div>
+      <div class="bonus-item">
+        <span class="bonus-check">✓</span>
+        <span class="bonus-mystery">+ Satu bonus tambahan yang hanya tersedia di halaman ini →</span>
+      </div>
+    </div>
+    <a href="#section-pricing" class="btn-primary" onclick="fireCTAClick('bonus_spill')">Lihat Pilihan Paket ↓</a>
+    <p class="body-text-sm text-center mt-12">Bonus hanya tersedia di halaman ini</p>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 5 — TESTIMONI
+══════════════════════════════════════════ -->
+<section id="section-5">
+
+  <div class="s5-header reveal">
+    <p class="label-text mb-12">Pengalaman Nyata</p>
+    <h2 class="section-headline"><em>"Mereka Juga Dulu Sudah Capek."</em></h2>
+  </div>
+
+  <div class="testimonial-list">
+
+    <!-- Testimoni 1 -->
+    <div class="testimonial-card reveal">
+      <div class="testimonial-header">
+        <img class="testimonial-avatar"
+             src="https://i.ibb.co.com/5hDpMBtf/s5-testimony1-rina-bandung.webp"
+             alt="Rina, Bandung"
+             loading="lazy" decoding="async">
+        <div class="testimonial-meta">
+          <p class="testimonial-name">Rina, 34</p>
+          <p class="testimonial-loc">Bandung</p>
+        </div>
+      </div>
+      <p class="testimonial-before">
+        "Saya udah bukan cari obat paling ampuh. Saya cuma pengen hidup normal lagi. Karena capek banget harus takut tiap malam. Takut bangun lagi. Takut besok badan drop lagi."
+      </p>
+      <p class="testimonial-after">
+        Minggu ketiga pakai Gadama — gue sadar saya ga bangun tengah malam. Bukan karena sembuh total. Tapi itu pertama kalinya dalam 2 tahun gue tidur tanpa khawatir.
+      </p>
+      <p class="testimonial-highlight">"Pertama kalinya dalam 2 tahun gue tidur tanpa khawatir."</p>
+    </div>
+
+    <!-- Testimoni 2 -->
+    <div class="testimonial-card reveal">
+      <div class="testimonial-header">
+        <img class="testimonial-avatar"
+             src="https://i.ibb.co.com/N22HRzT5/s5-testimony2-doni-jakarta.webp"
+             alt="Doni, Jakarta"
+             loading="lazy" decoding="async">
+        <div class="testimonial-meta">
+          <p class="testimonial-name">Doni, 41</p>
+          <p class="testimonial-loc">Jakarta</p>
+        </div>
+      </div>
+      <p class="testimonial-before">
+        "Yang paling bikin malu itu bukan sakitnya. Tapi harus terus nolak ajakan makan karena takut kambuh. Lama-lama hidup rasanya muter di situ aja."
+      </p>
+      <p class="testimonial-after">
+        Kemarin saya makan soto di warteg — hal yang 3 tahun ga berani saya lakuin. Ga ada drama. Ga ada kembung. Saya hampir nangis di sana.
+      </p>
+      <p class="testimonial-highlight">"Ga ada drama. Ga ada kembung. Saya hampir nangis di sana."</p>
+    </div>
+
+    <!-- Testimoni 3 -->
+    <div class="testimonial-card reveal">
+      <div class="testimonial-header">
+        <img class="testimonial-avatar"
+             src="https://i.ibb.co.com/RGPc82Ss/s5-testimony3-maya-surabaya.webp"
+             alt="Maya, Surabaya"
+             loading="lazy" decoding="async">
+        <div class="testimonial-meta">
+          <p class="testimonial-name">Maya, 28</p>
+          <p class="testimonial-loc">Surabaya</p>
+        </div>
+      </div>
+      <p class="testimonial-before">
+        "Dokter bilang maag saya dipicu stres. Tapi gimana caranya ga stres kalau kerjaannya emang begitu. Obat diminum, stres tetap ada, lambung tetap kambuh."
+      </p>
+      <p class="testimonial-after">
+        Yang berubah bukan cuma lambung. Tapi kepala saya lebih tenang. Karena akhirnya saya nggak habiskan energi buat mikirin perut terus.
+      </p>
+      <p class="testimonial-highlight">"Yang berubah bukan cuma lambung — kepala saya lebih tenang."</p>
+    </div>
+  </div>
+
+  <p class="testimonial-disclaimer body-text-sm" style="padding: 0 var(--px); max-width:430px; margin: 0 auto 8px;">*Hasil dapat berbeda tergantung kondisi individu.</p>
+
+  <!-- Divider image -->
+  <div class="s5-divider-img">
+    <img src="https://i.ibb.co.com/QvJV6DfW/s5-product-hand-hold.webp"
+         alt=""
+         loading="lazy" decoding="async">
+  </div>
+
+  <!-- Social number -->
+  <div class="s5-social reveal">
+    <p class="s5-number">157+</p>
+    <p class="s5-number-sub">orang-orang yang sebelumnya juga berpikir:<br><em>"Apa memang harus hidup begini terus?"</em></p>
+  </div>
+
+  <div class="s5-cta-strip reveal">
+    <p class="sampai-kapan">Sampai kapan kamu mau tunggu?.</p>
+    <a href="#section-pricing" class="btn-primary" onclick="fireCTAClick('mid_s5')">Pilih Paket Gadama ↓</a>
+  </div>
+
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     TRUST BADGE #2 + SCARCITY + COST FRAMING #2
+══════════════════════════════════════════ -->
+<div id="pre-pricing">
+  <div class="pre-pricing-inner">
+
+    <!-- Trust #2 — logo asli -->
+    <div class="trust-logo-grid reveal">
+      <div class="trust-logo-card">
+        <img src="https://i.ibb.co.com/7c2zq48/bpom.webp"
+             alt="Logo BPOM" loading="lazy" decoding="async">
+        <p class="trust-logo-name">BPOM ASROT</p>
+        <p class="trust-logo-num">TR256049601</p>
+      </div>
+      <div class="trust-logo-card">
+        <img src="https://i.ibb.co.com/GvbVSt8m/halal.webp"
+             alt="Logo Halal MUI" loading="lazy" decoding="async">
+        <p class="trust-logo-name">Halal MUI</p>
+        <p class="trust-logo-num">ID34110018277270424</p>
+      </div>
+    </div>
+
+    <!-- Scarcity -->
+    <h3 class="scarcity-title reveal">Gadama Tidak Dijual di Mana-mana.</h3>
+    <p class="scarcity-body reveal">Tidak di Shopee. Tidak di Tokopedia. Tidak di apotek manapun.</p>
+    <p class="scarcity-bold reveal">Bukan karena kami tidak bisa. Tapi karena kami tidak mau.<br><br>Setiap botol yang sampai ke tangan kamu harus melewati standar yang kami jaga sendiri. Jadi kami pilih satu tempat. <em style="color:var(--gold)">Halaman ini.</em></p>
+
+    <div class="scarcity-fear reveal">
+      <p><strong>Gadama hanya tersedia di halaman ini.</strong></p>
+      <p>Tidak ada reseller resmi. Tidak ada versi lain di marketplace. Tidak ada di apotek manapun.</p>
+      <p><br>Kalau kamu tutup halaman ini sekarang — <strong>tidak ada jalan lain untuk menemukannya lagi.</strong></p>
+    </div>
+
+    <!-- Cost Framing #2 -->
+    <p class="cost-2-title reveal">Sebelum lihat harganya, coba hitung:</p>
+
+    <div class="cost-comparison reveal">
+      <div class="cost-comp-cell header">Pengeluaran rutin</div>
+      <div class="cost-comp-cell header">Hasilnya</div>
+      <div class="cost-comp-cell">
+        <p class="cost-comp-label">Obat warung tiap kambuh</p>
+        <p class="cost-comp-value">±Rp15rb × 3x/minggu</p>
+      </div>
+      <div class="cost-comp-cell bad">
+        <p class="cost-comp-value">Rp180rb/bulan</p>
+        <p class="cost-comp-label">Hanya meredam</p>
+      </div>
+      <div class="cost-comp-cell">
+        <p class="cost-comp-label">Konsultasi dokter</p>
+        <p class="cost-comp-value">Rp50–150rb/kunjungan</p>
+      </div>
+      <div class="cost-comp-cell bad">
+        <p class="cost-comp-value">Belum obatnya</p>
+        <p class="cost-comp-label">Hanya meredam</p>
+      </div>
+    </div>
+
+    <div class="cost-life-list reveal">
+      <p><strong style="color:var(--text-primary)">Belum hitung:</strong></p>
+      <p>Acara yang kamu hindari</p>
+      <p>Tidur yang tidak pernah benar-benar tenang</p>
+      <p>Fokus kerja yang terus terpecah</p>
+      <p>Energi mental yang habis hanya untuk waspada</p>
+      <p>Hari-hari yang harus dijalani sambil terus bertahan</p>
+    </div>
+
+    <div class="cost-2-punchline reveal">
+      <strong>Gadama bukan pengeluaran baru.</strong><br>
+      Gadama adalah pengeluaran terakhir yang benar-benar menyentuh akarnya.
+    </div>
+
+    <div class="gain-callout reveal" style="margin-top:20px;">
+      <p>
+        Banyak orang baru sadar…
+        yang mereka cari ternyata bukan sekadar “obat lambung”.
+        <br><br>
+        Tapi rasa tenang karena bisa kembali makan, bekerja, dan beraktivitas tanpa terus dihantui takut kambuh.
+      </p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Dawn bridge: transisi gelap → cream -->
+<div class="dawn-bridge" aria-hidden="true"></div>
+
+<!-- ══════════════════════════════════════════
+     SECTION 6 — PRICING
+══════════════════════════════════════════ -->
+<section id="section-pricing">
+  <div class="pricing-inner">
+
+    <!-- Micro FAQ — turunkan resistance sebelum angka muncul -->
+    <div class="reveal" style="margin-bottom:28px;">
+      <p class="label-text mb-16">Sebelum Lihat Harganya</p>
+      <div style="display:flex; flex-direction:column; gap:2px;">
+        <div style="padding:14px 16px; background:rgba(255,255,255,0.04); border-radius:8px 8px 0 0; border:1px solid rgba(255,255,255,0.06);">
+          <p style="font-size:13px; font-weight:700; color:var(--gold); margin-bottom:4px;">Aman untuk lambung sensitif?</p>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.5;">Ya — diformulasikan dari bahan alami untuk membantu menjaga kenyamanan lambung.</p>
+        </div>
+        <div style="padding:14px 16px; background:rgba(255,255,255,0.04); border-top:none; border:1px solid rgba(255,255,255,0.06);">
+          <p style="font-size:13px; font-weight:700; color:var(--gold); margin-bottom:4px;">Apakah ini obat?</p>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.5;">Bukan. Gadama adalah herbal pendamping untuk membantu menjaga lambung — bukan pengganti obat dokter.</p>
+        </div>
+        <div style="padding:14px 16px; background:rgba(255,255,255,0.04); border-top:none; border-radius:0 0 8px 8px; border:1px solid rgba(255,255,255,0.06);">
+          <p style="font-size:13px; font-weight:700; color:var(--gold); margin-bottom:4px;">Harus minum jangka panjang?</p>
+          <p style="font-size:13px; color:var(--text-muted); line-height:1.5;">Disesuaikan kondisi masing-masing. Banyak yang merasakan perbedaan dalam 30 hari pertama.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="pricing-badge-row reveal">
+      <div class="pricing-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Bukan tentang beli produk.
+      </div>
+    </div>
+
+    <div class="pricing-framing reveal">
+      <p class="pricing-framing-main">Tapi tentang kapan kamu berhenti hidup<br>dalam mode bertahan terus.</p>
+      <p class="pricing-framing-sub">Lapisan lambung butuh minimal 90 hari untuk membantu pemulihannya. Pilih sesuai komitmenmu.</p>
+    </div>
+
+    <div class="pricing-cards">
+
+      <!-- Tier 1 -->
+      <div class="pricing-card reveal">
+        <div class="pricing-card-img-wrap">
+          <img class="pricing-card-img"
+               src="https://i.ibb.co.com/BK6zGHXv/pricing-tier1-1bottle.webp"
+               alt="Gadama 1 botol"
+               loading="lazy" decoding="async">
+        </div>
+        <div class="pricing-card-body">
+          <p class="pricing-tier-name">Mulai Coba</p>
+          <p class="pricing-duration">1 Botol / 30 Hari</p>
+          <div class="pricing-price-row">
+            <span class="pricing-normal">Rp197.000</span>
+            <span class="pricing-promo">Rp155.000</span>
+          </div>
+          <p class="pricing-per-day">Setara <strong>Rp5.166/hari</strong> · Ongkir ditanggung pembeli</p>
+          <div class="pricing-bonuses">
+            <div class="pricing-bonus-item">
+              <span class="check">✓</span>
+              <span>eBook Pola Makan Lambung Sehat (nilai Rp59.000)</span>
+            </div>
+            <div class="pricing-bonus-item">
+              <span class="cross">✕</span>
+              <span style="color:rgba(58,53,48,0.4)">eBook Program 90 Hari</span>
+            </div>
+            <div class="pricing-bonus-item">
+              <span class="cross">✕</span>
+              <span style="color:rgba(58,53,48,0.4)">Gratis Ongkir</span>
+            </div>
+            <div class="pricing-bonus-item">
+              <span class="cross">✕</span>
+              <span style="color:rgba(58,53,48,0.4)">Konsultasi WhatsApp</span>
+            </div>
+          </div>
+          <a href="https://livinh.storelink.id/gadama-co-sp-1btl" class="btn-ghost" onclick="fireContact('pricing_tier1')">Pilih Paket Ini</a>
+        </div>
+      </div>
+
+      <!-- Tier 2 (decoy) -->
+      <div class="pricing-card reveal">
+        <div class="pricing-card-img-wrap">
+          <img class="pricing-card-img"
+               src="https://i.ibb.co.com/hR6yFPC6/pricing-tier2-2bottle.webp"
+               alt="Gadama 2 botol"
+               loading="lazy" decoding="async">
+        </div>
+        <div class="pricing-card-body">
+          <p class="pricing-tier-name">Pemulihan Awal</p>
+          <p class="pricing-duration">2 Botol / 60 Hari</p>
+          <div class="pricing-price-row">
+            <span class="pricing-normal">Rp370.000</span>
+            <span class="pricing-promo">Rp295.000</span>
+          </div>
+          <p class="pricing-per-day">Setara <strong>Rp4.916/hari</strong> · Ongkir ditanggung pembeli</p>
+          <div class="pricing-bonuses">
+            <div class="pricing-bonus-item">
+              <span class="check">✓</span>
+              <span>eBook Pola Makan Lambung Sehat</span>
+            </div>
+            <div class="pricing-bonus-item">
+              <span class="check">✓</span>
+              <span>eBook Program 90 Hari Pemulihan</span>
+            </div>
+            <div class="pricing-bonus-item">
+              <span class="cross">✕</span>
+              <span style="color:rgba(58,53,48,0.4)">Gratis Ongkir</span>
+            </div>
+            <div class="pricing-bonus-item">
+              <span class="cross">✕</span>
+              <span style="color:rgba(58,53,48,0.4)">Konsultasi WhatsApp</span>
+            </div>
+          </div>
+          <a href="https://livinh.storelink.id/gadama-co-sp-2btl" class="btn-ghost" onclick="fireContact('pricing_tier2')">Pilih Paket Ini</a>
+        </div>
+      </div>
+
+      <!-- Tier 3 (target) -->
+      <div class="pricing-card featured reveal">
+        <div class="pricing-card-badge">⭐ Paling Dipilih — Pemulihan Optimal</div>
+        <div class="pricing-card-img-wrap">
+          <img class="pricing-card-img"
+               src="https://i.ibb.co.com/1tKY47qR/pricing-tier3-3bottle.webp"
+               alt="Gadama 3 botol"
+               loading="lazy" decoding="async">
+        </div>
+        <div class="pricing-card-body">
+          <p class="pricing-tier-name">Pemulihan Optimal</p>
+          <p class="pricing-duration">3 Botol / 90 Hari</p>
+          <div class="pricing-price-row">
+            <span class="pricing-normal">Rp555.000</span>
+            <span class="pricing-promo">Rp420.000</span>
+          </div>
+          <p class="pricing-per-day">Setara <strong>Rp4.666/hari</strong> · Hemat Rp75.000 vs beli satuan</p>
+          <div class="pricing-bonuses">
+            <div class="pricing-bonus-item">
+              <span class="check">✓</span>
+              <span>eBook Pola Makan Lambung Sehat (Rp59.000)</span>
+            </div>
+            <div class="pricing-bonus-item">
+              <span class="check">✓</span>
+              <span>eBook Program 90 Hari Pemulihan (Rp79.000)</span>
+            </div>
+            <div class="pricing-bonus-item">
+              <span class="check">✓</span>
+              <span>Gratis Ongkir s/d Rp20.000</span>
+            </div>
+            <div class="pricing-bonus-item">
+              <span class="check">✓</span>
+              <span><strong>Konsultasi WhatsApp 1× dengan tim Gadama</strong></span>
+            </div>
+          </div>
+          <p class="pricing-savings">Total nilai bonus: Rp158.000+</p>
+          <a href="https://livinh.storelink.id/gadama-co-sp-3btl" class="btn-wa" style="margin-top:14px;" onclick="fireContact('pricing_tier3')">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Ya, Saya Mau Berhenti Hidup Dalam Rasa Takut Kambuh
+          </a>
+          <p class="body-text-sm text-center mt-8">Lebih murah dari 1× konsultasi dokter</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Guarantee -->
+    <div class="guarantee-box reveal">
+      <div class="guarantee-icon">🤝</div>
+      <div class="guarantee-title">
+        Tidak harus jalan sendiri selama menjaga lambung
+      </div>
+      <p class="guarantee-body">
+        Setiap kondisi lambung bisa berbeda.
+        <br><br>
+        Karena itu selama penggunaan Gadama, tim kami siap membantu mendampingi jika ada yang ingin ditanyakan terkait pola konsumsi maupun kebiasaan harian yang mungkin mempengaruhi kondisi lambung.
+      </p>
+      <p class="guarantee-sub">
+        Pendampingan melalui WhatsApp pada jam operasional.
+      </p>
+    </div>
+
+    <!-- COD note -->
+    <div class="gold-callout reveal">
+      <p class="body-text" style="color:var(--text-dark-mid)">
+        <strong style="color:var(--gold)">Tersedia COD</strong> untuk area tertentu — bayar saat produk sudah di tangan, tidak perlu transfer duluan.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FAQ
+══════════════════════════════════════════ -->
+<section id="faq">
+  <div class="faq-inner">
+    <div class="faq-header reveal">
+      <h2 class="faq-headline">Masih Ada Pertanyaan?</h2>
+      <p class="faq-sub">Wajar kalau masih ragu. Ini yang paling sering ditanyakan.</p>
+    </div>
+
+    <div class="faq-list reveal">
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-summary-inner">
+            <span class="faq-q">Sudah ada izin resminya?</span>
+            <span class="faq-teaser">Nomor registrasinya bisa kamu cek sendiri.</span>
+          </div>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>Ya. Gadama terdaftar di BPOM dengan nomor <strong>TR256049601</strong> dan tersertifikasi Halal MUI dengan nomor <strong>ID34110018277270424</strong>.</p>
+          <p>Keduanya terdaftar di ASROT — Produk Obat Tradisional dan Suplemen Kesehatan. Bisa dicek langsung di situs resmi BPOM (cekbpom.pom.go.id) dan LPPOM MUI.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-summary-inner">
+            <span class="faq-q">Berapa lama sampai terasa bedanya?</span>
+            <span class="faq-teaser">Ada kisaran waktu yang paling sering dirasakan.</span>
+          </div>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>Berbeda tiap orang — kondisi lapisan lambung setiap orang tidak sama.</p>
+          <p>Dari yang sudah mencoba, banyak yang mulai merasakan perbedaan di hari ke-7 sampai ke-14. Bukan langsung dramatis — tapi mulai terasa ada yang berubah.</p>
+          <p>Untuk membantu pemulihan lapisan yang optimal, dianjurkan konsumsi minimal 90 hari secara konsisten.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-summary-inner">
+            <span class="faq-q">Saya masih minum obat dokter — aman tidak dikombinasikan?</span>
+            <span class="faq-teaser">Ada satu kondisi yang perlu kamu perhatikan dulu.</span>
+          </div>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p><strong>Gadama bukan pengganti obat dokter.</strong> Gadama adalah suplemen pendamping yang dapat dikonsumsi beriringan dengan pengobatan yang sedang berjalan.</p>
+          <p>Obat dari dokter bekerja menetralisir atau menekan asam. Gadama membantu melapisi dan memulihkan dinding lambung dari dalam. Dua mekanisme berbeda — bisa berjalan beriringan.</p>
+          <p>Jika kondisimu termasuk berat — nyeri intens, mual berulang, atau sudah didiagnosis kondisi tertentu oleh dokter — <strong>sangat disarankan konsultasi ke dokter spesialis</strong> sebelum menambahkan suplemen apapun, termasuk Gadama.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-summary-inner">
+            <span class="faq-q">Bedanya apa dengan herbal yang sudah pernah saya coba?</span>
+            <span class="faq-teaser">Perbedaannya bukan di nama — tapi di cara kerjanya di lambung.</span>
+          </div>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>Ada dua perbedaan utama.</p>
+          <p><strong>Pertama, viskositas madu.</strong> Madu biasa cenderung encer saat masuk lambung — langsung lewat tanpa sempat melapisi dinding dengan efektif. Gadama menggunakan madu viskositas tinggi yang lebih kental, membentuk lapisan pelindung lebih baik.</p>
+          <p><strong>Kedua, sari kunyit aktif.</strong> Kunyit bubuk atau instan banyak kehilangan kurkumin aktif saat diolah. Gadama menggunakan sari kunyit dari bahan segar untuk mempertahankan kandungan aktifnya.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-summary-inner">
+            <span class="faq-q">Kalau tidak cocok, bagaimana?</span>
+            <span class="faq-teaser">Ada yang bisa kamu lakukan dalam 30 hari pertama.</span>
+          </div>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>Mulai dari 1 botol dulu. Tidak perlu langsung ambil paket besar.</p>
+          <p>Kalau dalam 30 hari tidak ada perubahan yang kamu rasakan, hubungi tim kami langsung via WhatsApp. Kami akan bantu review cara konsumsi dan kebiasaan yang mungkin perlu disesuaikan.</p>
+          <p><strong>Ada garansi 30 hari</strong> — tanpa prosedur rumit, tanpa pertanyaan panjang.</p>
+        </div>
+      </details>
+
+      <details class="faq-item">
+        <summary>
+          <div class="faq-summary-inner">
+            <span class="faq-q">Apakah bisa COD?</span>
+            <span class="faq-teaser">Tergantung wilayahmu — cek di sini.</span>
+          </div>
+          <span class="faq-icon">+</span>
+        </summary>
+        <div class="faq-answer">
+          <p>Ya, tersedia opsi COD untuk area tertentu. Kamu bisa bayar saat produk sudah sampai — tidak perlu transfer duluan.</p>
+          <p>Untuk wilayah yang mendukung COD, info ini akan dikonfirmasi saat kamu hubungi tim kami via WhatsApp.</p>
+        </div>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- Dusk bridge: transisi cream → gelap -->
+<div class="dusk-bridge" aria-hidden="true"></div>
+
+<!-- ══════════════════════════════════════════
+     URGENCY + PAIN/GAIN + CTA FINAL
+══════════════════════════════════════════ -->
+<section id="final-cta">
+  <div class="final-inner">
+
+    <div class="reveal">
+      <p class="urgency-text">Kalau terus ditunda, yang biasanya terjadi bukan lambung tiba-tiba membaik sendiri.</p>
+      <p class="urgency-text">Tapi hidup makin terbiasa berjalan dalam rasa takut kambuh.</p>
+      <p class="urgency-text" style="margin-top:8px;">Dan makin lama, orang mulai menganggap itu normal.</p>
+      <p class="urgency-bold">Padahal seharusnya tidak harus hidup seperti itu terus.</p>
+    </div>
+
+    <!-- Pain wrapper -->
+    <div class="pain-wrapper reveal">
+      <p class="pain-wrapper-title">Kalau kamu tutup halaman ini hari ini —</p>
+      <div class="pain-wrapper-list">
+        <p>besok mungkin masih harus pilih-pilih makanan lagi.</p>
+        <p>Masih cek kondisi perut sebelum pergi.</p>
+        <p>Masih tidur dengan rasa waspada.</p>
+        <p>Masih simpan ketakutan kecil setiap kali lambung mulai terasa aneh.</p>
+        <p><strong style="color:var(--text-bright)">Dan beberapa bulan dari sekarang, mungkin hidupmu masih berjalan dengan pola yang sama.</strong></p>
+      </div>
+    </div>
+
+    <!-- Gain wrapper -->
+    <div class="gain-wrapper reveal">
+      <p class="gain-wrapper-title">Atau —</p>
+      <div class="gain-item">
+        <span class="gain-day">30 Hari</span>
+        <span class="gain-text">kamu mulai makan lebih tenang.</span>
+      </div>
+      <div class="gain-item">
+        <span class="gain-day">60 Hari</span>
+        <span class="gain-text">kamu mulai tidur tanpa rasa waspada berlebihan.</span>
+      </div>
+      <div class="gain-item">
+        <span class="gain-day">90 Hari</span>
+        <span class="gain-text">hidupmu tidak lagi dipenuhi ketakutan yang sama setiap hari.</span>
+      </div>
+    </div>
+
+    <!-- CTA Final -->
+    <p class="body-text text-center mb-20 reveal">
+      Kalau selama ini lambung terus mengganggu aktivitas dan pikiranmu…
+      mungkin sudah waktunya mulai menjaga dari sisi yang berbeda.
+    </p>
+
+    <div class="cta-final-wrap reveal">
+      <a href="https://wa.me/628XXXXXXXXXX?text=Halo,%20saya%20mau%20pesan%20Gadama%20paket%20pemulihan%20optimal%203%20botol" class="btn-wa" onclick="fireContact('final_cta')">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Ya, Saya Tidak Mau Terus Hidup<br>Takut Kambuh Terus
+      </a>
+    </div>
+
+    <p class="closing-line reveal">
+      Tiga puluh hari dari sekarang —<br>
+      kamu bisa masih terus bertahan seperti sekarang.<br>
+      <strong>Atau mulai pelan-pelan mengambil kembali hidupmu dari rasa takut kambuh.</strong>
+    </p>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="footer-inner">
+
+    <!-- Logo -->
+    <div class="footer-logo">
+      <img src="https://i.ibb.co.com/8LSycFwR/footer-product-minimal.webp"
+           alt="Gadama"
+           loading="lazy" decoding="async">
+      <p class="footer-brand">GADAMA</p>
+      <p class="footer-brand-sub">Madu Curcuma · Herbal Lambung</p>
+    </div>
+
+    <!-- Badges -->
+    <div class="footer-badges">
+      <div class="footer-badge">
+        <p class="footer-badge-name">BPOM & ASROT</p>
+        <p class="footer-badge-num">TR256049601</p>
+      </div>
+      <div class="footer-badge">
+        <p class="footer-badge-name">Halal MUI</p>
+        <p class="footer-badge-num">ID34110018277270424</p>
+      </div>
+    </div>
+
+    <!-- Disclaimer Medis -->
+    <div class="footer-disclaimer">
+      <p><strong>Produk ini bukan pengganti pengobatan medis.</strong> Gadama adalah suplemen pendamping yang dapat dikonsumsi beriringan dengan pengobatan yang sedang berjalan. Tidak dimaksudkan untuk mendiagnosis, mengobati, menyembuhkan, atau mencegah penyakit apapun. Jika kondisi kesehatanmu memerlukan penanganan lebih lanjut, konsultasikan dengan dokter atau tenaga medis yang berwenang.</p>
+    </div>
+
+    <!-- Disclaimer Hasil -->
+    <div class="footer-disclaimer">
+      <p>Hasil penggunaan dapat berbeda tergantung kondisi masing-masing individu. Testimoni yang ditampilkan adalah pengalaman pengguna dan tidak mewakili hasil yang dijamin untuk semua orang.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Gadama · Hanya tersedia di halaman ini</p>
+      <p style="margin-top:4px;">Dibuat dengan standar yang kami jaga sendiri.</p>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════
+     STICKY CTA
+══════════════════════════════════════════ -->
+<div class="sticky-cta" id="stickyCta">
+  <div class="sticky-cta-inner">
+    <a href="https://wa.me/628XXXXXXXXXX?text=Halo,%20saya%20mau%20pesan%20Gadama" class="btn-wa" onclick="fireContact('sticky_cta')">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Pesan Gadama via WhatsApp
+    </a>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════════════ -->
+<script>
+// ══════════════════════════════════════════════
+// GADAMA LP — PIXEL TRACKING
+// Meta Pixel + TikTok Pixel
+// ══════════════════════════════════════════════
+
+// ── SCROLL DEPTH TRACKING ─────────────────────
+var scrollFired = { 25: false, 50: false, 75: false, 90: false };
+
+function getScrollPct() {
+  var el = document.documentElement;
+  var scrolled = el.scrollTop || document.body.scrollTop;
+  var total = el.scrollHeight - el.clientHeight;
+  return total > 0 ? Math.round((scrolled / total) * 100) : 0;
+}
+
+window.addEventListener('scroll', function() {
+  var pct = getScrollPct();
+
+  if (!scrollFired[25] && pct >= 25) {
+    scrollFired[25] = true;
+    // ViewContent fires at Scroll_25
+    fbq('track', 'ViewContent', { content_name: 'Gadama LP', content_category: 'Herbal Lambung' });
+    fbq('trackCustom', 'Scroll_25');
+    if (window.ttq) ttq.track('ViewContent', { content_name: 'Gadama LP' });
+  }
+  if (!scrollFired[50] && pct >= 50) {
+    scrollFired[50] = true;
+    fbq('trackCustom', 'Scroll_50');
+    if (window.ttq) ttq.track('ClickButton', { content_name: 'Scroll_50' });
+  }
+  if (!scrollFired[75] && pct >= 75) {
+    scrollFired[75] = true;
+    fbq('trackCustom', 'Scroll_75');
+    if (window.ttq) ttq.track('ClickButton', { content_name: 'Scroll_75' });
+  }
+  if (!scrollFired[90] && pct >= 90) {
+    scrollFired[90] = true;
+    fbq('trackCustom', 'Scroll_90');
+    if (window.ttq) ttq.track('ClickButton', { content_name: 'Scroll_90' });
+  }
+}, { passive: true });
+
+// ── SECTION TRACKING ──────────────────────────
+var sectionFired = {};
+
+function fireSectionEvent(name) {
+  if (sectionFired[name]) return;
+  sectionFired[name] = true;
+  fbq('trackCustom', name);
+}
+
+var sectionMap = [
+  { id: 'section-2',      event: 'Section_Mirror'    },
+  { id: 'section-3',      event: 'Section_Verdict'   },
+  { id: 'section-4',      event: 'Section_Solution'  },
+  { id: 'section-5',      event: 'Section_Testimony' },
+  { id: 'section-pricing',event: 'Section_Pricing'   },
+];
+
+var sectionObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      var matched = sectionMap.find(function(s) { return s.id === entry.target.id; });
+      if (matched) fireSectionEvent(matched.event);
+    }
+  });
+}, { threshold: 0.2 });
+
+sectionMap.forEach(function(s) {
+  var el = document.getElementById(s.id);
+  if (el) sectionObserver.observe(el);
+});
+
+// ── CTA CLICK TRACKING ────────────────────────
+function fireCTAClick(position, type) {
+  fbq('trackCustom', 'CTA_Click', { position: position, type: type || 'scroll_cta' });
+  if (window.ttq) ttq.track('ClickButton', { content_name: 'CTA_' + position });
+}
+
+// ── WA BUTTON = CONTACT EVENT ─────────────────
+function fireContact(position) {
+  fbq('track', 'Contact', { content_name: position });
+  if (window.ttq) ttq.track('Contact', { content_name: position });
+}
+
+// ══════════════════════════════════════════════
+// SCROLL REVEAL
+// ══════════════════════════════════════════════
+var revealEls = document.querySelectorAll('.reveal');
+var revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+revealEls.forEach(function(el) { revealObserver.observe(el); });
+
+// ══════════════════════════════════════════════
+// STICKY CTA
+// ══════════════════════════════════════════════
+var stickyCta   = document.getElementById('stickyCta');
+var heroSection = document.getElementById('hero');
+var pricingSection = document.getElementById('section-pricing');
+
+var stickyObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (!entry.isIntersecting) stickyCta.classList.add('visible');
+    else stickyCta.classList.remove('visible');
+  });
+}, { threshold: 0 });
+stickyObserver.observe(heroSection);
+
+var pricingObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) stickyCta.classList.remove('visible');
+  });
+}, { threshold: 0.1 });
+pricingObserver.observe(pricingSection);
+</script>
+
+</body>
+</html>
