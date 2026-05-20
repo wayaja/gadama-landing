@@ -10,19 +10,16 @@
 <!-- GTM — satu-satunya script yang boleh blocking di head -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM_CONTAINER_ID');</script>
 
-<!-- Fonts: preconnect + satu stylesheet dengan display=swap -->
-<!-- FIX: hapus duplikasi preload as=style + stylesheet yang sama -->
+<!-- Fonts preconnect -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap&font-display=swap">
-
-<!-- Hero image preload: GANTI URL ibb.co dengan CDN setelah upload -->
-<!-- PANDUAN: upload hero-handbook-badge.webp ke Cloudflare/Netlify, ganti URL di bawah DAN di tag img hero -->
-<link rel="preload" as="image" href="https://i.ibb.co.com/Cptq0Cw4/hero-handbook-badge.webp">
-
-<!-- Meta Pixel — FIX: dipindah ke body bawah via defer, bukan blocking di head -->
-<!-- TikTok Pixel — FIX: sama, dipindah ke body bawah -->
-<!-- Keduanya dipanggil di akhir </body> dengan flag window._pixelReady -->
+<!-- FIX FONT BLOCKING: load async, tidak blocking render, saves est 3050ms -->
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"></noscript>
+<!-- FIX fetchpriority: tambahkan di preload link, bukan hanya di img tag -->
+<!-- GANTI URL ibb.co di bawah dan di img hero setelah upload ke Netlify -->
+<link rel="preload" as="image" fetchpriority="high" href="https://i.ibb.co.com/Cptq0Cw4/hero-handbook-badge.webp">
+<!-- Pixels dipindah ke akhir body -->
 
 <style>
 /* ── TOKENS ── */
@@ -30,7 +27,9 @@
   --ink:#1A120A;--madu:#C8874A;--madu-d:#7A4E2D;
   --cream:#F5EFE6;--ivory:#FDFAF6;--stone:#EAE4D9;
   --earth:#8B6A4A;--forest:#1A2E1C;--sage:#5C7A5E;--white:#fff;
-  --fd:'Fraunces',Georgia,serif;--fb:'Lora',Georgia,serif;
+  /* System font fallback: teks tampil langsung sebelum web font selesai load */
+  --fd:'Fraunces',Georgia,serif;
+  --fb:'Lora',Georgia,serif;
 }
 
 /* ── RESET ── */
