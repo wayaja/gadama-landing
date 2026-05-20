@@ -68,6 +68,11 @@ a{color:inherit;text-decoration:none}
 #sb button{background:var(--madu);color:var(--forest);padding:10px 22px;border-radius:6px;font-size:13px;font-weight:600;border:none;cursor:pointer;font-family:var(--fb)}
 @media(min-width:769px){#sb{display:none}}
 
+/* ── SALES EDUCATOR NOTES ── */
+.edu-note{background:rgba(200,135,74,.08);border:1px solid rgba(200,135,74,.18);border-radius:12px;padding:18px 20px;margin:24px auto;color:var(--earth);font-size:15px;line-height:1.75;max-width:620px}
+.edu-note strong{color:var(--ink)}
+.edu-note .small{display:block;margin-top:8px;font-size:13px;font-style:italic;color:var(--madu-d)}
+
 /* ── HERO — centered stacked ── */
 #hero{background:var(--cream);min-height:100svh;display:flex;align-items:center;padding:80px 0 64px}
 .hinner{max-width:700px;margin:0 auto;text-align:center}
@@ -306,12 +311,13 @@ footer{background:var(--ink);padding:44px 0 26px}
 </style>
 </head>
 <body>
+
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM_CONTAINER_ID" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ══ STICKY ══ -->
 <div id="sb">
-  <p>Program 90 Hari Gadama</p>
-  <button onclick="doCTA('sticky');goTo('price')">Mulai Sekarang →</button>
+  <p>Gadama 90 Hari</p>
+  <button onclick="doCTA('sticky');goTo('price')">Lihat Program →</button>
 </div>
 
 <!-- ══════════════════════════════════════ -->
@@ -321,37 +327,29 @@ footer{background:var(--ink);padding:44px 0 26px}
 <div class="w">
 <div class="hinner">
 
-  <span class="lbl">Program Pemulihan Lambung</span>
-  <h1>Sudah berkali-kali membaik.<br>Lalu kambuh lagi.</h1>
-  <p class="hsub">Bukan karena kamu tidak serius.<br>Ada yang belum tersentuh dari dalam.</p>
+  <span class="lbl">Coba pikirkan sebentar</span>
+  <h1>Kalau lambung sudah membaik, kenapa bisa balik lagi?</h1>
+  <p class="hsub">Biasanya bukan karena kamu kurang niat. Seringnya karena yang dijaga baru makanannya, belum polanya.</p>
 
-  <!-- Visual: muncul setelah headline + sub, sebelum body text -->
   <div class="hv-wrap">
-    <img src="https://i.ibb.co.com/Cptq0Cw4/hero-handbook-badge.webp"
+    <img src="./images/hero-handbook-badge.webp"
          alt="Gadama Program 90 Hari — formula herbal, panduan pola makan, checklist 90 hari"
          class="hv-img" width="400" height="480"
          loading="eager" fetchpriority="high">
   </div>
 
-  <!-- Trust pill — tepat setelah visual -->
-  <div class="htrust-card">
-    <span class="htrust-dot"></span>
-    <span style="font-size:11px;color:var(--ink);font-weight:500;font-family:var(--fb)">BPOM &middot; Halal MUI &middot; COD Tersedia</span>
-  </div>
+  <p class="hbody">Coba lihat dari sisi yang lebih sederhana.<br><br>Kalau masalahnya hanya makanan, seharusnya setelah pantang, minum obat, atau coba herbal, polanya selesai. Tapi kalau tetap balik lagi, berarti ada bagian lain yang belum ikut dibereskan: kebiasaan harian, kondisi tubuh saat stres, dan cara menjalani pemulihannya.</p>
 
-  <!-- Body text: muncul setelah visual, sebelum CTA -->
-  <p class="hbody">Program pemulihan lambung 90 hari — formula herbal, panduan harian, dan pendampingan langsung. Bukan sekadar produk.</p>
+  <div class="edu-note"><strong>Catatan sederhana:</strong> kalau sebuah masalah sering berulang, biasanya yang dibutuhkan bukan hanya sesuatu yang diminum, tapi sistem kecil yang bisa dijalani cukup lama. <span class="small">Itulah alasan Gadama dibuat sebagai program, bukan sekadar produk.</span></div>
 
-  <!-- Dua CTA: scanner langsung ke harga, reader baca dulu -->
   <div class="hact">
-    <a href="#price" class="btn btn-m btn-lg" onclick="doCTA('hero-scanner')">Lihat biaya program &rarr;</a>
-    <button class="h-r" onclick="goTo('cermin')">
+    <a href="#cermin" class="btn btn-m btn-lg" onclick="doCTA('hero-read')">Pahami dulu logikanya &rarr;</a>
+    <button class="h-r" onclick="goTo('price')">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-      Atau baca dulu penjelasannya
+      Kalau sudah paham, lihat programnya
     </button>
   </div>
 
-  <!-- Trust badges bawah -->
   <div class="htr">
     <span class="ht">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -367,7 +365,7 @@ footer{background:var(--ink);padding:44px 0 26px}
     </span>
     <span class="ht">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-      Program 90 hari
+      Garansi 30 hari
     </span>
   </div>
 
@@ -382,23 +380,23 @@ footer{background:var(--ink);padding:44px 0 26px}
 <div class="w">
 <div class="cermin-inner">
 
-  <span class="lbl">Kamu tidak sendirian</span>
-  <h2>Sudah ke dokter. Sudah minum obat.<br>Sudah coba herbal. Tapi masih kambuh lagi.</h2>
+  <span class="lbl">Masalahnya bukan cuma kambuh</span>
+  <h2>Masalah sebenarnya: kamu tidak tahu harus percaya cara yang mana lagi.</h2>
 
   <div class="rule" style="margin:22px auto"></div>
 
   <div class="cermin-body">
-    <p>Kamu masih ingat waktu terakhir kali makan tanpa was-was? Makan sesuatu yang kamu suka, tanpa hitung-hitung apakah ini akan memicu sesuatu nanti.</p>
+    <p>Coba ingat. Waktu kambuh, yang dicari pertama biasanya pereda. Itu wajar. Tidak ada orang yang mau menahan begah, perih, mual, atau panas terlalu lama.</p>
 
-    <p>Yang lebih sering kamu ingat justru polanya. Beberapa hari membaik setelah menjaga makan — lalu ada satu momen. Telat makan sedikit. Atau stres sebentar. Atau makan sesuatu yang harusnya aman. Dan semuanya kembali seperti semula.</p>
+    <p>Tapi setelah reda, pertanyaan pentingnya sering tidak dijawab: <strong>kenapa bisa balik lagi?</strong></p>
 
-    <p>Kamu sudah coba banyak cara. Herbal yang katanya terbukti. Obat dari dokter. Pantang yang ketat selama berminggu-minggu. Masing-masing punya efeknya — tapi tidak ada yang bertahan. Dan setiap kali kambuh lagi, ada yang lebih berat dari sekadar rasa sakitnya: <strong>kelelahan mencoba lagi sesuatu yang belum tentu berhasil.</strong></p>
+    <p>Kalau setiap kali kambuh hanya diredakan, kamu seperti mengulang siklus yang sama: tidak nyaman, minum sesuatu, membaik sebentar, lalu menunggu kambuh berikutnya.</p>
 
-    <p>Bukan karena kamu tidak serius. Bukan karena kamu tidak disiplin. Ada sesuatu yang lebih dalam yang belum pernah benar-benar tersentuh — dan itu yang membuat semua yang sudah kamu lakukan selama ini hanya <strong>mengelola gejalanya, bukan memulihkannya.</strong></p>
+    <p>Di sini banyak orang mulai lelah. Bukan karena tidak mau usaha. Tapi karena terlalu banyak cara terdengar menjanjikan, sementara hasilnya belum stabil.</p>
   </div>
 
   <div class="cq">
-    <p>"Apakah ini memang tidak bisa benar-benar pulih?"</p>
+    <p>"Sebelum mencari produk yang lebih kuat, coba lihat dulu apakah caranya sudah lengkap."</p>
   </div>
 
 </div>
@@ -415,20 +413,21 @@ footer{background:var(--ink);padding:44px 0 26px}
     <img src="https://i.ibb.co.com/zTbG7TkJ/s3-mukosa-comparison.webp"
          alt="Perbandingan lapisan mukosa lambung — terkikis vs terlindungi"
          width="480" height="400" loading="lazy">
-    <p class="mv-note">Kiri: lapisan mukosa terkikis &nbsp;·&nbsp; Kanan: lapisan mukosa terlindungi</p>
+    <p class="mv-note">Ilustrasi sederhana: lambung lebih mudah bereaksi saat lapisan pelindungnya sedang sensitif</p>
   </div>
   <div class="mt">
-    <span class="lbl">Ini yang sebenarnya terjadi</span>
-    <h2>Maag, GERD, asam lambung — akarnya sering sama.</h2>
+    <span class="lbl">Logikanya sederhana</span>
+    <h2>Reda itu penting. Tapi reda belum tentu sama dengan pulih.</h2>
     <div class="rule"></div>
-    <p>Di dalam lambung ada lapisan pelindung disebut <strong style="color:var(--ink)">mukosa.</strong> Ketika lapisan ini terkikis, lambung jadi sangat sensitif.</p>
+    <p>Di dalam lambung ada lapisan pelindung yang disebut <strong style="color:var(--ink)">mukosa.</strong> Saat lapisan ini sedang sensitif, reaksi kecil bisa terasa besar. Maka yang perlu dipikirkan bukan hanya “apa yang bikin kambuh”, tapi “kenapa lambungnya mudah bereaksi”.</p>
     <ul class="mi">
-      <li><span>—</span>Makanan yang seharusnya aman pun jadi pemicu</li>
-      <li><span>—</span>Stres langsung berdampak ke lambung</li>
-      <li><span>—</span>Obat hanya meredakan sementara karena tidak menyentuh ini</li>
+      <li><span>—</span>Makanan yang sama bisa terasa aman hari ini, tapi tidak aman besok</li>
+      <li><span>—</span>Telat makan sedikit bisa jadi pemicu karena kondisi tubuh sedang rentan</li>
+      <li><span>—</span>Pikiran penuh, kurang tidur, dan aktivitas padat ikut memengaruhi reaksi lambung</li>
+      <li><span>—</span>Pereda membantu saat gejala muncul, tapi belum tentu memperbaiki pola hariannya</li>
     </ul>
     <div class="mc">
-      <p>Lapisan lambung tidak pulih dalam 3 hari. Jaringan yang terkikis membutuhkan waktu yang cukup, bahan yang tepat, dan konsistensi yang dijaga.</p>
+      <p>Jadi pertanyaannya bukan: “produk apa yang paling cepat terasa?” Pertanyaan yang lebih tepat: “cara apa yang bisa membuat saya konsisten cukup lama sampai tubuh punya kesempatan membaik?”</p>
     </div>
   </div>
 </div>
@@ -442,22 +441,21 @@ footer{background:var(--ink);padding:44px 0 26px}
 <div class="w">
 
   <div class="st">
-    <span class="lbl lbl-s">Pendekatan yang berbeda</span>
-    <h2>Gadama bukan herbal baru.<br>Ini sebuah program.</h2>
-    <p>Produk lain menjual botol. Gadama membangun sistem pemulihan.</p>
+    <span class="lbl lbl-s">Di sinilah Gadama masuk</span>
+    <h2>Kalau masalahnya berulang, solusinya juga tidak bisa hanya satu kali minum.</h2>
+    <p>Gadama dibuat sebagai program karena banyak orang bukan kekurangan niat. Mereka kekurangan alur yang jelas: apa yang diminum, apa yang dijaga, dan ke mana bertanya saat bingung.</p>
   </div>
 
-  <!-- Ingredients -->
   <div class="ing">
     <div class="ic">
       <img src="https://i.ibb.co.com/7x1bsp7s/s4-honey-pour.webp"
            alt="Madu viskositas tinggi Gadama — melapisi dinding lambung"
            width="520" height="210" loading="lazy">
       <div class="ib">
-        <span>Komponen Formula · 1</span>
+        <span>Komponen 1</span>
         <h3>Madu Viskositas Tinggi</h3>
-        <p>Melapisi dinding lambung lebih lama dari madu biasa. Memberi waktu bagi mukosa untuk mulai pulih dari dalam.</p>
-        <small>Journal of Food Science, 2018</small>
+        <p>Dipakai untuk membantu memberi rasa nyaman dan mendukung lapisan lambung. Fungsinya bukan untuk membuat klaim instan, tapi menjadi bagian dari rutinitas harian.</p>
+        <small>Produk membantu. Konsistensi tetap menentukan.</small>
       </div>
     </div>
     <div class="ic">
@@ -465,67 +463,64 @@ footer{background:var(--ink);padding:44px 0 26px}
            alt="Sari kunyit segar Gadama — kurkumin aktif"
            width="520" height="210" loading="lazy">
       <div class="ib">
-        <span>Komponen Formula · 2</span>
-        <h3>Sari Kunyit Segar (Kurkumin)</h3>
-        <p>Bukan menekan asam — membantu memulihkan sel yang rusak. Segar, bukan bubuk — kurkumin aktifnya tetap utuh.</p>
-        <small>Gut Journal, 2019</small>
+        <span>Komponen 2</span>
+        <h3>Sari Kunyit Segar</h3>
+        <p>Kunyit dipilih karena sudah lama digunakan dalam pendekatan tradisional untuk kenyamanan pencernaan. Kami pakai sebagai bagian dari sistem, bukan sebagai janji ajaib.</p>
+        <small>Hasil tiap orang bisa berbeda karena pola hidup dan kondisi awalnya juga berbeda.</small>
       </div>
     </div>
   </div>
 
-  <!-- Product moment: botol bersih untuk "Gadama." reveal -->
   <div class="pm">
     <img src="https://i.ibb.co.com/pVJtd63/pendekatan.webp"
          alt="Gadama Madu Curcuma — formula herbal pemulihan lambung"
          width="300" height="360" loading="lazy">
     <div>
-      <span class="lbl lbl-s">Formula herbal yang diformulasikan khusus</span>
+      <span class="lbl lbl-s">Bukan hanya produknya. Cara memakainya yang dibuat lebih jelas.</span>
       <h3>Gadama.</h3>
-      <p>Membantu memulihkan dan melapisi lambung dari dalam. Tapi Gadama bukan hanya tentang apa yang ada di botolnya.</p>
+      <p>Kalau hanya membeli botol lalu menebak-nebak sendiri, banyak orang berhenti di tengah jalan. Karena itu Gadama disusun sebagai program: ada formula, ada panduan, ada pendampingan, dan ada batas waktu yang realistis.</p>
     </div>
   </div>
 
-  <!-- BOOM -->
   <div class="bw">
     <div class="bk">
-      <p>Program Pemulihan Lambung 90 Hari</p>
-      <h3>Tiga komponen. Satu tujuan.</h3>
+      <p>Program Lambung 90 Hari</p>
+      <h3>Tiga hal yang membuat prosesnya lebih masuk akal.</h3>
     </div>
     <div class="bkol">
       <div class="bki">
         <p class="num">01</p>
         <h4>Formula herbal</h4>
-        <p>Bekerja dari dalam — membantu mukosa pulih secara bertahap.</p>
+        <p>Supaya ada rutinitas yang jelas, bukan hanya minum saat panik karena gejala muncul.</p>
       </div>
       <div class="bki">
         <p class="num">02</p>
         <h4>Panduan harian</h4>
-        <p>Pola makan &amp; checklist 90 hari — mendampingi prosesnya hari per hari.</p>
+        <p>Membantu kamu mengambil keputusan harian: apa yang perlu dijaga, apa yang sebaiknya dicatat, dan kapan harus evaluasi.</p>
       </div>
       <div class="bki">
         <p class="num">03</p>
         <h4>Pendampingan WA</h4>
-        <p>Tim kami ada selama 90 hari. Bukan chatbot — ada orang yang membaca dan menjawab.</p>
+        <p>Karena sering kali orang berhenti bukan karena produknya habis, tapi karena bingung saat kondisi naik-turun.</p>
       </div>
     </div>
   </div>
 
   <div class="sbadge">
-    <span>Bahan alami</span>
-    <span>Tanpa kimia sintetis</span>
-    <span>Aman jangka panjang</span>
     <span>BPOM TR256049601</span>
     <span>Halal MUI ID34110018277270424</span>
+    <span>COD tersedia</span>
+    <span>Garansi 30 hari</span>
+    <span>Pendampingan WA</span>
   </div>
 
-  <!-- Social proof — GANTI [X] DENGAN ANGKA NYATA -->
   <div class="sp">
-    <p class="spn">867+</p>
-    <p>orang telah menjalani program ini.<br>Bukan karena menemukan pereda yang lebih kuat —<br>tapi karena akhirnya <em>pendekatannya berbeda.</em></p>
+    <p class="spn" style="font-size:clamp(24px,4vw,36px);line-height:1.25">Banyak yang datang bukan karena belum pernah mencoba.</p>
+    <p>Justru karena sudah coba obat, herbal, pantang, dan pola makan. Yang mereka cari bukan janji paling besar, tapi cara yang lebih jelas untuk dijalani.</p>
   </div>
 
   <div class="sc">
-    <a href="#price" class="btn btn-gw btn-lg" onclick="doCTA('sis-cta')">Lihat pilihan program →</a>
+    <a href="#cocok" class="btn btn-gw btn-lg" onclick="doCTA('sis-cta')">Cek apakah ini cocok →</a>
   </div>
 
 </div>
@@ -576,8 +571,9 @@ footer{background:var(--ink);padding:44px 0 26px}
 <!-- ══════════════════════════════════════ -->
 <section id="cocok">
 <div class="ws">
-  <span class="lbl" style="text-align:center">Sebelum memutuskan</span>
-  <h2 style="font-family:var(--fd);font-weight:400;font-size:clamp(22px,3.2vw,32px);text-align:center;color:var(--ink)">Program ini untuk kamu jika…</h2>
+  <span class="lbl" style="text-align:center">Supaya tidak salah ekspektasi</span>
+  <h2 style="font-family:var(--fd);font-weight:400;font-size:clamp(22px,3.2vw,32px);text-align:center;color:var(--ink)">Program ini masuk akal kalau kondisi kamu seperti ini.</h2>
+  <div class="edu-note"><strong>Cara membaca bagian ini:</strong> jangan cocok-cocokkan semuanya. Cukup lihat apakah pola besarnya mirip dengan kondisi Anda. Kalau tidak mirip, lebih baik tanya dulu sebelum membeli.</div>
   <div class="coi">
     <div>
       <p class="co-t" style="color:#2D4A35">Cocok untuk kamu</p>
@@ -585,20 +581,20 @@ footer{background:var(--ink);padding:44px 0 26px}
         <li><span class="cod cy">✓</span>Lambungmu sering kambuh meski sudah menjaga makan</li>
         <li><span class="cod cy">✓</span>Sudah coba obat atau herbal tapi efeknya tidak bertahan</li>
         <li><span class="cod cy">✓</span>Tidak yakin ini maag, GERD, atau asam lambung — tapi gejalanya nyata setiap hari</li>
-        <li><span class="cod cy">✓</span>Mau pendekatan sistematis, bukan sekadar minum dan berharap</li>
-        <li><span class="cod cy">✓</span>Ingin ada yang bisa ditanya selama prosesnya</li>
+        <li><span class="cod cy">✓</span>Mau menjalani proses yang lebih rapi, bukan sekadar minum saat kambuh</li>
+        <li><span class="cod cy">✓</span>Butuh tempat bertanya saat bingung di tengah proses</li>
       </ul>
     </div>
     <div>
       <p class="co-t" style="color:var(--earth)">Mungkin bukan untuk kamu</p>
       <ul class="col">
         <li><span class="cod cn2">✕</span>Sedang dalam pengobatan medis aktif — konsultasikan dulu dengan dokter</li>
-        <li><span class="cod cn2">✕</span>Mencari hasil instan dalam 3–7 hari</li>
+        <li><span class="cod cn2">✕</span>Mencari hasil instan dalam beberapa hari</li>
         <li><span class="cod cn2">✕</span>Alergi terhadap madu atau kunyit</li>
       </ul>
     </div>
     <div class="cow">
-      <p>Tidak yakin kondisimu masuk yang mana? Tim kami bisa membantu menilai sebelum kamu memutuskan.</p>
+      <p>Kalau masih ragu, tanya dulu. Lebih baik jelas di awal daripada membeli karena terburu-buru.</p>
       <a href="https://wa.me/6287778325315?text=Halo+Gadama%2C+saya+mau+tanya+apakah+program+ini+cocok+untuk+kondisi+saya"
          onclick="doWA('cocok')" target="_blank" rel="noopener">
         → Tanya via WhatsApp — tidak ada kewajiban
@@ -615,28 +611,28 @@ footer{background:var(--ink);padding:44px 0 26px}
 <div class="w">
 
   <div class="th2">
-    <span class="lbl" style="display:block">Cerita dari pengguna</span>
-    <h2>Bukan "sembuh dalam 3 hari."<br>Tapi cerita yang lebih jujur dari itu.</h2>
-    <p>Orang yang sudah coba banyak cara, baru merasakan bedanya di sini.</p>
+    <span class="lbl" style="display:block">Cerita yang tidak terlalu rapi</span>
+    <h2>Yang membuat orang percaya biasanya bukan janji besar.</h2>
+    <p>Tapi cerita kecil yang terasa masuk akal.</p>
   </div>
 
   <div class="tcg">
     <div class="tc2">
       <p class="qm">"</p>
-      <p class="qq">"Di minggu ketiga saya baru sadar — saya tidak bangun malam lagi karena perut perih."</p>
-      <p class="qb">Sebelumnya sudah ke dokter dua kali dan ganti obat beberapa kali. Selalu membaik sebentar, lalu kambuh kalau stres atau telat makan. Baru di minggu ketiga mulai tidur lebih nyenyak.</p>
+      <p class="qq">"Awalnya saya kira ya paling sama lagi."</p>
+      <p class="qb">Sebelumnya sudah coba beberapa cara. Yang saya notice duluan malah tidur mulai lebih tenang. Perut belum langsung sempurna, tapi tidak sepanik biasanya kalau mulai terasa tidak nyaman.</p>
       <p class="qn">Andika R. — 34 tahun, Surabaya</p>
     </div>
     <div class="tc2">
       <p class="qm">"</p>
-      <p class="qq">"Saya tidak bilang sembuh. Tapi sekarang telat makan tidak langsung separah dulu."</p>
-      <p class="qb">Sudah coba tiga herbal berbeda sebelumnya. Bedanya dengan Gadama — ada panduan yang menemani, jadi tahu apa yang perlu dijaga selain minum. Bulan kedua mulai terasa lebih stabil.</p>
+      <p class="qq">"Saya suka karena tidak cuma disuruh minum."</p>
+      <p class="qb">Ada panduan, jadi saya lebih tahu harus jaga apa. Telat makan masih kadang kejadian, tapi reaksi lambungnya tidak langsung separah dulu. Buat saya itu sudah beda.</p>
       <p class="qn">Rini W. — 29 tahun, Jakarta Selatan</p>
     </div>
     <div class="tc2">
       <p class="qm">"</p>
-      <p class="qq">"Pertama kalinya saya menjalani sampai bulan ketiga. Biasanya berhenti di tengah jalan."</p>
-      <p class="qb">Ada pendampingan WA yang menjawab kalau ada yang aneh di tengah proses — itu yang membuat saya tetap konsisten sampai selesai. Hasilnya lebih stabil dari sebelumnya.</p>
+      <p class="qq">"Biasanya saya berhenti di tengah jalan."</p>
+      <p class="qb">Kali ini lebih kebantu karena kalau bingung bisa tanya. Tidak harus nebak sendiri. Saya jadi lebih konsisten sampai bulan ketiga.</p>
       <p class="qn">Budi S. — 41 tahun, Bandung</p>
     </div>
   </div>
@@ -650,13 +646,13 @@ footer{background:var(--ink);padding:44px 0 26px}
       <img src="https://i.ibb.co.com/MxspzDr3/s6-fulfillment-table.webp"
            alt="Meja packing Gadama aktif setiap hari"
            width="520" height="270" loading="lazy">
-      <div class="fsic">Diproses setiap hari — ratusan pesanan aktif</div>
+      <div class="fsic">Ada pesanan yang diproses setiap hari</div>
     </div>
     <div class="fsi">
       <img src="https://i.ibb.co.com/4w3p91vr/s6-fulfillment-delivery.webp"
            alt="Pengiriman Gadama via kurir"
            width="520" height="270" loading="lazy">
-      <div class="fsic">Dikirim ke seluruh Indonesia via kurir terpercaya</div>
+      <div class="fsic">Dikirim bertahap ke berbagai kota</div>
     </div>
   </div>
 
@@ -694,16 +690,20 @@ footer{background:var(--ink);padding:44px 0 26px}
 <div class="w">
 
   <div class="ph">
-    <span class="lbl" style="display:block">Pilih komitmenmu</span>
-    <h2>Tiga pilihan program.</h2>
-    <p>Semakin panjang programnya, semakin dalam pendampingannya.</p>
+    <span class="lbl" style="display:block">Kalau ingin mencoba</span>
+    <h2>Pilih yang paling masuk akal untuk kondisimu.</h2>
+    <p>Tidak harus langsung 90 hari. Yang penting ekspektasinya jelas sejak awal.</p>
+  </div>
+
+  <div style="max-width:620px;margin:0 auto 34px;text-align:center">
+    <p style="font-size:15px;line-height:1.9;color:var(--earth)">Kalau jujur, banyak orang yang sampai bagian ini awalnya juga skeptis.<br><br>Karena biasanya produk lambung terdengar mirip: herbal, alami, aman, dan membantu meredakan.<br><br>Bedanya di sini bukan hanya botolnya. Ada panduan dan pendampingan supaya kamu tidak menjalani prosesnya sendirian.</p>
   </div>
 
   <div class="pgrid">
 
     <!-- TIER 1 -->
     <div class="pc">
-      <span class="ptb">Mulai berkenalan</span>
+      <span class="ptb">Coba dulu</span>
       <h3>Program 30 Hari</h3>
       <img src="https://i.ibb.co.com/BK6zGHXv/pricing-tier1-1bottle.webp"
            alt="Gadama 1 botol — Program 30 Hari"
@@ -722,13 +722,13 @@ footer{background:var(--ink);padding:44px 0 26px}
       </ul>
       <div class="pcta">
         <a href="https://livinh.storelink.id/gadama-co-sp-1btl" class="btn btn-o btn-w"
-           onclick="doATC('pricing-t1')" target="_blank" rel="noopener">Pilih Program Ini →</a>
+           onclick="doATC('pricing-t1')" target="_blank" rel="noopener">Pilih yang ini →</a>
       </div>
     </div>
 
     <!-- TIER 2 -->
     <div class="pc">
-      <span class="ptb">Pemulihan awal</span>
+      <span class="ptb">Lebih realistis</span>
       <h3>Program 60 Hari</h3>
       <img src="https://i.ibb.co.com/hR6yFPC6/pricing-tier2-2bottle.webp"
            alt="Gadama 2 botol — Program 60 Hari"
@@ -738,7 +738,7 @@ footer{background:var(--ink);padding:44px 0 26px}
         <li class="bon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>BONUS: Panduan Pola Makan Lambung Sehat</li>
         <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Akses tanya WA 60 hari</li>
       </ul>
-      <p class="pmq">"Bulan kedua mulai terasa lebih stabil." — Rini W.</p>
+      <p class="pmq">Untuk yang merasa 30 hari terlalu pendek untuk menilai perubahan.</p>
       <p class="por">2×Rp 175.000 = Rp 350.000</p>
       <p class="ppr">Rp 295.000</p>
       <p class="psav">Hemat Rp 55.000</p>
@@ -749,13 +749,13 @@ footer{background:var(--ink);padding:44px 0 26px}
       </ul>
       <div class="pcta">
         <a href="https://livinh.storelink.id/gadama-co-sp-2btl" class="btn btn-o btn-w"
-           onclick="doATC('pricing-t2')" target="_blank" rel="noopener">Pilih Program Ini →</a>
+           onclick="doATC('pricing-t2')" target="_blank" rel="noopener">Pilih yang ini →</a>
       </div>
     </div>
 
     <!-- TIER 3 FEATURED -->
     <div class="pc ft">
-      <span class="pb">⭐ Yang kami rekomendasikan</span>
+      <span class="pb">Untuk proses paling utuh</span>
       <h3>Program 90 Hari</h3>
       <img src="https://i.ibb.co.com/1tKY47qR/pricing-tier3-3bottle.webp"
            alt="Gadama 3 botol + 2 bonus panduan — Program 90 Hari lengkap"
@@ -769,7 +769,7 @@ footer{background:var(--ink);padding:44px 0 26px}
       <div class="cob">
         <p>Satu kali konsul dokter = Rp 150–300rb. Program 90 hari Gadama = <strong>±Rp 4.700/hari.</strong></p>
       </div>
-      <p class="pmq">"Pertama kalinya menjalani sampai bulan ketiga." — Budi S.</p>
+      <p class="pmq">Untuk yang ingin menjalani prosesnya dengan panduan dan pendampingan paling lengkap.</p>
       <p class="por">3×Rp 175.000 = Rp 525.000</p>
       <p class="ppr">Rp 420.000</p>
       <p class="psav">Hemat Rp 105.000</p>
@@ -782,7 +782,7 @@ footer{background:var(--ink);padding:44px 0 26px}
       </ul>
       <div class="pcta">
         <a href="https://livinh.storelink.id/gadama-co-sp-3btl" class="btn btn-f btn-w btn-lg"
-           onclick="doATC('pricing-t3')" target="_blank" rel="noopener">Mulai Program 90 Hari →</a>
+           onclick="doATC('pricing-t3')" target="_blank" rel="noopener">Mulai 90 Hari →</a>
         <p class="pwan">atau <a href="https://wa.me/6287778325315?text=Halo+Gadama%2C+saya+mau+tanya+Program+90+Hari" onclick="doWA('pricing-t3')" target="_blank" rel="noopener">tanya dulu via WA</a> — tidak ada kewajiban</p>
       </div>
     </div>
@@ -817,7 +817,7 @@ footer{background:var(--ink);padding:44px 0 26px}
         <svg class="fi2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <span class="fp">Banyak yang mulai merasakan di minggu ke-2 atau ke-3 — berbeda tiap orang.</span>
-      <div class="fa"><div class="fai">Jawabannya jujur: berbeda tiap orang. Banyak yang mulai merasakan perbedaan di minggu kedua atau ketiga. Lambung tidak pulih dalam 3 hari — program 90 hari ada untuk memberi waktu yang cukup. Studi menunjukkan kurkumin bekerja konsisten setelah 4 minggu konsumsi rutin.</div></div>
+      <div class="fa"><div class="fai">Jawabannya jujur: berbeda tiap orang. Ada yang mulai merasa lebih nyaman di minggu kedua atau ketiga, ada juga yang butuh lebih lama. Karena itu kami tidak ingin menjanjikan hasil instan dalam beberapa hari.</div></div>
     </div>
 
     <div class="fi3">
@@ -826,7 +826,7 @@ footer{background:var(--ink);padding:44px 0 26px}
         <svg class="fi2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
       <span class="fp">1 sendok makan pagi hari, perut kosong, 15–30 menit sebelum sarapan.</span>
-      <div class="fa"><div class="fai">Pagi hari, perut kosong, 15–30 menit sebelum makan. Dosis: 1 sendok makan (±15ml). Jangan larutkan dalam air di atas 60°C — merusak kurkumin aktif. Detail lengkap ada di Checklist 90 Hari yang disertakan di setiap program.</div></div>
+      <div class="fa"><div class="fai">Pagi hari, perut kosong, 15–30 menit sebelum makan. Dosis: 1 sendok makan (±15ml). Detail konsumsi dan catatan harian ada di checklist yang disertakan agar kamu tidak perlu menebak-nebak.</div></div>
     </div>
 
     <div class="fi3">
@@ -858,11 +858,11 @@ footer{background:var(--ink);padding:44px 0 26px}
 
     <div class="fi3">
       <button class="fq2" onclick="doFAQ(this)" aria-expanded="false">
-        <span>Apa bedanya Gadama dengan herbal lambung lain?</span>
+        <span>Apa bedanya Gadama dengan produk lambung lain?</span>
         <svg class="fi2" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       </button>
-      <span class="fp">Gadama adalah program — formula + dua panduan + pendampingan WA 90 hari. Bukan sekadar botol.</span>
-      <div class="fa"><div class="fai">Herbal lain menjual produk. Gadama menjual program: formula herbal, dua panduan tertulis, dan pendampingan WA selama program. Perbedaannya bukan hanya di bahan — tapi di pendekatan. Kami ada selama kamu menjalaninya.</div></div>
+      <span class="fp">Pembeda utamanya adalah sistem: formula, panduan, pendampingan, dan durasi yang realistis.</span>
+      <div class="fa"><div class="fai">Kalau hanya membandingkan botol dengan botol, semua produk akan terdengar mirip. Yang kami buat berbeda adalah prosesnya: ada formula yang diminum, panduan yang diikuti, pendampingan saat bingung, dan target 90 hari agar tidak berhenti terlalu cepat.</div></div>
     </div>
 
   </div>
@@ -875,20 +875,20 @@ footer{background:var(--ink);padding:44px 0 26px}
 <section id="cf">
 <div class="w">
   <div class="cfi">
-    <span class="lbl" style="display:block">Sudah sampai di sini?</span>
-    <h2>Kalau kamu sudah sampai di sini, berarti kamu sedang serius memikirkannya.</h2>
-    <p class="body" style="font-size:16px;color:var(--earth);line-height:1.8;margin-bottom:28px">Program 90 hari Gadama ada untuk mendampingi prosesnya — dari awal sampai selesai.</p>
+    <span class="lbl" style="display:block">Kesimpulannya sederhana</span>
+    <h2>Kalau caranya selama ini selalu berhenti di “redakan dulu”, wajar kalau polanya sering kembali.</h2>
+    <p class="body" style="font-size:16px;color:var(--earth);line-height:1.8;margin-bottom:28px">Gadama bukan untuk orang yang mencari janji instan. Ini untuk orang yang ingin menjalani proses lebih jelas: minum rutin, mengikuti panduan, mencatat perubahan, dan punya tempat bertanya saat bingung.</p>
     <a href="#price" class="btn btn-f btn-lg"
        onclick="doCTA('cta-final')"
-       style="display:block;max-width:400px;margin:0 auto">Mulai Program 90 Hari →</a>
-    <p class="cfwa">atau tanya dulu — tim kami ada di WhatsApp<br>
+       style="display:block;max-width:400px;margin:0 auto">Lihat pilihan program →</a>
+    <p class="cfwa">atau tanya dulu — tidak perlu langsung membeli<br>
       <a href="https://wa.me/6287778325315?text=Halo+Gadama%2C+saya+ingin+bertanya+tentang+program"
          onclick="doWA('cta-final')" target="_blank" rel="noopener">→ Mulai percakapan di WhatsApp</a>
     </p>
     <div class="cftr">
       <span class="cft"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>COD — bayar saat paket tiba</span>
       <span class="cft"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Garansi 30 hari</span>
-      <span class="cft"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>Gratis ongkir s/d Rp 15.000</span>
+      <span class="cft"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>BPOM & Halal MUI</span>
     </div>
     <p class="cflg">BPOM TR256049601 · Halal MUI ID34110018277270424 · gadama.my.id</p>
   </div>
