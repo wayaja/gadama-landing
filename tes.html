@@ -309,52 +309,167 @@ footer{background:var(--ink);padding:44px 0 26px}
 .ftcp{font-size:11px;color:#b8d4ba;opacity:.5;text-align:center}
 @media(max-width:768px){.ftg{grid-template-columns:1fr;text-align:center;gap:14px}.ftnav,.ftsoc{justify-content:center}}
 
-/* ── MOBILE PROGRESSIVE DISCLOSURE ── */
+/* ── MOBILE OPTIMIZATION — conversion-first ── */
 @media(max-width:768px){
 
-  /* S02 Cermin — collapse paragraf 3-4 */
-  .cermin-collapse{display:none}
-  .cermin-collapse.open{display:block}
+  /* ── HIDE ENTIRELY on mobile ── */
+  #vp{display:none}           /* Visual produk — tidak perlu */
+  #cf{display:none}           /* CTA final — pricing sudah ada CTA */
+
+  /* ── COLLAPSE TRIGGERS ── */
+  .mob-collapse{display:none}
+  .mob-collapse.open{display:block}
+  .mob-collapse-flex{display:none}
+  .mob-collapse-flex.open{display:flex}
+
+  /* ── EXPAND BUTTON ── */
   .btn-expand{
     background:none;border:1px solid var(--stone);border-radius:8px;
-    padding:9px 18px;font-size:14px;color:var(--earth);cursor:pointer;
-    display:flex;align-items:center;gap:6px;margin:16px auto 0;
-    font-family:var(--fb);transition:.2s
+    padding:10px 18px;font-size:14px;color:var(--earth);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;gap:7px;
+    margin:14px auto 0;font-family:var(--fb);transition:.2s;width:100%
   }
   .btn-expand:hover{background:var(--stone)}
-  .btn-expand svg{transition:transform .25s}
+  .btn-expand svg{transition:transform .25s;flex-shrink:0}
   .btn-expand.open svg{transform:rotate(180deg)}
 
-  /* S04b Visual Produk — tampilkan 2, sembunyikan 2 */
-  .vi-hide-mob{display:none}
-  .vi-hide-mob.open{display:block}
+  /* ── PADDING compact ── */
+  #hero{padding:48px 0 40px}
+  #cermin{padding:44px 0}
+  #mek{padding:44px 0}
+  #sis{padding:44px 0}
+  #cocok{padding:44px 0}
+  #testi{padding:44px 0}
+  #price{padding:44px 0}
+  #faq{padding:44px 0}
 
-  /* S05 WA screenshots — tampilkan 2, sembunyikan 2 */
+  /* ── CERMIN compact ── */
+  .cermin-inner h2{font-size:20px;margin-bottom:14px}
+  .cermin-body p{font-size:15px;margin-bottom:12px;line-height:1.7}
+
+  /* ── MEKANISME compact ── */
+  .mt h2{font-size:20px}
+  .mt p{font-size:14px}
+  .mi li{font-size:14px}
+
+  /* ── SISTEM compact ── */
+  .st h2{font-size:22px}
+  .bw{padding:22px 16px}
+  .bkol{grid-template-columns:1fr;gap:10px}
+  .bki{text-align:left;padding:14px;display:flex;gap:12px;align-items:flex-start}
+  .bki .num{font-size:28px;min-width:36px;margin-bottom:0}
+  .bki h4{font-size:15px;margin-bottom:4px}
+  .bki p{font-size:13px}
+  .pm{grid-template-columns:1fr;gap:20px;padding:0}
+  .pm img{max-width:180px}
+  .ing{grid-template-columns:1fr}
+  .ic img{height:160px}
+  .sbadge{gap:6px}
+  .sbadge span{font-size:11px;padding:4px 10px}
+
+  /* ── COCOK hidden behind button ── */
+  .cocok-content{display:none}
+  .cocok-content.open{display:block}
+
+  /* ── TESTIMONI: 1+1 tampil, sisanya collapse ── */
+  .testi-hide{display:none}
+  .testi-hide.open{display:block}
+  .tcg{grid-template-columns:1fr;gap:12px;max-width:100%;margin-bottom:32px}
+  .fstrip{grid-template-columns:1fr;gap:10px;margin-bottom:32px}
+  .fsi img{height:180px}
+  .wag{grid-template-columns:1fr 1fr;gap:10px}
   .wa-hide-mob{display:none}
   .wa-hide-mob.open{display:block}
+  .th2{margin-bottom:24px}
+  .th2 h2{font-size:20px}
 
-  /* Padding lebih compact di mobile */
-  #cermin{padding:52px 0}
-  #mek{padding:52px 0}
-  #sis{padding:52px 0}
-  #vp{padding:48px 0}
-  #cocok{padding:52px 0}
-  #testi{padding:52px 0}
-  #price{padding:52px 0}
-  #faq{padding:52px 0}
-  #cf{padding:52px 0}
+  /* ── PRICING compact ── */
+  .ph{margin-bottom:24px}
+  .ph h2{font-size:20px}
+  .pgrid{gap:12px}
+  .pc{padding:20px 18px}
+  .pc.ft{order:-1}
 
-  /* Section label + h2 gap lebih kecil */
-  .cermin-inner h2{margin-bottom:16px}
-  .th2{margin-bottom:28px}
-  .ph{margin-bottom:28px}
-
-  /* Kurangi margin antar paragraf Cermin */
-  .cermin-body p{margin-bottom:14px;font-size:15px}
-
-  /* FAQ lebih compact */
+  /* ── FAQ compact ── */
   .fq2{padding:13px 16px;font-size:15px}
   .fai{padding:0 16px 14px;font-size:14px}
+
+  /* ── HERO compact ── */
+  .hinner h1{font-size:26px}
+  .hsub{font-size:16px;margin-bottom:20px}
+  .hbody{font-size:15px;margin-bottom:20px}
+  .hv-wrap{max-width:240px}
+  .htr{gap:10px}
+  .ht{font-size:11px}
+  .edu-note{padding:14px 16px;font-size:14px}
+}
+
+/* ── HERO CONTRAST ── */
+.hcontrast{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0 24px;max-width:640px;margin-left:auto;margin-right:auto}
+.hc-card{border-radius:12px;overflow:hidden;position:relative;text-align:left}
+.hc-card img{width:100%;height:240px;object-fit:cover;display:block}
+.hc-label{position:absolute;top:12px;left:12px;font-family:var(--fb);font-size:12px;font-weight:600;padding:4px 10px;border-radius:6px;letter-spacing:.03em}
+.hc-label.before{background:rgba(26,18,10,.75);color:#F5E6C8}
+.hc-label.after{background:rgba(26,46,28,.85);color:#9FE1CB}
+.hc-bullets{padding:12px 14px;background:var(--ivory);border:1px solid var(--stone);border-top:none;border-radius:0 0 12px 12px}
+.hc-bullets li{list-style:none;font-size:13px;color:var(--ink);padding:4px 0;display:flex;align-items:center;gap:7px;line-height:1.4}
+.hc-bullets .x{color:#C0392B;font-weight:600;font-size:14px}
+.hc-bullets .ok{color:#2D7A3A;font-weight:600;font-size:14px}
+@media(max-width:600px){.hcontrast{grid-template-columns:1fr;gap:12px}.hc-card img{height:200px}}
+
+/* ── HERO BULLETS ── */
+.h-bullets{display:flex;flex-direction:column;gap:8px;margin:20px auto;max-width:420px;text-align:left}
+.h-bullet{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--ink);line-height:1.5}
+.h-bullet-icon{background:var(--forest);color:var(--ivory);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;margin-top:1px}
+
+/* ── CERMIN CHECKLIST ── */
+.cermin-check{list-style:none;margin:20px 0;display:flex;flex-direction:column;gap:10px}
+.cermin-check li{display:flex;align-items:flex-start;gap:12px;font-size:15px;color:var(--ink);line-height:1.55;padding:10px 14px;background:var(--ivory);border:1px solid var(--stone);border-radius:8px}
+.cermin-check li .ck{font-size:18px;flex-shrink:0;margin-top:1px}
+
+/* ── VIDEO EMBED ── */
+.vid-wrap{position:relative;width:100%;max-width:560px;margin:28px auto;border-radius:14px;overflow:hidden;background:#000;box-shadow:0 8px 32px rgba(0,0,0,.18)}
+.vid-wrap video,.vid-wrap iframe{width:100%;aspect-ratio:9/16;border:none;display:block}
+@media(min-width:600px){.vid-wrap{max-width:380px}}
+
+/* ── OBJECTION HANDLING ── */
+#obj{background:var(--cream);padding:80px 0}
+.obj-inner{max-width:820px;margin:0 auto}
+.obj-title{font-family:var(--fd);font-weight:400;font-size:clamp(20px,2.8vw,30px);text-align:center;color:var(--ink);margin-bottom:8px}
+.obj-sub{text-align:center;font-size:15px;color:var(--earth);margin-bottom:36px}
+.obj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.obj-card{background:var(--ivory);border:1px solid var(--stone);border-radius:12px;padding:22px 20px}
+.obj-q{font-family:var(--fb);font-style:italic;font-size:14px;color:var(--madu-d);margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid var(--stone);line-height:1.5}
+.obj-a{font-size:14px;color:var(--ink);line-height:1.7}
+.obj-a strong{color:var(--forest)}
+@media(max-width:768px){.obj-grid{grid-template-columns:1fr}#obj{padding:48px 0}}
+
+/* ── PRICING ANCHOR ── */
+.price-anchor{max-width:560px;margin:0 auto 32px;background:var(--ivory);border:1px solid var(--stone);border-radius:12px;padding:20px 24px;text-align:center}
+.pa-label{font-family:var(--fb);font-size:13px;color:var(--earth);margin-bottom:12px;font-style:italic}
+.pa-items{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+.pa-item{display:flex;justify-content:space-between;font-size:14px;color:var(--ink);padding:6px 0;border-bottom:1px solid var(--stone)}
+.pa-item:last-child{border-bottom:none}
+.pa-item .pa-crossed{color:var(--earth);text-decoration:line-through;font-size:13px}
+.pa-total{font-size:13px;color:var(--earth);margin-bottom:14px}
+.pa-vs{font-family:var(--fd);font-size:15px;color:var(--forest);font-weight:500}
+
+/* ── SOCIAL PROOF TOP ── */
+#sp-top{background:var(--cream);padding:56px 0;border-bottom:2px solid var(--stone)}
+.sp-top-inner{max-width:820px;margin:0 auto}
+.sp-wa-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+.sp-wa-img{border-radius:10px;overflow:hidden}
+.sp-wa-img img{width:100%;height:auto;border-radius:10px}
+.sp-quote{background:var(--ivory);border-left:3px solid var(--madu);border-radius:0 10px 10px 0;padding:18px 20px;margin-bottom:8px}
+.sp-quote p{font-family:var(--fb);font-style:italic;font-size:16px;color:var(--ink);line-height:1.6;margin-bottom:6px}
+.sp-quote small{font-size:13px;color:var(--earth)}
+@media(max-width:600px){.sp-wa-row{grid-template-columns:1fr}}
+
+/* ── MOBILE: hide social proof duplicate ── */
+@media(max-width:768px){
+  #obj{padding:44px 0}
+  .price-anchor{padding:16px 16px}
+  .pa-item{font-size:13px}
 }
 </style>
 </head>
@@ -386,15 +501,53 @@ footer{background:var(--ink);padding:44px 0 26px}
          loading="eager" fetchpriority="high">
   </div>
 
-  <p class="hbody">Coba lihat dari sisi yang lebih sederhana.<br><br>Kalau masalahnya hanya makanan, seharusnya setelah pantang, minum obat, atau coba herbal, polanya selesai. Tapi kalau tetap balik lagi, berarti ada bagian lain yang belum ikut dibereskan: kebiasaan harian, kondisi tubuh saat stres, dan cara menjalani pemulihannya.</p>
+  <!-- CONTRAST VISUAL -->
+  <div class="hcontrast">
+    <div class="hc-card">
+      <img src="https://i.ibb.co.com/CKBPVDg1/tanpa-gadama.webp"
+           alt="Tanpa Gadama — menghitung menu sebelum makan, was-was, kambuh terus"
+           width="300" height="240" loading="eager">
+      <span class="hc-label before">Sebelum</span>
+      <ul class="hc-bullets">
+        <li><span class="x">✗</span>Hitung menu sebelum makan</li>
+        <li><span class="x">✗</span>Stres langsung ke perut</li>
+        <li><span class="x">✗</span>Kambuh tanpa tahu kapan selesai</li>
+      </ul>
+    </div>
+    <div class="hc-card">
+      <img src="https://i.ibb.co.com/RGJLYHSt/setelah-gadama.webp"
+           alt="Setelah Gadama — makan tenang, kambuh makin jarang, tidur nyenyak"
+           width="300" height="240" loading="eager">
+      <span class="hc-label after">Setelah Fase 1+2</span>
+      <ul class="hc-bullets">
+        <li><span class="ok">✓</span>Makan tanpa was-was</li>
+        <li><span class="ok">✓</span>Stres tidak langsung bereaksi</li>
+        <li><span class="ok">✓</span>Kambuhnya makin jarang</li>
+      </ul>
+    </div>
+  </div>
 
-  <div class="edu-note"><strong>Catatan sederhana:</strong> kalau sebuah masalah sering berulang, biasanya yang dibutuhkan bukan hanya sesuatu yang diminum, tapi sistem kecil yang bisa dijalani cukup lama. <span class="small">Itulah alasan Gadama dibuat sebagai program, bukan sekadar produk.</span></div>
+  <!-- 3 BULLET BENEFIT -->
+  <div class="h-bullets">
+    <div class="h-bullet">
+      <span class="h-bullet-icon">⚡</span>
+      <span>Terasa dalam <strong>30 menit pertama</strong> — bukan nunggu berhari-hari</span>
+    </div>
+    <div class="h-bullet">
+      <span class="h-bullet-icon">📅</span>
+      <span>Kambuhnya makin jarang di <strong>bulan kedua</strong></span>
+    </div>
+    <div class="h-bullet">
+      <span class="h-bullet-icon">💬</span>
+      <span>Ada panduan + pendampingan WA — <strong>tidak ditebak sendiri</strong></span>
+    </div>
+  </div>
 
   <div class="hact">
-    <a href="#cermin" class="btn btn-m btn-lg" onclick="doCTA('hero-read')">Pahami dulu logikanya &rarr;</a>
-    <button class="h-r" onclick="goTo('price')">
+    <a href="#price" class="btn btn-m btn-lg" onclick="doCTA('hero-price')">Lihat Program &rarr;</a>
+    <button class="h-r" onclick="goTo('mek')">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-      Kalau sudah paham, lihat programnya
+      Pelajari dulu cara kerjanya
     </button>
   </div>
 
@@ -409,12 +562,60 @@ footer{background:var(--ink);padding:44px 0 26px}
     </span>
     <span class="ht">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      COD tersedia
+      COD — bayar saat paket tiba
     </span>
     <span class="ht">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
       Garansi 30 hari
     </span>
+  </div>
+
+</div>
+</div>
+</section>
+
+
+<!-- ══════════════════════════════════════ -->
+<!-- S01b SOCIAL PROOF TOP — naik posisi   -->
+<!-- ══════════════════════════════════════ -->
+<section id="sp-top">
+<div class="w">
+<div class="sp-top-inner">
+
+  <span class="lbl" style="text-align:center;display:block">Yang mereka rasakan</span>
+  <p style="text-align:center;font-family:var(--fd);font-size:clamp(18px,2.5vw,24px);color:var(--ink);margin-bottom:28px;font-weight:400">"Di minggu ketiga baru sadar — tidak bangun malam lagi."</p>
+
+  <div class="sp-wa-row">
+    <div class="sp-wa-img">
+      <img src="https://i.ibb.co.com/ZzqGSTrV/wa-screenshot-nita-depok.webp"
+           alt="Testimoni WA Kak Nita Depok" width="280" height="380" loading="lazy">
+    </div>
+    <div class="sp-wa-img">
+      <img src="https://i.ibb.co.com/yBBDqSgh/wa-screenshot-rina-bandung.webp"
+           alt="Testimoni WA Kak Rina Bandung" width="280" height="380" loading="lazy">
+    </div>
+  </div>
+
+  <div class="sp-quote">
+    <p>"Minggu ke-3: tidak bangun jam 2 pagi lagi karena perut perih. Bulan ke-2, telat makan 2 jam sudah tidak langsung separah dulu."</p>
+    <small>— Andika R., 34 tahun, Surabaya</small>
+  </div>
+
+  <div style="text-align:center">
+    <button class="btn-expand" onclick="toggleMobClass(this,'wa-hide-mob')" aria-expanded="false" style="margin:0 auto;max-width:260px">
+      <span data-open="Lihat testimoni lainnya">Lihat testimoni lainnya</span>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+    </button>
+    <div class="sp-wa-row wa-hide-mob" style="margin-top:16px">
+      <div class="sp-wa-img">
+        <img src="https://i.ibb.co.com/XZBXWkNy/wa-screenshot-sari-bekasi.webp"
+             alt="Testimoni WA Bu Sari Bekasi" width="280" height="380" loading="lazy">
+      </div>
+      <div class="sp-wa-img">
+        <img src="https://i.ibb.co.com/Vc5sznFC/wa-screenshot-dwi-solo.webp"
+             alt="Testimoni WA Kak Dwi Solo" width="280" height="380" loading="lazy">
+      </div>
+    </div>
   </div>
 
 </div>
@@ -428,28 +629,20 @@ footer{background:var(--ink);padding:44px 0 26px}
 <div class="w">
 <div class="cermin-inner">
 
-  <span class="lbl">Masalahnya bukan cuma kambuh</span>
-  <h2>Masalah sebenarnya: kamu tidak tahu harus percaya cara yang mana lagi.</h2>
+  <h2>Sudah pilih yang paling aman. Sudah kurangi yang berisiko. Tapi lambung tetap bereaksi — dan kamu tidak tahu salahnya di mana.</h2>
 
   <div class="rule" style="margin:22px auto"></div>
 
-  <div class="cermin-body">
-    <p>Coba ingat. Waktu kambuh, yang dicari pertama biasanya pereda. Itu wajar. Tidak ada orang yang mau menahan begah, perih, mual, atau panas terlalu lama.</p>
-
-    <p>Tapi setelah reda, pertanyaan pentingnya sering tidak dijawab: <strong>kenapa bisa balik lagi?</strong></p>
-
-    <div class="cermin-collapse">
-      <p>Kalau setiap kali kambuh hanya diredakan, kamu seperti mengulang siklus yang sama: tidak nyaman, minum sesuatu, membaik sebentar, lalu menunggu kambuh berikutnya.</p>
-      <p>Di sini banyak orang mulai lelah. Bukan karena tidak mau usaha. Tapi karena terlalu banyak cara terdengar menjanjikan, sementara hasilnya belum stabil.</p>
-    </div>
-    <button class="btn-expand" onclick="toggleExpand(this,'cermin-collapse')" aria-expanded="false">
-      <span>Baca selengkapnya</span>
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
-    </button>
-  </div>
+  <ul class="cermin-check">
+    <li><span class="ck">□</span>Pilih menu yang paling aman — tetap bereaksi</li>
+    <li><span class="ck">□</span>Baik selama seminggu, lalu stres satu hari — kembali dari awal</li>
+    <li><span class="ck">□</span>Di acara makan bersama, masih menghitung dalam kepala: "ini aman tidak ya?"</li>
+    <li><span class="ck">□</span>Sudah minum sesuatu, membaik — tapi tidak tahu sampai kapan</li>
+    <li><span class="ck">□</span>Malam hari ada pikiran diam-diam: kalau terus begini, makin parah tidak ya?</li>
+  </ul>
 
   <div class="cq">
-    <p>"Sebelum mencari produk yang lebih kuat, coba lihat dulu apakah caranya sudah lengkap."</p>
+    <p>Bukan karena kamu kurang serius. Ada satu bagian yang hampir tidak pernah tersentuh — dan itulah yang membuat semua usaha terasa hanya sementara.</p>
   </div>
 
 </div>
@@ -470,20 +663,26 @@ footer{background:var(--ink);padding:44px 0 26px}
   </div>
   <div class="mt">
     <span class="lbl">Logikanya sederhana</span>
-    <h2>Reda itu penting. Tapi reda belum tentu sama dengan pulih.</h2>
+    <h2>Pereda menyentuh gejalanya.<br>Gadama menyentuh kondisinya.</h2>
     <div class="rule"></div>
-    <p>Di dalam lambung ada lapisan pelindung yang disebut <strong style="color:var(--ink)">mukosa.</strong> Saat lapisan ini sedang sensitif, reaksi kecil bisa terasa besar. Maka yang perlu dipikirkan bukan hanya “apa yang bikin kambuh”, tapi “kenapa lambungnya mudah bereaksi”.</p>
     <ul class="mi">
-      <li><span>—</span>Makanan yang sama bisa terasa aman hari ini, tapi tidak aman besok</li>
-      <li><span>—</span>Telat makan sedikit bisa jadi pemicu karena kondisi tubuh sedang rentan</li>
-      <li><span>—</span>Pikiran penuh, kurang tidur, dan aktivitas padat ikut memengaruhi reaksi lambung</li>
-      <li><span>—</span>Pereda membantu saat gejala muncul, tapi belum tentu memperbaiki pola hariannya</li>
+      <li><span>—</span>Lambung bereaksi berulang karena lapisan dalamnya belum pulih — bukan karena makanannya selalu salah</li>
+      <li><span>—</span>Stres, pola tidur, dan ritme harian langsung memengaruhi kondisi lapisan itu</li>
+      <li><span>—</span>Selama kondisi lapisan itu belum dipulihkan, siklus kambuh tidak bisa berhenti dari akar</li>
     </ul>
-    <div class="mc">
-      <p>Jadi pertanyaannya bukan: “produk apa yang paling cepat terasa?” Pertanyaan yang lebih tepat: “cara apa yang bisa membuat saya konsisten cukup lama sampai tubuh punya kesempatan membaik?”</p>
-    </div>
   </div>
-</div>
+</div><!-- /mg -->
+
+  <!-- VIDEO MEKANISME -->
+  <div class="vid-wrap">
+    <iframe
+      src="https://www.canva.com/design/6w5fp4qwxmvvht8/watch?embed"
+      allowfullscreen
+      allow="autoplay"
+      title="Video Mekanisme Gadama — Cara kerja pemulihan lambung">
+    </iframe>
+  </div>
+
 </div>
 </section>
 
@@ -535,7 +734,11 @@ footer{background:var(--ink);padding:44px 0 26px}
     </div>
   </div>
 
-  <div class="bw">
+  <button class="btn-expand" onclick="toggleMobId(this,'bw-block')" aria-expanded="false" id="btn-bw" style="display:none;margin-bottom:0">
+    <span data-open="Lihat detail program">Lihat detail program</span>
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="bw mob-collapse" id="bw-block">
     <div class="bk">
       <p>Program Lambung 90 Hari</p>
       <h3>Tiga hal yang membuat prosesnya lebih masuk akal.</h3>
@@ -618,7 +821,7 @@ footer{background:var(--ink);padding:44px 0 26px}
   </div>
   <div style="text-align:center;margin-top:14px">
     <button class="btn-expand" onclick="toggleExpandClass(this,'vi-hide-mob')" aria-expanded="false" style="margin:0 auto">
-      <span>Lihat semua foto</span>
+      <span data-open="Lihat semua foto">Lihat semua foto</span>
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
     </button>
   </div>
@@ -632,6 +835,11 @@ footer{background:var(--ink);padding:44px 0 26px}
 <div class="ws">
   <span class="lbl" style="text-align:center">Supaya tidak salah ekspektasi</span>
   <h2 style="font-family:var(--fd);font-weight:400;font-size:clamp(22px,3.2vw,32px);text-align:center;color:var(--ink)">Program ini masuk akal kalau kondisi kamu seperti ini.</h2>
+  <button class="btn-expand" onclick="toggleMob(this,'cocok-content')" aria-expanded="false" style="display:none" id="btn-cocok">
+    <span data-open="Lihat apakah ini cocok untukmu">Lihat apakah ini cocok untukmu</span>
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
+  <div class="cocok-content">
   <div class="edu-note"><strong>Cara membaca bagian ini:</strong> jangan cocok-cocokkan semuanya. Cukup lihat apakah pola besarnya mirip dengan kondisimu. Kalau tidak mirip, lebih baik tanya dulu sebelum membeli.</div>
   <div class="coi">
     <div>
@@ -659,8 +867,9 @@ footer{background:var(--ink);padding:44px 0 26px}
         → Tanya via WhatsApp — tidak ada kewajiban
       </a>
     </div>
-  </div>
-</div>
+  </div><!-- /coi -->
+  </div><!-- /cocok-content -->
+</div><!-- /ws -->
 </section>
 
 <!-- ══════════════════════════════════════ -->
@@ -682,19 +891,23 @@ footer{background:var(--ink);padding:44px 0 26px}
       <p class="qb">Sebelumnya sudah coba beberapa cara. Yang saya notice duluan malah tidur mulai lebih tenang. Perut belum langsung sempurna, tapi tidak sepanik biasanya kalau mulai terasa tidak nyaman.</p>
       <p class="qn">Andika R. — 34 tahun, Surabaya</p>
     </div>
-    <div class="tc2">
+    <div class="tc2 testi-hide">
       <p class="qm">"</p>
       <p class="qq">"Saya suka karena tidak cuma disuruh minum."</p>
       <p class="qb">Ada panduan, jadi saya lebih tahu harus jaga apa. Telat makan masih kadang kejadian, tapi reaksi lambungnya tidak langsung separah dulu. Buat saya itu sudah beda.</p>
       <p class="qn">Rini W. — 29 tahun, Jakarta Selatan</p>
     </div>
-    <div class="tc2">
+    <div class="tc2 testi-hide">
       <p class="qm">"</p>
       <p class="qq">"Biasanya saya berhenti di tengah jalan."</p>
       <p class="qb">Kali ini lebih kebantu karena kalau bingung bisa tanya. Tidak harus nebak sendiri. Saya jadi lebih konsisten sampai bulan ketiga.</p>
       <p class="qn">Budi S. — 41 tahun, Bandung</p>
     </div>
   </div>
+  <button class="btn-expand" onclick="toggleMobClass(this,'testi-hide')" aria-expanded="false">
+    <span data-open="Lihat cerita lainnya">Lihat cerita lainnya</span>
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+  </button>
 
   <!-- Fulfillment proof -->
   <div class="fl-h">
@@ -740,7 +953,7 @@ footer{background:var(--ink);padding:44px 0 26px}
   </div>
   <div style="text-align:center;margin-top:16px">
     <button class="btn-expand" onclick="toggleExpandClass(this,'wa-hide-mob')" aria-expanded="false" style="margin:0 auto">
-      <span>Lihat testimoni lainnya</span>
+      <span data-open="Lihat testimoni lainnya">Lihat testimoni lainnya</span>
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
     </button>
   </div>
@@ -749,147 +962,131 @@ footer{background:var(--ink);padding:44px 0 26px}
 </section>
 
 <!-- ══════════════════════════════════════ -->
-<!-- S06 PRICING                           -->
+<!-- OBJECTION HANDLING — section baru     -->
+<!-- ══════════════════════════════════════ -->
+<section id="obj">
+<div class="w">
+<div class="obj-inner">
+
+  <span class="lbl" style="display:block;text-align:center">Sebelum memutuskan</span>
+  <p class="obj-title">Tiga hal yang biasanya muncul di kepala.</p>
+  <p class="obj-sub">Dan jawaban jujurnya.</p>
+
+  <div class="obj-grid">
+
+    <div class="obj-card">
+      <p class="obj-q">"Sudah pernah coba herbal, tidak berhasil."</p>
+      <p class="obj-a">Yang pernah dicoba sebelumnya kemungkinan bekerja untuk <strong>meredakan reaksi</strong> — Gadama bekerja untuk memulihkan <strong>kondisi yang membuatnya mudah bereaksi.</strong> Dua target yang berbeda. Hasilnya berbeda.</p>
+    </div>
+
+    <div class="obj-card">
+      <p class="obj-q">"Harganya lumayan untuk herbal."</p>
+      <p class="obj-a">Rata-rata yang sudah keluar untuk suplemen dan herbal lambung yang berganti-ganti selama 6 bulan: <strong>Rp 300.000–600.000</strong> — dengan hasil yang tidak bertahan. Program ini dirancang agar tidak perlu diulang terus.</p>
+    </div>
+
+    <div class="obj-card">
+      <p class="obj-q">"Bagaimana kalau tidak cocok untuk saya?"</p>
+      <p class="obj-a"><strong>Garansi 30 hari</strong> — kalau tidak ada perubahan yang dirasakan, uang kembali penuh. <strong>COD</strong> — bayar saat paket tiba di tangan, bukan dulu. Risiko ada di kami, bukan di kamu.</p>
+    </div>
+
+  </div>
+
+</div>
+</div>
+</section>
+
+<!-- ══════════════════════════════════════ -->
+<!-- ══════════════════════════════════════ -->
+<!-- S06 PRICING — 2 tier cold traffic     -->
 <!-- ══════════════════════════════════════ -->
 <section id="price">
 <div class="w">
 
   <div class="ph">
-    <span class="lbl" style="display:block">Kalau ingin mencoba</span>
-    <h2>Pilih yang paling masuk akal untuk kondisimu.</h2>
-    <p>Tidak harus langsung 90 hari. Yang penting ekspektasinya jelas sejak awal.</p>
+    <span class="lbl" style="display:block">Pilih program yang sesuai</span>
+    <h2>COD tersedia. Garansi 30 hari. Mulai dari Rp 155.000.</h2>
+    <p>Tidak perlu langsung 3 bulan. Mulai dari Fase 1 — rasakan sendiri bedanya.</p>
   </div>
 
-  <div style="max-width:620px;margin:0 auto 34px;text-align:center">
-    <p style="font-size:15px;line-height:1.9;color:var(--earth)">Kalau jujur, banyak orang yang sampai bagian ini awalnya juga skeptis.<br><br>Karena biasanya produk lambung terdengar mirip: herbal, alami, aman, dan membantu meredakan.<br><br>Bedanya di sini bukan hanya botolnya. Ada panduan dan pendampingan supaya kamu tidak menjalani prosesnya sendirian.</p>
+  <!-- ANCHOR HARGA -->
+  <div class="price-anchor">
+    <p class="pa-label">Rata-rata yang sudah keluar untuk suplemen dan herbal lambung berganti-ganti (6 bulan):</p>
+    <div class="pa-items">
+      <div class="pa-item"><span>Herbal A → berhenti karena tidak bertahan</span><span class="pa-crossed">Rp 120.000–200.000</span></div>
+      <div class="pa-item"><span>Herbal B → sama saja</span><span class="pa-crossed">Rp 150.000–250.000</span></div>
+      <div class="pa-item"><span>Suplemen C → dicoba sebentar</span><span class="pa-crossed">Rp 100.000–150.000</span></div>
+    </div>
+    <p class="pa-total">Total yang sudah keluar tanpa hasil bertahan: <strong>Rp 370.000–600.000+</strong></p>
+    <p class="pa-vs">Gadama Fase 1 — mulai dari Rp 155.000 · COD · Garansi 30 hari</p>
   </div>
 
-  <div class="pgrid">
+  <div class="pgrid" style="grid-template-columns:1fr 1fr;max-width:680px;margin:0 auto">
 
-    <!-- TIER 1 -->
+    <!-- FASE 1 -->
     <div class="pc">
-      <span class="ptb">Coba dulu</span>
-      <h3>Program 30 Hari</h3>
+      <span class="ptb">Mulai dari sini</span>
+      <h3>Fase 1</h3>
+      <p style="font-size:13px;color:var(--earth);margin-bottom:12px">1 Botol — 30 hari</p>
       <img src="https://i.ibb.co.com/BK6zGHXv/pricing-tier1-1bottle.webp"
-           alt="Gadama 1 botol — Program 30 Hari"
+           alt="Gadama 1 botol — Fase 1"
            class="pci" width="280" height="180" loading="lazy">
       <ul class="pl" style="flex:1">
         <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>1 botol Gadama (30 hari)</li>
-        <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Panduan cara konsumsi</li>
+        <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Panduan pola makan lambung sehat</li>
         <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Akses tanya WA 30 hari</li>
       </ul>
       <p class="por">Rp 175.000</p>
       <p class="ppr">Rp 155.000</p>
       <p class="ppd">±Rp 5.200/hari</p>
       <ul class="prk">
-        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>COD tersedia</li>
-        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Garansi 30 hari</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>COD — bayar saat paket tiba</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Ongkir disubsidi Rp 10.000</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Garansi 30 hari uang kembali</li>
       </ul>
       <div class="pcta">
         <a href="https://livinh.storelink.id/gadama-co-sp-1btl" class="btn btn-o btn-w"
-           onclick="doATC('pricing-t1')" target="_blank" rel="noopener">Pilih yang ini →</a>
+           onclick="doATC('pricing-fase1')" target="_blank" rel="noopener">Mulai Fase 1 →</a>
       </div>
     </div>
 
-    
-    <!-- TIER 3 FEATURED -->
+    <!-- FASE 1+2 FEATURED -->
     <div class="pc ft">
-      <span class="pb">Untuk proses paling utuh</span>
-      <h3>Program 90 Hari</h3>
-      <img src="https://i.ibb.co.com/1tKY47qR/pricing-tier3-3bottle.webp"
-           alt="Gadama 3 botol + 2 bonus panduan — Program 90 Hari lengkap"
-           class="pci" width="280" height="180" loading="lazy">
-      <ul class="pl" style="flex:1">
-        <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>3 botol Gadama (90 hari)</li>
-        <li class="bon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>BONUS 1: Panduan Pola Makan Lambung Sehat</li>
-        <li class="bon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>BONUS 2: Checklist Pemulihan 90 Hari</li>
-        <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Pendampingan WA prioritas (90 hari penuh)</li>
-      </ul>
-      <div class="cob">
-        <p>Satu kali konsul dokter = Rp 150–300rb. Program 90 hari Gadama = <strong>±Rp 4.700/hari.</strong></p>
-      </div>
-      <p class="pmq">Untuk yang ingin menjalani prosesnya dengan panduan dan pendampingan paling lengkap.</p>
-      <p class="por">3×Rp 175.000 = Rp 525.000</p>
-      <p class="ppr">Rp 420.000</p>
-      <p class="psav">Hemat Rp 105.000</p>
-      <p class="ppd">±Rp 4.700/hari selama 90 hari</p>
-      <ul class="prk">
-        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Gratis ongkir s/d Rp 15.000</li>
-        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>COD — bayar saat paket tiba</li>
-        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Garansi 30 hari, uang kembali penuh</li>
-        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>BPOM TR256049601</li>
-      </ul>
-      <div class="pcta">
-        <a href="https://livinh.storelink.id/gadama-co-sp-3btl" class="btn btn-f btn-w btn-lg"
-           onclick="doATC('pricing-t3')" target="_blank" rel="noopener">Mulai 90 Hari →</a>
-        <p class="pwan">atau <a href="https://wa.me/6287778325315?text=Halo+Gadama%2C+saya+mau+tanya+Program+90+Hari" onclick="doWA('pricing-t3')" target="_blank" rel="noopener">tanya dulu via WA</a> — tidak ada kewajiban</p>
-      </div>
-    </div>
-
-    <!-- TIER 3 FEATURED -->
-    <div class="pc ft">
-      <span class="pb">Untuk proses paling utuh</span>
-      <h3>Program 90 Hari</h3>
-      <img src="https://i.ibb.co.com/1tKY47qR/pricing-tier3-3bottle.webp"
-           alt="Gadama 3 botol + 2 bonus panduan — Program 90 Hari lengkap"
-           class="pci" width="280" height="180" loading="lazy">
-      <ul class="pl" style="flex:1">
-        <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>3 botol Gadama (90 hari)</li>
-        <li class="bon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>BONUS 1: Panduan Pola Makan Lambung Sehat</li>
-        <li class="bon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>BONUS 2: Checklist Pemulihan 90 Hari</li>
-        <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Pendampingan WA prioritas (90 hari penuh)</li>
-      </ul>
-      <div class="cob">
-        <p>Satu kali konsul dokter = Rp 150–300rb. Program 90 hari Gadama = <strong>±Rp 4.700/hari.</strong></p>
-      </div>
-      <p class="pmq">Untuk yang ingin menjalani prosesnya dengan panduan dan pendampingan paling lengkap.</p>
-      <p class="por">3×Rp 175.000 = Rp 525.000</p>
-      <p class="ppr">Rp 420.000</p>
-      <p class="psav">Hemat Rp 105.000</p>
-      <p class="ppd">±Rp 4.700/hari selama 90 hari</p>
-      <ul class="prk">
-        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Gratis ongkir s/d Rp 15.000</li>
-        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>COD — bayar saat paket tiba</li>
-        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Garansi 30 hari, uang kembali penuh</li>
-        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>BPOM TR256049601</li>
-      </ul>
-      <div class="pcta">
-        <a href="https://livinh.storelink.id/gadama-co-sp-3btl" class="btn btn-f btn-w btn-lg"
-           onclick="doATC('pricing-t3')" target="_blank" rel="noopener">Mulai 90 Hari →</a>
-        <p class="pwan">atau <a href="https://wa.me/6287778325315?text=Halo+Gadama%2C+saya+mau+tanya+Program+90+Hari" onclick="doWA('pricing-t3')" target="_blank" rel="noopener">tanya dulu via WA</a> — tidak ada kewajiban</p>
-      </div>
-    </div>
-
-    <!-- TIER 2 -->
-    <div class="pc">
-      <span class="ptb">Lebih realistis</span>
-      <h3>Program 60 Hari</h3>
+      <span class="pb">Paling banyak dipilih</span>
+      <h3>Fase 1 + 2</h3>
+      <p style="font-size:13px;color:var(--earth);margin-bottom:12px">2 Botol — 60 hari</p>
       <img src="https://i.ibb.co.com/hR6yFPC6/pricing-tier2-2bottle.webp"
-           alt="Gadama 2 botol — Program 60 Hari"
+           alt="Gadama 2 botol — Fase 1 dan 2"
            class="pci" width="280" height="180" loading="lazy">
       <ul class="pl" style="flex:1">
         <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>2 botol Gadama (60 hari)</li>
-        <li class="bon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>BONUS: Panduan Pola Makan Lambung Sehat</li>
+        <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Panduan pola makan lambung sehat</li>
+        <li class="bon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>BONUS: Checklist Pemulihan 90 Hari (PDF via WA)</li>
         <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Akses tanya WA 60 hari</li>
+        <li><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Review progress di bulan ke-2</li>
       </ul>
-      <p class="pmq">Untuk yang merasa 30 hari terlalu pendek untuk menilai perubahan.</p>
       <p class="por">2×Rp 175.000 = Rp 350.000</p>
-      <p class="ppr">Rp 295.000</p>
-      <p class="psav">Hemat Rp 55.000</p>
-      <p class="ppd">±Rp 4.900/hari</p>
+      <p class="ppr">Rp 285.000</p>
+      <p class="psav">Hemat Rp 65.000</p>
+      <p class="ppd">±Rp 4.750/hari</p>
       <ul class="prk">
-        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>COD tersedia</li>
-        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Garansi 30 hari</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>COD — bayar saat paket tiba</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Ongkir disubsidi Rp 10.000</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>Garansi 30 hari uang kembali penuh</li>
+        <li><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg>BPOM TR256049601 · Halal MUI</li>
       </ul>
       <div class="pcta">
-        <a href="https://livinh.storelink.id/gadama-co-sp-2btl" class="btn btn-o btn-w"
-           onclick="doATC('pricing-t2')" target="_blank" rel="noopener">Pilih yang ini →</a>
+        <a href="https://livinh.storelink.id/gadama-co-sp-2btl" class="btn btn-f btn-w btn-lg"
+           onclick="doATC('pricing-fase12')" target="_blank" rel="noopener">Mulai Fase 1+2 →</a>
+        <p class="pwan">atau <a href="https://wa.me/6287778325315?text=Halo+Gadama%2C+saya+mau+tanya+soal+program+Fase+1+2" onclick="doWA('pricing-fase12')" target="_blank" rel="noopener">tanya dulu via WA</a> — tidak ada kewajiban</p>
       </div>
     </div>
 
-    
-
   </div>
+
+  <p style="text-align:center;font-size:13px;color:var(--earth);margin-top:20px">
+    Perubahan biasanya mulai terasa di <strong>bulan kedua</strong>. Botol ketiga untuk menyelesaikan program tersedia setelah Fase 1+2 selesai.
+  </p>
+
 </div>
 </section>
 
@@ -1084,23 +1281,55 @@ function doWA(s){
   if(typeof ttq!='undefined')ttq.track('Contact',{content_category:s});
 }
 
-/* ── Progressive Disclosure ── */
-function toggleExpand(btn, cls) {
+/* ── Mobile Progressive Disclosure ── */
+var isMobile = window.innerWidth <= 768;
+
+function toggleMob(btn, cls) {
+  var el = document.querySelector('.' + cls);
+  if(!el) return;
+  var isOpen = btn.classList.contains('open');
+  el.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', !isOpen);
+  var sp = btn.querySelector('span');
+  if(sp) sp.textContent = isOpen ? sp.dataset.open : 'Sembunyikan';
+}
+function toggleMobId(btn, id) {
+  var el = document.getElementById(id);
+  if(!el) return;
+  var isOpen = btn.classList.contains('open');
+  el.classList.toggle('open', !isOpen);
+  btn.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', !isOpen);
+  var sp = btn.querySelector('span');
+  if(sp) sp.textContent = isOpen ? sp.dataset.open : 'Sembunyikan';
+}
+function toggleMobClass(btn, cls) {
   var items = document.querySelectorAll('.' + cls);
   var isOpen = btn.classList.contains('open');
   items.forEach(function(el){ el.classList.toggle('open', !isOpen); });
   btn.classList.toggle('open', !isOpen);
   btn.setAttribute('aria-expanded', !isOpen);
-  btn.querySelector('span').textContent = isOpen ? 'Baca selengkapnya' : 'Sembunyikan';
+  var sp = btn.querySelector('span');
+  if(sp) sp.textContent = isOpen ? sp.dataset.open : 'Sembunyikan';
 }
-function toggleExpandClass(btn, cls) {
-  var items = document.querySelectorAll('.' + cls);
-  var isOpen = btn.classList.contains('open');
-  items.forEach(function(el){ el.classList.toggle('open', !isOpen); });
-  btn.classList.toggle('open', !isOpen);
-  btn.setAttribute('aria-expanded', !isOpen);
-  btn.querySelector('span').textContent = isOpen ? (cls === 'wa-hide-mob' ? 'Lihat testimoni lainnya' : 'Lihat semua foto') : 'Sembunyikan';
-}
+/* Alias lama untuk backward compat */
+function toggleExpand(btn,cls){toggleMob(btn,cls);}
+function toggleExpandClass(btn,cls){toggleMobClass(btn,cls);}
+
+/* Show mobile-only buttons on mobile */
+document.addEventListener('DOMContentLoaded', function() {
+  if(window.innerWidth <= 768) {
+    var mBtns = document.querySelectorAll('#btn-cocok, #btn-bw');
+    mBtns.forEach(function(b){ b.style.display = 'flex'; });
+    /* Hide cocok-content on mobile by default */
+    var cc = document.querySelector('.cocok-content');
+    if(cc) cc.style.display = 'none';
+    /* Hide bw-block on mobile by default */
+    var bw = document.getElementById('bw-block');
+    if(bw) bw.style.display = 'none';
+  }
+});
 
 /* ── Smooth scroll ── */
 function goTo(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
